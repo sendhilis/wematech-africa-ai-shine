@@ -69,7 +69,7 @@ const solutions = [
     description: "Custom-built AI agent platform for commercial banks — deploy domain-specific copilots for credit, compliance, trade finance, treasury, and customer service operations.",
     features: ["Domain Agents", "Agent Builder", "Compliance AI", "Trade Finance"],
     slug: "tigiverse",
-    demo: "https://tigiverse.techurate.world",
+    demo: "https://tigiverseai.techurate.world",
     color: "primary",
   },
   {
