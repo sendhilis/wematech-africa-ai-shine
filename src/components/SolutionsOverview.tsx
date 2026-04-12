@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Wallet, LayoutDashboard, BarChart3, Brain, Smartphone } from "lucide-react";
+import { ArrowRight, Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, Phone, Bot, CreditCard } from "lucide-react";
 
 const solutions = [
   {
