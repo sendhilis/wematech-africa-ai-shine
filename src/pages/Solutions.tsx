@@ -204,6 +204,11 @@ const Solutions = () => {
         <title>Solutions | AI Banking, Mobile Money & Digital Lending — Wematech Africa</title>
         <meta name="description" content="Explore Wematech's full suite of AI-powered banking solutions — GlobalPay mobile money, digital lending, credit intelligence, AI copilots, and voice call center for African banks and fintechs." />
         <link rel="canonical" href="https://www.wematech.in/solutions" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.wematech.in/solutions" />
+        <meta property="og:title" content="Solutions | AI Banking, Mobile Money & Digital Lending — Wematech Africa" />
+        <meta property="og:description" content="Explore Wematech's full suite of AI-powered banking solutions — GlobalPay mobile money, digital lending, credit intelligence, AI copilots, and voice call center for African banks and fintechs." />
+        <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f7cf74b4-a501-4ba6-99fc-605ac5a3ae20/id-preview-e944887d--163e2fc3-2f9a-45c2-8325-972d3fd31fb6.lovable.app-1775979718401.png" />
       </Helmet>
       <Navbar />
 
