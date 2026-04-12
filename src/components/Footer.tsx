@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/wematech-logo.png";
+import logo from "@/assets/wematech-logo-transparent.png";
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <img src={logo} alt="WeMaTech Logo" className="h-10 w-auto" />
+              <img src={logo} alt="WeMaTech Logo" className="h-14 w-auto drop-shadow-[0_0_10px_hsl(var(--accent)/0.3)]" />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Africa-focused AI-powered digital banking solutions. Transforming financial services across the continent.
