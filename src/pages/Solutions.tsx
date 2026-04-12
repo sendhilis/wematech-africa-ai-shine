@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
-import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, ExternalLink } from "lucide-react";
+import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, ExternalLink, Phone, Bot, CreditCard } from "lucide-react";
 
 const solutions = [
   {
@@ -114,6 +114,72 @@ const solutions = [
       { value: "KES 2B+", label: "Transactions" },
       { value: "99.9%", label: "Uptime" },
       { value: "3s", label: "Avg Transfer" },
+    ],
+  },
+  {
+    id: "eximvoice",
+    icon: Phone,
+    title: "EximVoice",
+    subtitle: "AI-Powered Voice Call Center for Banks",
+    demo: "https://eximvoice.techmonk.world",
+    hero: "Versatile, cost-effective AI voice-based call center solution for banks. Experience multilingual support in English, Arabic, and French with real-time AI resolution, intelligent call routing, and comprehensive agent performance analytics.",
+    modules: [
+      { name: "AI Voice Agent", desc: "Handles routine inquiries — mobile banking, card issues, balance checks — with 78% AI resolution rate" },
+      { name: "Live Call Dashboard", desc: "Real-time monitoring of active calls, queue management, priority tagging, and agent assignment" },
+      { name: "Multilingual Support", desc: "Native support for English, Arabic, and French with context-aware language switching" },
+      { name: "Agent Management", desc: "Performance scoring, call routing, workload balancing, and real-time coaching tools" },
+      { name: "Knowledge Base", desc: "AI-curated knowledge repository for instant answers, policy lookups, and compliance scripts" },
+      { name: "Analytics & Reporting", desc: "Call volume trends, resolution rates, customer satisfaction tracking, and issue categorization" },
+    ],
+    stats: [
+      { value: "78%", label: "AI Resolution" },
+      { value: "45s", label: "Avg Wait Time" },
+      { value: "4.6/5", label: "CSAT Score" },
+      { value: "3", label: "Languages" },
+    ],
+  },
+  {
+    id: "tigiverse",
+    icon: Bot,
+    title: "TigiVerse",
+    subtitle: "AI Copilot Platform for Commercial Banks",
+    demo: "https://tigiverse.techurate.world",
+    hero: "Custom-built AI agent platform for commercial banks — deploy domain-specific copilots for credit analysis, compliance, customer service, trade finance, and treasury operations. Each agent is trained on your bank's policies, products, and regulatory framework.",
+    modules: [
+      { name: "Credit Analysis Agent", desc: "Automated financial statement analysis, risk assessment, covenant monitoring, and credit memo generation" },
+      { name: "Compliance Copilot", desc: "Real-time regulatory screening, AML/KYC automation, suspicious activity reporting, and policy updates" },
+      { name: "Customer Service Agent", desc: "Intelligent ticket routing, context-aware responses, escalation management, and feedback loops" },
+      { name: "Trade Finance Agent", desc: "LC processing, document verification, trade risk assessment, and cross-border compliance checks" },
+      { name: "Treasury Copilot", desc: "Liquidity forecasting, FX exposure management, investment recommendations, and ALM support" },
+      { name: "Agent Builder Studio", desc: "No-code agent creation, domain knowledge ingestion, testing sandbox, and deployment pipeline" },
+    ],
+    stats: [
+      { value: "6+", label: "Domain Agents" },
+      { value: "85%", label: "Task Automation" },
+      { value: "< 3s", label: "Response Time" },
+      { value: "Custom", label: "Bank-Trained" },
+    ],
+  },
+  {
+    id: "digital-lending",
+    icon: CreditCard,
+    title: "Digital Lending Platform",
+    subtitle: "Uncollateralized MSME Credit & Wallet Services",
+    demo: "https://michu2.0.wematech.in",
+    hero: "End-to-end digital lending platform delivering uncollateralized credit, wallet services, and smart savings for MSMEs. AI-powered credit decisioning with alternative data scoring, instant disbursement, and automated collections.",
+    modules: [
+      { name: "Instant Credit", desc: "Uncollateralized micro-loans with AI credit scoring, alternative data signals, and real-time disbursement" },
+      { name: "Smart Wallet", desc: "Integrated digital wallet for repayments, savings, and merchant transactions" },
+      { name: "Savings Goals", desc: "Purpose-built savings products with auto-deduction, target tracking, and interest accrual" },
+      { name: "Credit Scoring Engine", desc: "Psychometric + transactional scoring for thin-file borrowers, 300-900 range with instant decisions" },
+      { name: "Collections & Recovery", desc: "Automated SMS/push reminders, grace period management, restructuring workflows" },
+      { name: "MSME Dashboard", desc: "Business health monitoring, cash flow analytics, credit limit management, and repayment tracking" },
+    ],
+    stats: [
+      { value: "< 60s", label: "Disbursement" },
+      { value: "Zero", label: "Collateral" },
+      { value: "95%", label: "Repayment Rate" },
+      { value: "MSME", label: "Focused" },
     ],
   },
 ];

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Wallet, LayoutDashboard, BarChart3, Brain, Smartphone } from "lucide-react";
+import { ArrowRight, Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, Phone, Bot, CreditCard } from "lucide-react";
 
 const solutions = [
   {
@@ -51,6 +51,36 @@ const solutions = [
     slug: "smart-wallet",
     demo: "https://tesfapay.techmonk.world",
     color: "primary",
+  },
+  {
+    icon: Phone,
+    title: "EximVoice",
+    subtitle: "AI Voice Call Center",
+    description: "Cost-effective AI voice-based call center for banks with multilingual support in English, Arabic & French. 78% AI resolution rate, real-time monitoring, and intelligent call routing.",
+    features: ["Multilingual AI", "Live Dashboard", "Agent Analytics", "Knowledge Base"],
+    slug: "eximvoice",
+    demo: "https://eximvoice.techmonk.world",
+    color: "accent",
+  },
+  {
+    icon: Bot,
+    title: "TigiVerse",
+    subtitle: "AI Copilot for Banks",
+    description: "Custom-built AI agent platform for commercial banks — deploy domain-specific copilots for credit, compliance, trade finance, treasury, and customer service operations.",
+    features: ["Domain Agents", "Agent Builder", "Compliance AI", "Trade Finance"],
+    slug: "tigiverse",
+    demo: "https://tigiverse.techurate.world",
+    color: "primary",
+  },
+  {
+    icon: CreditCard,
+    title: "Digital Lending Platform",
+    subtitle: "MSME Credit & Wallet Services",
+    description: "End-to-end digital lending with uncollateralized credit, AI scoring, smart savings, and instant disbursement for MSMEs. Zero collateral, sub-60s disbursement.",
+    features: ["Instant Credit", "AI Scoring", "Smart Savings", "MSME Dashboard"],
+    slug: "digital-lending",
+    demo: "https://michu2.0.wematech.in",
+    color: "accent",
   },
 ];
 
