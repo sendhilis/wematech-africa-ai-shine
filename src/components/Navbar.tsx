@@ -67,7 +67,7 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <Link to="/contact" className="btn-primary text-xs px-6 py-2.5">
+          <Link to="/solutions#book-demo" className="btn-primary text-xs px-6 py-2.5">
             Get Started
           </Link>
         </div>
@@ -95,7 +95,7 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <Link to="/contact" className="btn-primary block text-center text-xs px-6 py-2.5 mt-4">
+          <Link to="/solutions#book-demo" className="btn-primary block text-center text-xs px-6 py-2.5 mt-4">
             Get Started
           </Link>
         </div>

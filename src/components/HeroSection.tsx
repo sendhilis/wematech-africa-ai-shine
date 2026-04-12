@@ -42,7 +42,7 @@ const HeroSection = () => {
             <Link to="/solutions" className="btn-primary flex items-center gap-2">
               Explore Solutions <ArrowRight size={16} />
             </Link>
-            <Link to="/contact" className="btn-outline">
+            <Link to="/solutions#book-demo" className="btn-outline">
               Request Demo
             </Link>
           </div>
