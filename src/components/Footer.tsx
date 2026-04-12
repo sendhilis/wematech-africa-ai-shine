@@ -3,7 +3,7 @@ import logoIcon from "@/assets/wematech-icon.png";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border/30 bg-background">
+    <footer role="contentinfo" className="border-t border-border/30 bg-background">
       <div className="section-container py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-1">

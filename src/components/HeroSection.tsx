@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-africa.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <header role="banner" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <img src={heroImage} alt="Digital Africa" className="w-full h-full object-cover opacity-30" />
@@ -28,9 +28,9 @@ const HeroSection = () => {
           <h1 className="animate-slide-up font-heading text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-foreground mb-6">
             AI-Powered
             <br />
-            <span className="glow-text">Digital Banking</span>
+            <span className="glow-text">Banking Technology</span>
             <br />
-            for Africa
+            Solutions for Africa
           </h1>
 
           <p className="animate-slide-up-delayed text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-10">
@@ -66,7 +66,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </header>
   );
 };
 
