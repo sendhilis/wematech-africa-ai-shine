@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Mail, MapPin, Send, Loader2 } from "lucide-react";
@@ -67,6 +68,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Contact Wematech Africa | Request a Demo — AI Banking Solutions</title>
+        <meta name="description" content="Get in touch with Wematech Africa to schedule a demo of our AI-powered banking technology. Offices in Nairobi and Addis Ababa serving banks and fintechs across Africa." />
+        <link rel="canonical" href="https://www.wematech.in/contact" />
+      </Helmet>
       <Navbar />
 
       <section className="pt-32 pb-24">

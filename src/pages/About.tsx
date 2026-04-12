@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
@@ -6,6 +7,11 @@ import { Target, Globe, Cpu, Shield, Users, TrendingUp } from "lucide-react";
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>About Wematech Africa | Engineering Africa's Financial Future with AI</title>
+        <meta name="description" content="Wematech Africa is an AI-first banking technology company serving 12+ African markets with core banking, credit intelligence, mobile money, and agentic AI solutions." />
+        <link rel="canonical" href="https://www.wematech.in/about" />
+      </Helmet>
       <Navbar />
 
       <section className="pt-32 pb-16">
