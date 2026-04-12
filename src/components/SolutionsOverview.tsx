@@ -19,7 +19,7 @@ const solutions = [
     description: "Comprehensive 5-portal financial services platform — retail, agency, merchant, internet banking & admin. Built with shadow banking architecture and regulatory compliance.",
     features: ["Retail Portal", "Agency Banking", "Corporate RBAC", "Loan Management"],
     slug: "digital-experience",
-    demo: "https://rukisha2.0.techmonk.world",
+    demo: "https://nisir.techurate.world",
     color: "accent",
   },
   {
@@ -29,7 +29,7 @@ const solutions = [
     description: "AI-powered credit scoring for thin-file borrowers across 12+ African markets. WoE/IV logistic regression, document OCR, fairness monitoring, and bureau fusion.",
     features: ["AI Scoring (300-900)", "Smart OCR", "Fairness Auditing", "40+ Integrations"],
     slug: "africaone",
-    demo: "https://rukisha2.0.techmonk.world",
+    demo: "https://africaone.techmonk.world",
     color: "primary",
   },
   {
@@ -49,7 +49,7 @@ const solutions = [
     description: "White-label digital wallet solution with multi-wallet savings, auto-save features, bill payments, and bank-grade security. Deployed across East African markets.",
     features: ["Multi-Wallets", "Auto-Save", "Bill Payments", "Diaspora Connect"],
     slug: "smart-wallet",
-    demo: "https://rukisha2.0.techmonk.world",
+    demo: "https://tesfapay.techmonk.world",
     color: "primary",
   },
 ];

@@ -11,7 +11,7 @@ const solutions = [
     icon: Wallet,
     title: "GlobalPay",
     subtitle: "The World's Most Advanced AI-Powered Mobile Money Platform",
-    demo: "https://rukisha2.0.techmonk.world",
+    demo: "https://tesfapay.techmonk.world",
     hero: "Complete enterprise wallet ecosystem with 14 core modules, 50+ AI features, and infrastructure to serve 10M+ users across African markets.",
     modules: [
       { name: "Customer Wallet", desc: "P2P transfers, bill payments, merchant QR, airtime top-up, smart savings goals" },
@@ -33,7 +33,7 @@ const solutions = [
     icon: LayoutDashboard,
     title: "Digital Experience Platform",
     subtitle: "Comprehensive Multi-Portal Financial Services Ecosystem",
-    demo: "https://rukisha2.0.techmonk.world",
+    demo: "https://nisir.techurate.world",
     hero: "Five independent portals unified under a single platform — retail banking, agency banking, merchant payments, internet banking, and centralized admin console.",
     modules: [
       { name: "Retail Portal", desc: "Mobile-first individual banking — savings, payments, loans, tiered KYC compliance" },
@@ -55,7 +55,7 @@ const solutions = [
     icon: BarChart3,
     title: "AfricaOne",
     subtitle: "Pan-African Credit Intelligence Platform",
-    demo: "https://rukisha2.0.techmonk.world",
+    demo: "https://africaone.techmonk.world",
     hero: "AI-powered credit scoring, document intelligence, and production-grade integrations for Africa's financial future. Serving 12+ markets with thin-file friendly scoring.",
     modules: [
       { name: "AI Scoring Engine", desc: "WoE + IV logistic regression, 300-900 score range, 5 risk bands (A-E), bureau fusion, <2s latency" },
@@ -99,7 +99,7 @@ const solutions = [
     icon: Smartphone,
     title: "Smart Wallet",
     subtitle: "White-Label Consumer Digital Wallet",
-    demo: "https://rukisha2.0.techmonk.world",
+    demo: "https://tesfapay.techmonk.world",
     hero: "Ready-to-deploy digital wallet with multi-wallet savings, auto-save features, bill payments, and diaspora connectivity. Bank-grade security for all transactions.",
     modules: [
       { name: "Multi-Wallets", desc: "Education, Medical, Holiday & Retirement purpose-built savings wallets" },
