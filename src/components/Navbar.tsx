@@ -27,6 +27,8 @@ const Navbar = () => {
 
   return (
     <nav
+      role="navigation"
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
           ? "bg-[hsl(228_50%_16%/0.95)] backdrop-blur-xl border-b border-[hsl(228_50%_30%/0.3)] py-2"
