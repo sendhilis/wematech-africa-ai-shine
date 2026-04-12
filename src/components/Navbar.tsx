@@ -34,12 +34,15 @@ const Navbar = () => {
       }`}
     >
       <div className="section-container flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group">
-          <img
-            src={logoIcon}
-            alt="WeMaTech"
-            className={`transition-all duration-500 drop-shadow-[0_0_16px_hsl(40_92%_56%/0.5)] group-hover:drop-shadow-[0_0_28px_hsl(40_92%_56%/0.7)] ${isScrolled ? "h-12 w-12" : "h-14 w-14"}`}
-          />
+        <Link to="/" className="flex items-center gap-3 group relative">
+          <div className="relative flex-shrink-0">
+            <div className={`absolute inset-0 rounded-full bg-accent/20 blur-xl animate-pulse-glow transition-all duration-500 ${isScrolled ? "scale-110" : "scale-125"}`} />
+            <img
+              src={logoIcon}
+              alt="WeMaTech"
+              className={`relative z-10 transition-all duration-500 drop-shadow-[0_0_20px_hsl(40_92%_56%/0.6)] group-hover:drop-shadow-[0_0_32px_hsl(40_92%_56%/0.8)] ${isScrolled ? "h-14 w-14" : "h-[4.5rem] w-[4.5rem]"}`}
+            />
+          </div>
           <div className="flex flex-col">
             <span className={`font-heading font-bold text-foreground leading-tight transition-all duration-500 ${isScrolled ? "text-xl" : "text-2xl"}`}>
               Wema<span className="text-accent">Tech</span>
