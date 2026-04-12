@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/wematech-logo-transparent.png";
+import logoIcon from "@/assets/wematech-icon.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -36,10 +36,18 @@ const Navbar = () => {
       <div className="section-container flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
           <img
-            src={logo}
-            alt="WeMaTech Logo"
-            className={`transition-all duration-500 drop-shadow-[0_0_12px_hsl(var(--accent)/0.4)] group-hover:drop-shadow-[0_0_20px_hsl(var(--accent)/0.6)] ${isScrolled ? "h-12" : "h-16"} w-auto`}
+            src={logoIcon}
+            alt="WeMaTech"
+            className={`transition-all duration-500 drop-shadow-[0_0_16px_hsl(40_92%_56%/0.5)] group-hover:drop-shadow-[0_0_28px_hsl(40_92%_56%/0.7)] ${isScrolled ? "h-12 w-12" : "h-14 w-14"}`}
           />
+          <div className="flex flex-col">
+            <span className={`font-heading font-bold text-foreground leading-tight transition-all duration-500 ${isScrolled ? "text-xl" : "text-2xl"}`}>
+              Wema<span className="text-accent">Tech</span>
+            </span>
+            <span className={`text-muted-foreground font-medium leading-tight transition-all duration-500 ${isScrolled ? "text-[10px]" : "text-xs"}`}>
+              Advanced AI. Accessible to All.
+            </span>
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
