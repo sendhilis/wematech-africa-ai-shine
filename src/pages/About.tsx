@@ -11,6 +11,11 @@ const About = () => {
         <title>About Wematech Africa | Engineering Africa's Financial Future with AI</title>
         <meta name="description" content="Wematech Africa is an AI-first banking technology company serving 12+ African markets with core banking, credit intelligence, mobile money, and agentic AI solutions." />
         <link rel="canonical" href="https://www.wematech.in/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.wematech.in/about" />
+        <meta property="og:title" content="About Wematech Africa | Engineering Africa's Financial Future with AI" />
+        <meta property="og:description" content="Wematech Africa is an AI-first banking technology company serving 12+ African markets with core banking, credit intelligence, mobile money, and agentic AI solutions." />
+        <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f7cf74b4-a501-4ba6-99fc-605ac5a3ae20/id-preview-e944887d--163e2fc3-2f9a-45c2-8325-972d3fd31fb6.lovable.app-1775979718401.png" />
       </Helmet>
       <Navbar />
 
