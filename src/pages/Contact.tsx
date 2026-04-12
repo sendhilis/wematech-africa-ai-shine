@@ -1,14 +1,68 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    organization: "",
+    solutionInterest: "GlobalPay - Mobile Money",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      // Store in database
+      const { error: dbError } = await supabase.from("contact_submissions").insert({
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        email: formData.email,
+        organization: formData.organization || null,
+        solution_interest: formData.solutionInterest,
+        message: formData.message || null,
+      });
+
+      if (dbError) throw dbError;
+
+      // Send notification email
+      await supabase.functions.invoke("send-contact-email", {
+        body: {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          organization: formData.organization,
+          solutionInterest: formData.solutionInterest,
+          message: formData.message,
+        },
+      });
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "Failed to submit your enquiry. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -79,38 +133,45 @@ const Contact = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="text-xs text-muted-foreground block mb-1.5">First Name</label>
-                      <input required className="w-full rounded-lg bg-secondary border border-border px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
+                      <input name="firstName" value={formData.firstName} onChange={handleChange} required className="w-full rounded-lg bg-secondary border border-border px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
                     </div>
                     <div>
                       <label className="text-xs text-muted-foreground block mb-1.5">Last Name</label>
-                      <input required className="w-full rounded-lg bg-secondary border border-border px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
+                      <input name="lastName" value={formData.lastName} onChange={handleChange} required className="w-full rounded-lg bg-secondary border border-border px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
                     </div>
                   </div>
                   <div>
                     <label className="text-xs text-muted-foreground block mb-1.5">Email</label>
-                    <input type="email" required className="w-full rounded-lg bg-secondary border border-border px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full rounded-lg bg-secondary border border-border px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
                   </div>
                   <div>
                     <label className="text-xs text-muted-foreground block mb-1.5">Organization</label>
-                    <input className="w-full rounded-lg bg-secondary border border-border px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
+                    <input name="organization" value={formData.organization} onChange={handleChange} className="w-full rounded-lg bg-secondary border border-border px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
                   </div>
                   <div>
                     <label className="text-xs text-muted-foreground block mb-1.5">Solution Interest</label>
-                    <select className="w-full rounded-lg bg-secondary border border-border px-4 py-2.5 text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-primary">
+                    <select name="solutionInterest" value={formData.solutionInterest} onChange={handleChange} className="w-full rounded-lg bg-secondary border border-border px-4 py-2.5 text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-primary">
                       <option>GlobalPay - Mobile Money</option>
                       <option>Digital Experience Platform</option>
                       <option>AfricaOne - Credit Intelligence</option>
                       <option>AI Banking Core</option>
                       <option>Smart Wallet</option>
+                      <option>EximVoice - AI Call Center</option>
+                      <option>TigiVerse - AI Copilot</option>
+                      <option>Digital Lending Platform</option>
                       <option>Full Platform Suite</option>
                     </select>
                   </div>
                   <div>
                     <label className="text-xs text-muted-foreground block mb-1.5">Message</label>
-                    <textarea rows={3} className="w-full rounded-lg bg-secondary border border-border px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary resize-none" />
+                    <textarea name="message" value={formData.message} onChange={handleChange} rows={3} className="w-full rounded-lg bg-secondary border border-border px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary resize-none" />
                   </div>
-                  <button type="submit" className="btn-primary w-full flex items-center justify-center gap-2">
-                    Send Message <Send size={14} />
+                  <button type="submit" disabled={loading} className="btn-primary w-full flex items-center justify-center gap-2">
+                    {loading ? (
+                      <>Sending... <Loader2 size={14} className="animate-spin" /></>
+                    ) : (
+                      <>Send Message <Send size={14} /></>
+                    )}
                   </button>
                 </form>
               )}
