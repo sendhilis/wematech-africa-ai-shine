@@ -18,7 +18,7 @@ const CTASection = () => {
           tailored for African markets.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <Link to="/contact" className="btn-primary flex items-center gap-2 text-base px-10 py-4">
+          <Link to="/solutions#book-demo" className="btn-primary flex items-center gap-2 text-base px-10 py-4">
             Schedule a Demo <ArrowRight size={18} />
           </Link>
           <Link to="/solutions" className="btn-outline text-base px-10 py-4">
