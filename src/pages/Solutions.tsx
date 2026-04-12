@@ -143,7 +143,7 @@ const solutions = [
     icon: Bot,
     title: "TigiVerse",
     subtitle: "AI Copilot Platform for Commercial Banks",
-    demo: "https://tigiverse.techurate.world",
+    demo: "https://tigiverseai.techurate.world",
     hero: "Custom-built AI agent platform for commercial banks — deploy domain-specific copilots for credit analysis, compliance, customer service, trade finance, and treasury operations. Each agent is trained on your bank's policies, products, and regulatory framework.",
     modules: [
       { name: "Credit Analysis Agent", desc: "Automated financial statement analysis, risk assessment, covenant monitoring, and credit memo generation" },
