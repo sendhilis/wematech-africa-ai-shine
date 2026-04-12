@@ -9,7 +9,7 @@ const solutions = [
     description: "Complete enterprise wallet with 14 core modules, agent networks, merchant payments, AI micro-loans, and conversational banking. Serving 10M+ users with <0.3s latency.",
     features: ["P2P Transfers", "Agent Network", "AI Credit Scoring", "Merchant QR Payments"],
     slug: "globalpay",
-    demo: "https://rukisha2.0.techmonk.world",
+    demo: "https://tesfapay.techmonk.world",
     color: "primary",
   },
   {
