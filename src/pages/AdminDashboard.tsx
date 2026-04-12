@@ -12,6 +12,9 @@ import type { Tables } from "@/integrations/supabase/types";
 type ContactSubmission = Tables<"contact_submissions">;
 type DemoBooking = Tables<"demo_bookings">;
 
+// Paste your Looker Studio embed URL here once created
+const LOOKER_STUDIO_EMBED_URL = "";
+
 const AdminDashboard = () => {
   const [contacts, setContacts] = useState<ContactSubmission[]>([]);
   const [demos, setDemos] = useState<DemoBooking[]>([]);
@@ -193,7 +196,7 @@ const AdminDashboard = () => {
           </TabsContent>
         </Tabs>
 
-        {/* Google Analytics Section */}
+        {/* Google Analytics — Looker Studio Embed */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -201,23 +204,42 @@ const AdminDashboard = () => {
               Visitor Analytics & Demographics
             </CardTitle>
             <CardDescription>
-              Connect Google Analytics to see live visitor statistics, demographics, and traffic sources.
+              Live visitor statistics from Google Analytics via Looker Studio
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="rounded-lg border border-border bg-muted/30 p-6 text-center space-y-3">
-              <p className="text-muted-foreground">
-                To view live visitor stats and demographics here, add your Google Analytics Measurement ID.
-              </p>
-              <div className="text-sm text-muted-foreground space-y-1">
-                <p>1. Go to <a href="https://analytics.google.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Google Analytics</a> → Admin → Data Streams</p>
-                <p>2. Copy your Measurement ID (e.g. G-XXXXXXXXXX)</p>
-                <p>3. Ask me to add the GA tracking script to your site</p>
+            {/* Replace the src below with your Looker Studio embed URL */}
+            {LOOKER_STUDIO_EMBED_URL ? (
+              <div className="w-full rounded-lg overflow-hidden border border-border" style={{ aspectRatio: "16/9" }}>
+                <iframe
+                  src={LOOKER_STUDIO_EMBED_URL}
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allowFullScreen
+                  sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+                  title="Visitor Analytics"
+                />
               </div>
-              <p className="text-xs text-muted-foreground mt-4">
-                Meanwhile, visit <a href="https://analytics.google.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Google Analytics Dashboard</a> or <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Google Search Console</a> for real-time stats.
-              </p>
-            </div>
+            ) : (
+              <div className="rounded-lg border border-border bg-muted/30 p-6 text-center space-y-3">
+                <p className="text-muted-foreground font-medium">Set up your Looker Studio embed</p>
+                <div className="text-sm text-muted-foreground space-y-1 text-left max-w-lg mx-auto">
+                  <p>1. Open <a href="https://lookerstudio.google.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Looker Studio</a> and create a new report</p>
+                  <p>2. Add <strong>Google Analytics</strong> as a data source → select property <code className="bg-muted px-1 rounded text-xs">G-0YTLQV3CYW</code></p>
+                  <p>3. Add charts you want (sessions, users, demographics, traffic sources)</p>
+                  <p>4. Click <strong>File → Embed report</strong> → copy the embed URL</p>
+                  <p>5. Ask me to paste the embed URL into the admin dashboard</p>
+                </div>
+                <div className="flex flex-wrap gap-2 justify-center pt-2">
+                  <a href="https://analytics.google.com" target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" size="sm">Open Google Analytics</Button>
+                  </a>
+                  <a href="https://lookerstudio.google.com" target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" size="sm">Open Looker Studio</Button>
+                  </a>
+                </div>
+              </div>
+            )}
           </CardContent>
         </Card>
       </main>
