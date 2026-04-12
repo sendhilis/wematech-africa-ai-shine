@@ -12,6 +12,9 @@ import type { Tables } from "@/integrations/supabase/types";
 type ContactSubmission = Tables<"contact_submissions">;
 type DemoBooking = Tables<"demo_bookings">;
 
+// Paste your Looker Studio embed URL here once created
+const LOOKER_STUDIO_EMBED_URL = "";
+
 const AdminDashboard = () => {
   const [contacts, setContacts] = useState<ContactSubmission[]>([]);
   const [demos, setDemos] = useState<DemoBooking[]>([]);
