@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import DemoBooking from "@/components/DemoBooking";
 import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, ExternalLink, Phone, Bot, CreditCard } from "lucide-react";
 
 const solutions = [
@@ -275,6 +276,7 @@ const Solutions = () => {
         </section>
       ))}
 
+      <DemoBooking />
       <CTASection />
       <Footer />
     </div>
