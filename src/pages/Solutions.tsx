@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
@@ -199,6 +200,11 @@ const Solutions = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Solutions | AI Banking, Mobile Money & Digital Lending — Wematech Africa</title>
+        <meta name="description" content="Explore Wematech's full suite of AI-powered banking solutions — GlobalPay mobile money, digital lending, credit intelligence, AI copilots, and voice call center for African banks and fintechs." />
+        <link rel="canonical" href="https://www.wematech.in/solutions" />
+      </Helmet>
       <Navbar />
 
       <section className="pt-32 pb-16">
