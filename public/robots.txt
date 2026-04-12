@@ -3,7 +3,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://wematech.africa/sitemap.xml
+Sitemap: https://www.wematech.in/sitemap.xml
 
 User-agent: Googlebot
 Allow: /
