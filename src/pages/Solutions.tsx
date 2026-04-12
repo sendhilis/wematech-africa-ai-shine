@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
-import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, ExternalLink } from "lucide-react";
+import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, ExternalLink, Phone, Bot, CreditCard } from "lucide-react";
 
 const solutions = [
   {
