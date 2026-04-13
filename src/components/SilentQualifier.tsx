@@ -101,11 +101,11 @@ const SilentQualifier = () => {
   return (
     <div
       className={cn(
-        "fixed bottom-24 right-6 z-40 transition-all duration-500 ease-out",
+        "fixed bottom-24 right-3 sm:right-6 z-40 transition-all duration-500 ease-out",
         exiting ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
       )}
     >
-      <div className="bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl w-[300px] overflow-hidden">
+      <div className="bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl w-[calc(100vw-1.5rem)] max-w-[300px] overflow-hidden">
         {/* Progress bar */}
         <div className="h-0.5 bg-muted">
           <div

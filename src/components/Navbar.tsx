@@ -43,14 +43,14 @@ const Navbar = () => {
             <img
               src={logoIcon}
               alt="WeMaTech"
-              className={`relative z-10 transition-all duration-500 drop-shadow-[0_0_20px_hsl(40_92%_56%/0.6)] group-hover:drop-shadow-[0_0_32px_hsl(40_92%_56%/0.8)] ${isScrolled ? "h-14 w-14" : "h-[4.5rem] w-[4.5rem]"}`}
+              className={`relative z-10 transition-all duration-500 drop-shadow-[0_0_20px_hsl(40_92%_56%/0.6)] group-hover:drop-shadow-[0_0_32px_hsl(40_92%_56%/0.8)] ${isScrolled ? "h-10 w-10 sm:h-14 sm:w-14" : "h-12 w-12 sm:h-[4.5rem] sm:w-[4.5rem]"}`}
             />
           </div>
           <div className="flex flex-col">
-            <span className={`font-heading font-bold text-foreground leading-tight transition-all duration-500 ${isScrolled ? "text-xl" : "text-2xl"}`}>
+            <span className={`font-heading font-bold text-foreground leading-tight transition-all duration-500 ${isScrolled ? "text-lg sm:text-xl" : "text-xl sm:text-2xl"}`}>
               Wema<span className="text-accent">Tech</span>
             </span>
-            <span className={`text-muted-foreground font-medium leading-tight transition-all duration-500 ${isScrolled ? "text-[10px]" : "text-xs"}`}>
+            <span className={`text-muted-foreground font-medium leading-tight transition-all duration-500 hidden sm:block ${isScrolled ? "text-[10px]" : "text-xs"}`}>
               Advanced AI. Accessible to All.
             </span>
           </div>

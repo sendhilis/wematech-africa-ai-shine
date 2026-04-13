@@ -16,7 +16,7 @@ const HeroSection = () => {
       <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-primary/5 blur-[100px] animate-float" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-accent/5 blur-[120px] animate-float-delayed" />
 
-      <div className="section-container relative z-10 pt-32 pb-20">
+      <div className="section-container relative z-10 pt-24 sm:pt-32 pb-12 sm:pb-20">
         <div className="max-w-4xl">
           <div className="animate-slide-up">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 text-xs font-medium text-primary mb-8">
@@ -25,7 +25,7 @@ const HeroSection = () => {
             </span>
           </div>
 
-          <h1 className="animate-slide-up font-heading text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-foreground mb-6">
+          <h1 className="animate-slide-up font-heading text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-foreground mb-4 sm:mb-6">
             AI-Powered
             <br />
             <span className="glow-text">Banking Technology</span>
@@ -33,7 +33,7 @@ const HeroSection = () => {
             Solutions for Africa
           </h1>
 
-          <p className="animate-slide-up-delayed text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-10">
+          <p className="animate-slide-up-delayed text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-8 sm:mb-10">
             End-to-end digital financial infrastructure — from mobile money platforms and credit intelligence 
             to AI-driven customer engagement. Built for Africa's fastest-growing markets.
           </p>
@@ -47,19 +47,19 @@ const HeroSection = () => {
             </Link>
           </div>
 
-          <div className="animate-slide-up-delayed-2 grid grid-cols-3 gap-6 max-w-lg">
+          <div className="animate-slide-up-delayed-2 grid grid-cols-3 gap-3 sm:gap-6 max-w-lg">
             {[
               { icon: Globe, label: "12+ Markets", sub: "Pan-African" },
               { icon: Cpu, label: "50+ AI Features", sub: "Intelligent" },
               { icon: Shield, label: "99.99% Uptime", sub: "Enterprise" },
             ].map((stat) => (
-              <div key={stat.label} className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <stat.icon size={18} className="text-primary" />
+              <div key={stat.label} className="flex items-center gap-2 sm:gap-3">
+                <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <stat.icon size={16} className="text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">{stat.label}</p>
-                  <p className="text-xs text-muted-foreground">{stat.sub}</p>
+                  <p className="text-xs sm:text-sm font-semibold text-foreground">{stat.label}</p>
+                  <p className="text-[10px] sm:text-xs text-muted-foreground">{stat.sub}</p>
                 </div>
               </div>
             ))}
