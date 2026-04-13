@@ -13,6 +13,7 @@ import AdminLogin from "./pages/AdminLogin.tsx";
 import AdminDashboard from "./pages/AdminDashboard.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost_AICoreBankingNigeria from "./pages/BlogPost_AICoreBankingNigeria.tsx";
+import BlogPost_MobileMoneyKenya from "./pages/BlogPost_MobileMoneyKenya.tsx";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/ai-transforming-core-banking-nigeria" element={<BlogPost_AICoreBankingNigeria />} />
+            <Route path="/blog/mobile-money-financial-inclusion-kenya" element={<BlogPost_MobileMoneyKenya />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="*" element={<NotFound />} />

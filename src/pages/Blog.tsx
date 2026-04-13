@@ -5,8 +5,20 @@ import Navbar from "@/components/Navbar";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import blogImage from "@/assets/blog-ai-core-banking-nigeria.jpg";
+import blogImage2 from "@/assets/blog-mobile-money-kenya.jpg";
 
 const blogPosts = [
+  {
+    slug: "mobile-money-financial-inclusion-kenya",
+    title: "How Mobile Money Infrastructure is Driving Financial Inclusion in Kenya",
+    excerpt:
+      "Kenya did not wait for traditional banks to solve financial inclusion. It built something better. Discover how M-Pesa's mobile money infrastructure is reshaping financial services across Africa.",
+    image: blogImage2,
+    author: "Wematech Africa",
+    date: "April 2026",
+    readTime: "9 min read",
+    tags: ["Mobile Money", "Kenya", "Financial Inclusion", "M-Pesa"],
+  },
   {
     slug: "ai-transforming-core-banking-nigeria",
     title: "How AI is Transforming Core Banking in Nigeria",
