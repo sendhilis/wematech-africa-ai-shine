@@ -89,7 +89,7 @@ const SolutionsOverview = () => {
   const { requestDemoAccess, isVerified } = useDemoAccess();
 
   return (
-    <section className="py-24 relative">
+    <section id="solutions-overview" className="py-24 relative">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/3 blur-[200px]" />
       
       <div className="section-container relative z-10">
