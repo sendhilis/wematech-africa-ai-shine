@@ -14,7 +14,7 @@ import CornerOracle from "@/components/CornerOracle";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Helmet>
         <title>Wematech Africa | AI-Powered Banking Technology Solutions in Africa</title>
         <meta name="description" content="Wematech Africa delivers AI-first banking technology solutions across Africa — core banking transformation, digital lending, mobile money infrastructure, fraud detection, RegTech, and open banking APIs." />
