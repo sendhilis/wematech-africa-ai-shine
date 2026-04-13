@@ -32,7 +32,8 @@ const DemoBooking = () => {
         return;
       }
 
-      toast({ title: "Code Sent", description: `A verification code has been sent to ${verifyData.email}` });
+      const devCode = data?.devCode ? ` [DEV CODE: ${data.devCode}]` : "";
+      toast({ title: "Code Sent", description: `A verification code has been sent to ${verifyData.email}${devCode}` });
       setStep("enter-otp");
     } catch (error) {
       console.error("OTP send error:", error);
