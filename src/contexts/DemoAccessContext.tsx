@@ -93,8 +93,7 @@ const DemoVerificationModal = ({
         toast({ title: "Error", description: data.error, variant: "destructive" });
         return;
       }
-      const devCode = data?.devCode ? ` [DEV CODE: ${data.devCode}]` : "";
-      toast({ title: "Code Sent", description: `Verification code sent to ${email}${devCode}` });
+      toast({ title: "Code Sent", description: `Verification code sent to ${email}` });
       setStep("otp");
     } catch {
       toast({ title: "Error", description: "Failed to send verification code.", variant: "destructive" });

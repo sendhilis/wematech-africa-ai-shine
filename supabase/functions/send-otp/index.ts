@@ -68,8 +68,8 @@ serve(async (req: Request) => {
       );
     }
 
-    // Log OTP (email sending will work once DNS is verified)
-    console.log(`[OTP SENT] To: ${email}, Code: ${code}, Expires: ${expiresAt}`);
+    // Send OTP email via Resend
+    console.log(`[OTP] Code generated for: ${email}`);
 
     // Send OTP email via Resend or log for now
     // When email domain is verified, this can be upgraded to send actual emails
@@ -105,9 +105,8 @@ serve(async (req: Request) => {
       }
     }
 
-    // DEV MODE: Return code in response until email delivery is active
     return new Response(
-      JSON.stringify({ success: true, message: "Verification code sent to your email.", devCode: code }),
+      JSON.stringify({ success: true, message: "Verification code sent to your email." }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (error) {
