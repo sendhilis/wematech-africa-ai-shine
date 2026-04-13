@@ -7,6 +7,7 @@ import CTASection from "@/components/CTASection";
 import DemoBooking from "@/components/DemoBooking";
 import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, Lock, Phone, Bot, CreditCard } from "lucide-react";
 import { useDemoAccess } from "@/contexts/DemoAccessContext";
+import CornerOracle from "@/components/CornerOracle";
 
 const solutions = [
   {
@@ -290,6 +291,7 @@ const Solutions = () => {
       <DemoBooking />
       <CTASection />
       <Footer />
+      <CornerOracle />
     </div>
   );
 };
