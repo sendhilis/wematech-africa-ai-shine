@@ -189,6 +189,7 @@ const solutions = [
 
 const Solutions = () => {
   const location = useLocation();
+  const { requestDemoAccess, isVerified } = useDemoAccess();
 
   useEffect(() => {
     if (location.hash) {
@@ -249,13 +250,11 @@ const Solutions = () => {
                     </div>
                     <p className="text-muted-foreground leading-relaxed max-w-2xl">{sol.hero}</p>
                   </div>
-                  <a
-                    href={sol.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => requestDemoAccess(sol.demo)}
                     className="btn-primary flex items-center gap-2 flex-shrink-0"
                   >
-                    View Demo <ExternalLink size={14} />
+                    {isVerified ? "View Demo" : <><Lock size={14} /> View Demo</>}
                   </a>
                 </div>
 
