@@ -5,7 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import DemoBooking from "@/components/DemoBooking";
-import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, ExternalLink, Phone, Bot, CreditCard } from "lucide-react";
+import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, Lock, Phone, Bot, CreditCard } from "lucide-react";
+import { useDemoAccess } from "@/contexts/DemoAccessContext";
 
 const solutions = [
   {

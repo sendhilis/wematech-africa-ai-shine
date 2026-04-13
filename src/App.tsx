@@ -4,6 +4,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { DemoAccessProvider } from "@/contexts/DemoAccessContext";
 import Index from "./pages/Index.tsx";
 import Solutions from "./pages/Solutions.tsx";
 import About from "./pages/About.tsx";
@@ -21,6 +22,7 @@ const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <DemoAccessProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
@@ -37,6 +39,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+        </DemoAccessProvider>
       </TooltipProvider>
     </QueryClientProvider>
   </HelmetProvider>
