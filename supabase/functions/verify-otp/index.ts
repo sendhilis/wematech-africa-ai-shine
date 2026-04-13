@@ -6,6 +6,12 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+const respond = (body: Record<string, unknown>) =>
+  new Response(JSON.stringify(body), {
+    status: 200,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
+
 serve(async (req: Request) => {
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: corsHeaders });
@@ -15,10 +21,7 @@ serve(async (req: Request) => {
     const { email, code } = await req.json();
 
     if (!email || !code) {
-      return new Response(
-        JSON.stringify({ error: "Email and code are required." }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
+      return respond({ error: "Email and code are required." });
     }
 
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
@@ -38,17 +41,11 @@ serve(async (req: Request) => {
 
     if (fetchError) {
       console.error("Fetch error:", fetchError);
-      return new Response(
-        JSON.stringify({ error: "Verification failed." }),
-        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
+      return respond({ error: "Verification failed." });
     }
 
     if (!otpRecords || otpRecords.length === 0) {
-      return new Response(
-        JSON.stringify({ error: "Invalid or expired verification code." }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
+      return respond({ error: "Invalid or expired verification code." });
     }
 
     // Mark as verified
@@ -57,15 +54,9 @@ serve(async (req: Request) => {
       .update({ verified: true })
       .eq("id", otpRecords[0].id);
 
-    return new Response(
-      JSON.stringify({ success: true, message: "Email verified successfully." }),
-      { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-    );
+    return respond({ success: true, message: "Email verified successfully." });
   } catch (error) {
     console.error("Error:", error);
-    return new Response(
-      JSON.stringify({ error: "Verification failed." }),
-      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-    );
+    return respond({ error: "Verification failed." });
   }
 });
