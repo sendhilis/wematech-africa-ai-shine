@@ -42,12 +42,14 @@ const AdminDashboard = () => {
 
   const fetchData = async () => {
     setLoading(true);
-    const [contactsRes, demosRes] = await Promise.all([
-      supabase.from("contact_submissions").select("*").order("created_at", { ascending: false }),
-      supabase.from("demo_bookings").select("*").order("created_at", { ascending: false }),
-    ]);
-    setContacts(contactsRes.data ?? []);
-    setDemos(demosRes.data ?? []);
+    try {
+      const { data, error } = await supabase.functions.invoke("admin-data");
+      if (error) throw error;
+      setContacts(data?.contacts ?? []);
+      setDemos(data?.demos ?? []);
+    } catch (err) {
+      console.error("Failed to fetch admin data:", err);
+    }
     setLoading(false);
   };
 
