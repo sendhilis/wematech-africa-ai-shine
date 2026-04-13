@@ -105,8 +105,9 @@ serve(async (req: Request) => {
       }
     }
 
+    // DEV MODE: Return code in response until email delivery is active
     return new Response(
-      JSON.stringify({ success: true, message: "Verification code sent to your email." }),
+      JSON.stringify({ success: true, message: "Verification code sent to your email.", devCode: code }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (error) {
