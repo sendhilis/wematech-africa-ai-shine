@@ -35,7 +35,7 @@ const reasons = [
 
 const WhyWematech = () => {
   return (
-    <section className="py-24 relative">
+    <section id="why-wematech" className="py-24 relative">
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-accent/3 blur-[180px]" />
       
       <div className="section-container relative z-10">

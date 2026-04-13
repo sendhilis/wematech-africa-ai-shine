@@ -8,6 +8,9 @@ import FAQSection from "@/components/FAQSection";
 import SEOContentBlock from "@/components/SEOContentBlock";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import IntentPulse from "@/components/IntentPulse";
+import SilentQualifier from "@/components/SilentQualifier";
+import CornerOracle from "@/components/CornerOracle";
 
 const Index = () => {
   return (
@@ -31,6 +34,9 @@ const Index = () => {
       <FAQSection />
       <CTASection />
       <Footer />
+      <IntentPulse />
+      <SilentQualifier />
+      <CornerOracle />
     </div>
   );
 };

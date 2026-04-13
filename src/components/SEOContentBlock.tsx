@@ -1,6 +1,6 @@
 const SEOContentBlock = () => {
   return (
-    <section aria-labelledby="seo-about-heading" className="py-20">
+    <section id="seo-content" aria-labelledby="seo-about-heading" className="py-20">
       <div className="section-container">
         <div className="glass-card glow-border p-8 sm:p-12 max-w-4xl mx-auto">
           <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-4 block">
