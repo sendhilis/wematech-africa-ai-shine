@@ -242,7 +242,7 @@ const Solutions = () => {
           <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-4 block">
             Solutions Portfolio
           </span>
-          <h1 className="font-heading text-5xl sm:text-6xl font-bold text-foreground mb-6">
+          <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
             Digital Banking <span className="glow-text">Solutions</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -258,16 +258,16 @@ const Solutions = () => {
           )}
           <div className="section-container relative z-10">
             <div className="glass-card glow-border overflow-hidden">
-              <div className="p-8 md:p-12">
+              <div className="p-6 sm:p-8 md:p-12">
                 {/* Header */}
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-10">
+                <div className="flex flex-col gap-4 sm:gap-6 mb-8 sm:mb-10">
                   <div className="flex-1">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center">
                         <sol.icon size={26} className="text-primary" />
                       </div>
                       <div>
-                        <h2 className="font-heading text-3xl font-bold text-foreground">{sol.title}</h2>
+                        <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground">{sol.title}</h2>
                         <p className="text-sm text-primary font-medium">{sol.subtitle}</p>
                       </div>
                     </div>
@@ -282,7 +282,7 @@ const Solutions = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-10">
                   {sol.stats.map((stat) => (
                     <div key={stat.label} className="glass-card p-4 text-center">
                       <p className="font-heading text-2xl font-bold glow-text">{stat.value}</p>

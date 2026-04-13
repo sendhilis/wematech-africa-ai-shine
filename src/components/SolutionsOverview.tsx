@@ -107,7 +107,7 @@ const SolutionsOverview = () => {
           <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-4 block">
             Our Solutions
           </span>
-          <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             End-to-End Digital Banking
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
