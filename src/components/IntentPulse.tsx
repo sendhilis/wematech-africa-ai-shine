@@ -142,7 +142,7 @@ const IntentPulse = ({ intents = defaultIntents }: IntentPulseProps) => {
   return (
     <div
       className={cn(
-        "fixed left-6 top-1/2 -translate-y-1/2 z-50 transition-all duration-500 ease-out",
+        "fixed left-3 sm:left-6 top-1/2 -translate-y-1/2 z-50 transition-all duration-500 ease-out",
         expanded ? "opacity-100" : "opacity-70"
       )}
     >
@@ -150,7 +150,7 @@ const IntentPulse = ({ intents = defaultIntents }: IntentPulseProps) => {
         className={cn(
           "relative flex items-center gap-3 transition-all duration-500 ease-out",
           expanded
-            ? "bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl px-5 py-4 shadow-lg max-w-[280px]"
+            ? "bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl px-4 sm:px-5 py-3 sm:py-4 shadow-lg max-w-[240px] sm:max-w-[280px]"
             : "w-2 h-2"
         )}
       >

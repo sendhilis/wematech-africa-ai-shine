@@ -86,7 +86,7 @@ const Contact = () => {
             <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-4 block">
               Get In Touch
             </span>
-            <h1 className="font-heading text-5xl sm:text-6xl font-bold text-foreground mb-6">
+            <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Let's Build <span className="glow-text">Together</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">

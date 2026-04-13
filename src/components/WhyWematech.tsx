@@ -44,7 +44,7 @@ const WhyWematech = () => {
             <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-4 block">
               Why Wematech
             </span>
-            <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Built for Africa.
               <br />
               <span className="text-primary">Powered by AI.</span>

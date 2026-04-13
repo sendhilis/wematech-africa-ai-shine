@@ -116,11 +116,11 @@
   }
 
   .section-container {
-    @apply mx-auto max-w-7xl px-6 lg:px-8;
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-xl px-8 py-3.5 text-sm font-semibold transition-all duration-300;
+    @apply inline-flex items-center justify-center rounded-xl px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-semibold transition-all duration-300;
     background: var(--gradient-primary);
     color: hsl(var(--primary-foreground));
     box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
@@ -132,7 +132,7 @@
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center rounded-xl px-8 py-3.5 text-sm font-semibold border transition-all duration-300;
+    @apply inline-flex items-center justify-center rounded-xl px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-semibold border transition-all duration-300;
     border-color: hsl(var(--primary) / 0.4);
     color: hsl(var(--primary));
   }

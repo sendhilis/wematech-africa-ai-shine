@@ -120,12 +120,12 @@ const CornerOracle = ({ qas = defaultQAs }: CornerOracleProps) => {
   if (!currentQA) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-40">
+    <div className="fixed bottom-6 right-3 sm:right-6 z-40 max-w-[calc(100vw-1.5rem)]">
       {open ? (
         <div
           className={cn(
             "bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl",
-            "w-[320px] transition-all duration-400 ease-out animate-in fade-in slide-in-from-bottom-2"
+            "w-[320px] max-w-[calc(100vw-1.5rem)] transition-all duration-400 ease-out animate-in fade-in slide-in-from-bottom-2"
           )}
         >
           <div className="p-5">
