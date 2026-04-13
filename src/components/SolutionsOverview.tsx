@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, Phone, Bot, CreditCard, Lock } from "lucide-react";
+import { ArrowRight, Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, Phone, Bot, CreditCard, Lock, FileBarChart } from "lucide-react";
 import { useDemoAccess } from "@/contexts/DemoAccessContext";
 
 const solutions = [
@@ -82,6 +82,16 @@ const solutions = [
     slug: "digital-lending",
     demo: "https://michu2.0.wematech.in",
     color: "accent",
+  },
+  {
+    icon: FileBarChart,
+    title: "FiniosIQ",
+    subtitle: "AI-Powered Regulatory Reporting Engine",
+    description: "Automated central bank compliance reporting with AI that adapts to any African country's Reserve Bank framework. 16+ regulatory reports, immutable audit trails, and 100% submission accuracy — zero manual spreadsheets.",
+    features: ["Auto-Compliance", "AI Country Adapt", "16+ Reports", "Audit Trail"],
+    slug: "finiosiq",
+    demo: "https://nisir.techurate.world",
+    color: "primary",
   },
 ];
 

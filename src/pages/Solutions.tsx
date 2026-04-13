@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import DemoBooking from "@/components/DemoBooking";
-import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, Lock, Phone, Bot, CreditCard } from "lucide-react";
+import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, Lock, Phone, Bot, CreditCard, FileBarChart } from "lucide-react";
 import { useDemoAccess } from "@/contexts/DemoAccessContext";
 import CornerOracle from "@/components/CornerOracle";
 
@@ -184,6 +184,28 @@ const solutions = [
       { value: "Zero", label: "Collateral" },
       { value: "95%", label: "Repayment Rate" },
       { value: "MSME", label: "Focused" },
+    ],
+  },
+  {
+    id: "finiosiq",
+    icon: FileBarChart,
+    title: "FiniosIQ",
+    subtitle: "AI-Powered Regulatory Reporting & Analytics Engine",
+    demo: "https://nisir.techurate.world",
+    hero: "Purpose-built, AI-adaptive regulatory reporting engine that auto-configures to any African country's Reserve Bank compliance framework. From balance sheets to capital adequacy — 16+ reports generated, validated, and submission-ready with zero manual spreadsheets. Embedded within the Digital Experience Platform.",
+    modules: [
+      { name: "Business Data Pipeline", desc: "Server-side ETL ingesting CBS/LOS data nightly, classifying every loan through the central bank's asset grading framework with immutable snapshot versioning" },
+      { name: "AI Country Adapter", desc: "Intelligent compliance layer that auto-maps regulatory directives — NBE, CBK, CBN, SARB, or any African Reserve Bank — to report templates, thresholds, and submission formats" },
+      { name: "Regulatory Report Suite", desc: "16+ automated reports: Balance Sheet, Income Statement, Capital Adequacy, Asset Quality, Liquidity Return, Large Exposure, DFS Activity, and more" },
+      { name: "Workflow Governance", desc: "Five-stage lifecycle (Draft → Review → Approved → Submitted → Archived) with named role assignments and immutable audit trail" },
+      { name: "Validation Engine", desc: "Cross-field mathematical validation — balance sheet identity checks, provision rate compliance, capital floor enforcement — flagging errors before submission" },
+      { name: "Analytics Dashboards", desc: "Real-time BI dashboards for portfolio quality, transaction trends, customer demographics, agent performance, and financial inclusion metrics" },
+    ],
+    stats: [
+      { value: "16+", label: "Regulatory Reports" },
+      { value: "100%", label: "Compliance Rate" },
+      { value: "54", label: "Markets Ready" },
+      { value: "Zero", label: "Manual Entry" },
     ],
   },
 ];
