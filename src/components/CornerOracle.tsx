@@ -49,6 +49,11 @@ const defaultQAs: SectionQA[] = [
     question: "What's the default rate on uncollateralized loans?",
     answer: "Our AI scoring keeps default rates under 5% across deployed portfolios. The system combines psychometric assessment, transactional history, and behavioral signals to identify creditworthy thin-file borrowers that traditional scoring would reject.",
   },
+  {
+    sectionId: "finiosiq",
+    question: "How does FiniosIQ adapt to different African regulators?",
+    answer: "The AI country adapter auto-maps any Reserve Bank's compliance directives — NBE, CBK, CBN, SARB, BOU — to report templates, validation thresholds, and submission formats. When regulations change, the engine re-configures without code changes. One deployment covers all 54 African markets.",
+  },
   // Homepage sections
   {
     sectionId: "solutions-overview",
