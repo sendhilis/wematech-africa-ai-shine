@@ -6,7 +6,7 @@ import { Target, Globe, Cpu, Shield, Users, TrendingUp } from "lucide-react";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Helmet>
         <title>About Wematech Africa | Engineering Africa's Financial Future with AI</title>
         <meta name="description" content="Wematech Africa is an AI-first banking technology company serving 12+ African markets with core banking, credit intelligence, mobile money, and agentic AI solutions." />

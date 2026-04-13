@@ -34,7 +34,7 @@ const blogPosts = [
 
 const Blog = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Helmet>
         <title>Blog | Wematech Africa — AI Banking Insights for Africa</title>
         <meta
