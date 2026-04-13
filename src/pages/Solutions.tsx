@@ -5,7 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import DemoBooking from "@/components/DemoBooking";
-import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, ExternalLink, Phone, Bot, CreditCard } from "lucide-react";
+import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, Lock, Phone, Bot, CreditCard } from "lucide-react";
+import { useDemoAccess } from "@/contexts/DemoAccessContext";
 
 const solutions = [
   {
@@ -188,6 +189,7 @@ const solutions = [
 
 const Solutions = () => {
   const location = useLocation();
+  const { requestDemoAccess, isVerified } = useDemoAccess();
 
   useEffect(() => {
     if (location.hash) {
@@ -248,14 +250,12 @@ const Solutions = () => {
                     </div>
                     <p className="text-muted-foreground leading-relaxed max-w-2xl">{sol.hero}</p>
                   </div>
-                  <a
-                    href={sol.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => requestDemoAccess(sol.demo)}
                     className="btn-primary flex items-center gap-2 flex-shrink-0"
                   >
-                    View Demo <ExternalLink size={14} />
-                  </a>
+                    {isVerified ? "View Demo" : <><Lock size={14} /> View Demo</>}
+                  </button>
                 </div>
 
                 {/* Stats */}

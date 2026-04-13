@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, Phone, Bot, CreditCard } from "lucide-react";
+import { ArrowRight, Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, Phone, Bot, CreditCard, Lock } from "lucide-react";
+import { useDemoAccess } from "@/contexts/DemoAccessContext";
 
 const solutions = [
   {
@@ -85,6 +86,8 @@ const solutions = [
 ];
 
 const SolutionsOverview = () => {
+  const { requestDemoAccess, isVerified } = useDemoAccess();
+
   return (
     <section className="py-24 relative">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/3 blur-[200px]" />
@@ -127,9 +130,12 @@ const SolutionsOverview = () => {
                 <Link to={`/solutions#${sol.slug}`} className="text-sm text-primary font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
                   Learn More <ArrowRight size={14} />
                 </Link>
-                <a href={sol.demo} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-accent transition-colors">
-                  View Demo →
-                </a>
+                <button
+                  onClick={() => requestDemoAccess(sol.demo)}
+                  className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center gap-1"
+                >
+                  {isVerified ? "View Demo →" : <><Lock size={12} /> View Demo</>}
+                </button>
               </div>
             </div>
           ))}
