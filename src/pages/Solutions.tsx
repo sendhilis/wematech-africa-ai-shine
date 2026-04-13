@@ -224,7 +224,7 @@ const Solutions = () => {
   }, [location]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Helmet>
         <title>Solutions | AI Banking, Mobile Money & Digital Lending — Wematech Africa</title>
         <meta name="description" content="Explore Wematech's full suite of AI-powered banking solutions — GlobalPay mobile money, digital lending, credit intelligence, AI copilots, and voice call center for African banks and fintechs." />

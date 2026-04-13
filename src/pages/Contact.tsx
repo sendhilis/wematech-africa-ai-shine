@@ -67,7 +67,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Helmet>
         <title>Contact Wematech Africa | Request a Demo — AI Banking Solutions</title>
         <meta name="description" content="Get in touch with Wematech Africa to schedule a demo of our AI-powered banking technology. Offices in Nairobi and Addis Ababa serving banks and fintechs across Africa." />
