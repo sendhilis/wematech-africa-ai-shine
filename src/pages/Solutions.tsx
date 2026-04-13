@@ -255,7 +255,7 @@ const Solutions = () => {
                     className="btn-primary flex items-center gap-2 flex-shrink-0"
                   >
                     {isVerified ? "View Demo" : <><Lock size={14} /> View Demo</>}
-                  </a>
+                  </button>
                 </div>
 
                 {/* Stats */}
