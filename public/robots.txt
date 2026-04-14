@@ -3,20 +3,6 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://wematech.africa/sitemap.xml
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: GPTBot
 Allow: /
 
@@ -28,3 +14,14 @@ Allow: /
 
 User-agent: anthropic-ai
 Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: https://www.wematech.africa/sitemap.xml
