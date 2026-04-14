@@ -1,20 +1,28 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Cpu, Globe } from "lucide-react";
 import heroImage from "@/assets/hero-africa.webp";
+import heroImageMobile from "@/assets/hero-africa-mobile.webp";
 
 const HeroSection = () => {
   return (
     <header role="banner" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background */}
+      {/* Background - use picture element for responsive images */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Digital Africa" className="w-full h-full object-cover opacity-30" fetchPriority="high" decoding="async" />
+        <picture>
+          <source media="(max-width: 768px)" srcSet={heroImageMobile} type="image/webp" />
+          <img
+            src={heroImage}
+            alt="Digital Africa"
+            className="w-full h-full object-cover opacity-30"
+            fetchPriority="high"
+            decoding="async"
+            width={1200}
+            height={675}
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
       </div>
-
-      {/* Floating orbs */}
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-primary/5 blur-[100px] animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-accent/5 blur-[120px] animate-float-delayed" />
 
       <div className="section-container relative z-10 pt-24 sm:pt-32 pb-12 sm:pb-20">
         <div className="max-w-4xl">

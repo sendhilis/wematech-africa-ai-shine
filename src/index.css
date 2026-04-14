@@ -193,6 +193,13 @@
   .animate-float-slow {
     animation: none;
   }
+
+  .animate-slide-up,
+  .animate-slide-up-delayed,
+  .animate-slide-up-delayed-2 {
+    animation: none;
+    opacity: 1;
+  }
 }
 
 /* Respect reduced motion preference */
