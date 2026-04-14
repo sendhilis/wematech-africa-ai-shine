@@ -12,6 +12,7 @@ import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import AdminLogin from "./pages/AdminLogin.tsx";
 import AdminDashboard from "./pages/AdminDashboard.tsx";
+import SEOWarRoom from "./pages/SEOWarRoom.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost_AICoreBankingNigeria from "./pages/BlogPost_AICoreBankingNigeria.tsx";
 import BlogPost_MobileMoneyKenya from "./pages/BlogPost_MobileMoneyKenya.tsx";
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/blog/mobile-money-financial-inclusion-kenya" element={<BlogPost_MobileMoneyKenya />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin/seo-warroom" element={<SEOWarRoom />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
