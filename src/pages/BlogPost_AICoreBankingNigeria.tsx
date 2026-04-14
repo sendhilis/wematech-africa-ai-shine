@@ -4,7 +4,7 @@ import { ArrowLeft, Calendar, Clock, User, Tag, Shield, CreditCard, UserCheck, S
 import Navbar from "@/components/Navbar";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import blogImage from "@/assets/blog-ai-core-banking-nigeria.jpg";
+import blogImage from "@/assets/blog-ai-core-banking-nigeria.webp";
 
 const sectionIcons = [Shield, CreditCard, UserCheck, Sparkles, Settings];
 const sectionColors = ["primary", "accent", "primary", "accent", "primary"] as const;

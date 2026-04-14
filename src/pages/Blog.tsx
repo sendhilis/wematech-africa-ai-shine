@@ -4,8 +4,8 @@ import { ArrowRight, Calendar, Clock, User } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import blogImage from "@/assets/blog-ai-core-banking-nigeria.jpg";
-import blogImage2 from "@/assets/blog-mobile-money-kenya.jpg";
+import blogImage from "@/assets/blog-ai-core-banking-nigeria.webp";
+import blogImage2 from "@/assets/blog-mobile-money-kenya.webp";
 
 const blogPosts = [
   {

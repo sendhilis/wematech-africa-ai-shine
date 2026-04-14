@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Cpu, Globe } from "lucide-react";
-import heroImage from "@/assets/hero-africa.jpg";
+import heroImage from "@/assets/hero-africa.webp";
 
 const HeroSection = () => {
   return (
