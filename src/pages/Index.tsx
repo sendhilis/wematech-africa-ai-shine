@@ -1,16 +1,18 @@
+import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import SolutionsOverview from "@/components/SolutionsOverview";
-import StatsSection from "@/components/StatsSection";
-import WhyWematech from "@/components/WhyWematech";
-import FAQSection from "@/components/FAQSection";
-import SEOContentBlock from "@/components/SEOContentBlock";
-import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
-import IntentPulse from "@/components/IntentPulse";
-import SilentQualifier from "@/components/SilentQualifier";
-import CornerOracle from "@/components/CornerOracle";
+
+const StatsSection = lazy(() => import("@/components/StatsSection"));
+const SolutionsOverview = lazy(() => import("@/components/SolutionsOverview"));
+const WhyWematech = lazy(() => import("@/components/WhyWematech"));
+const SEOContentBlock = lazy(() => import("@/components/SEOContentBlock"));
+const FAQSection = lazy(() => import("@/components/FAQSection"));
+const CTASection = lazy(() => import("@/components/CTASection"));
+const Footer = lazy(() => import("@/components/Footer"));
+const IntentPulse = lazy(() => import("@/components/IntentPulse"));
+const SilentQualifier = lazy(() => import("@/components/SilentQualifier"));
+const CornerOracle = lazy(() => import("@/components/CornerOracle"));
 
 const Index = () => {
   return (
@@ -27,16 +29,18 @@ const Index = () => {
       </Helmet>
       <Navbar />
       <HeroSection />
-      <StatsSection />
-      <SolutionsOverview />
-      <WhyWematech />
-      <SEOContentBlock />
-      <FAQSection />
-      <CTASection />
-      <Footer />
-      <IntentPulse />
-      <SilentQualifier />
-      <CornerOracle />
+      <Suspense fallback={null}>
+        <StatsSection />
+        <SolutionsOverview />
+        <WhyWematech />
+        <SEOContentBlock />
+        <FAQSection />
+        <CTASection />
+        <Footer />
+        <IntentPulse />
+        <SilentQualifier />
+        <CornerOracle />
+      </Suspense>
     </div>
   );
 };

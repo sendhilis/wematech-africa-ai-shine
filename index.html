@@ -201,7 +201,33 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script defer src="https://unpkg.com/@elevenlabs/convai-widget-embed" type="text/javascript"></script>
-    <elevenlabs-convai agent-id="agent_7801kp0hpr6gfvct6ew70a890689"></elevenlabs-convai>
+    <script>
+      // Lazy load ElevenLabs widget after page is interactive
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() {
+          var s = document.createElement('script');
+          s.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
+          s.defer = true;
+          document.body.appendChild(s);
+          s.onload = function() {
+            var el = document.createElement('elevenlabs-convai');
+            el.setAttribute('agent-id', 'agent_7801kp0hpr6gfvct6ew70a890689');
+            document.body.appendChild(el);
+          };
+        });
+      } else {
+        window.addEventListener('load', function() {
+          var s = document.createElement('script');
+          s.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
+          s.defer = true;
+          document.body.appendChild(s);
+          s.onload = function() {
+            var el = document.createElement('elevenlabs-convai');
+            el.setAttribute('agent-id', 'agent_7801kp0hpr6gfvct6ew70a890689');
+            document.body.appendChild(el);
+          };
+        });
+      }
+    </script>
   </body>
 </html>
