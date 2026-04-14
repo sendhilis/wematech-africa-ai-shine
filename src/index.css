@@ -77,8 +77,13 @@
   .glass-card {
     @apply relative overflow-hidden rounded-2xl border border-border/40;
     background: linear-gradient(135deg, hsl(220 20% 12% / 0.7), hsl(220 20% 8% / 0.5));
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+  }
+
+  @media (min-width: 769px) {
+    .glass-card {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
   }
 
   .glass-card-hover {
@@ -178,6 +183,30 @@
   .animate-gradient {
     animation: gradient-shift 8s ease-in-out infinite;
     background-size: 200% 200%;
+  }
+}
+
+/* Reduce animations on mobile for performance */
+@media (max-width: 768px) {
+  .animate-float,
+  .animate-float-delayed,
+  .animate-float-slow {
+    animation: none;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-delayed,
+  .animate-float-slow,
+  .animate-pulse-glow,
+  .animate-slide-up,
+  .animate-slide-up-delayed,
+  .animate-slide-up-delayed-2,
+  .animate-gradient {
+    animation: none;
+    opacity: 1;
   }
 }
 
