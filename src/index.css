@@ -181,6 +181,30 @@
   }
 }
 
+/* Reduce animations on mobile for performance */
+@media (max-width: 768px) {
+  .animate-float,
+  .animate-float-delayed,
+  .animate-float-slow {
+    animation: none;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-delayed,
+  .animate-float-slow,
+  .animate-pulse-glow,
+  .animate-slide-up,
+  .animate-slide-up-delayed,
+  .animate-slide-up-delayed-2,
+  .animate-gradient {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
