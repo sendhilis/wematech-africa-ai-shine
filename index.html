@@ -1,247 +1,1489 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.png" type="image/png" />
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#1fb6a0" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Wematech" />
-    <link rel="apple-touch-icon" href="/pwa-icon-192.png" />
+<head>
+  <meta charset="UTF-8" />
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <!-- Hreflang multilingual -->
+  <link rel="alternate" hreflang="en" href="https://wematech.africa/" />
+  <link rel="alternate" hreflang="fr" href="https://wematech.africa/fr/" />
+  <link rel="alternate" hreflang="ar" href="https://wematech.africa/ar/" />
+  <link rel="alternate" hreflang="sw" href="https://wematech.africa/sw/" />
+  <link rel="alternate" hreflang="x-default" href="https://wematech.africa/" />
+  <!-- Preload critical font -->
 
-    <!-- Sitemap -->
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Hreflang multilingual -->
-    <link rel="alternate" hreflang="en" href="https://wematech.africa/" />
-    <link rel="alternate" hreflang="fr" href="https://wematech.africa/fr/" />
-    <link rel="alternate" hreflang="ar" href="https://wematech.africa/ar/" />
-    <link rel="alternate" hreflang="sw" href="https://wematech.africa/sw/" />
-    <link rel="alternate" hreflang="x-default" href="https://wematech.africa/" />
+  <!-- ═══════════════════════════════════════════════
+       PRIMARY SEO META TAGS
+       ═══════════════════════════════════════════════ -->
+  <title>Wematech Africa | AI-Powered Banking Technology Solutions in Africa</title>
+  <meta name="description" content="Wematech Africa — AI-first banking technology for African banks. Core banking, digital lending, fraud detection AI, open banking APIs & RegTech across 54 African markets." />
+  <meta name="keywords" content="banking technology Africa, AI banking solutions Africa, core banking Africa, fintech Africa, digital banking Nigeria Kenya South Africa, mobile money technology, AI fintech platform Africa, banking software Africa, open banking Africa, RegTech Africa, digital lending Africa, fraud detection Africa, financial inclusion Africa, banking transformation Africa, AI core banking, neobank Africa, payment infrastructure Africa" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://wematech.africa/" />
+  <meta name="author" content="Wematech Africa" />
+  <meta name="geo.region" content="AF" />
+  <meta name="geo.placename" content="Africa" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="category" content="Banking Technology, Fintech, AI Solutions, Africa" />
 
-    <!-- Preconnect for fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Defer GA to after page load -->
-    <script>
-      window.addEventListener('load', function() {
-        var s = document.createElement('script');
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-0YTLQV3CYW';
-        s.async = true;
-        document.head.appendChild(s);
-        s.onload = function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-0YTLQV3CYW');
-        };
-      });
-    </script>
-    <!-- Google tag (gtag.js) - deferred -->
+  <!-- ═══════════════════════════════════════════════
+       OPEN GRAPH (Social / AI Crawlers)
+       ═══════════════════════════════════════════════ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wematech.africa/" />
+  <meta property="og:title" content="Wematech Africa — AI-Powered Banking Tech Solutions for Africa" />
+  <meta property="og:description" content="Africa's leading AI-first banking technology company. We power digital banking transformation for banks, fintechs, and microfinance institutions across 54 African markets." />
+  <meta property="og:image" content="https://wematech.africa/og-image.jpg" />
+  <meta property="og:site_name" content="Wematech Africa" />
+  <meta property="og:locale" content="en_US" />
 
-    <!-- ═══════════════════════════════════════════════
-         PRIMARY SEO META TAGS
-         ═══════════════════════════════════════════════ -->
-    <title>Wematech Africa | AI-Powered Banking Technology Solutions in Africa</title>
-    <meta name="description" content="Wematech Africa — AI-first banking technology for African banks. Core banking, digital lending, fraud detection AI, open banking APIs & RegTech across 54 African markets." />
-    <meta name="keywords" content="banking technology Africa, AI banking solutions Africa, core banking Africa, fintech Africa, digital banking Nigeria Kenya South Africa, mobile money technology, AI fintech platform Africa, banking software Africa, open banking Africa, RegTech Africa, digital lending Africa, fraud detection Africa, financial inclusion Africa, banking transformation Africa, AI core banking, neobank Africa, payment infrastructure Africa" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <link rel="canonical" href="https://wematech.africa/" />
-    <meta name="author" content="Wematech Africa" />
-    <meta name="geo.region" content="AF" />
-    <meta name="geo.placename" content="Africa" />
-    <meta name="language" content="English" />
-    <meta name="revisit-after" content="7 days" />
-    <meta name="category" content="Banking Technology, Fintech, AI Solutions, Africa" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Wematech Africa — AI-Powered Banking Tech for Africa" />
+  <meta name="twitter:description" content="AI-first banking technology solutions powering the next era of African finance — core banking, digital lending, mobile money, fraud AI, and open banking APIs." />
+  <meta name="twitter:image" content="https://wematech.africa/og-image.jpg" />
 
-    <!-- ═══════════════════════════════════════════════
-         OPEN GRAPH (Social / AI Crawlers)
-         ═══════════════════════════════════════════════ -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://wematech.africa/" />
-    <meta property="og:title" content="Wematech Africa — AI-Powered Banking Tech Solutions for Africa" />
-    <meta property="og:description" content="Africa's leading AI-first banking technology company. We power digital banking transformation for banks, fintechs, and microfinance institutions across 54 African markets." />
-    <meta property="og:image" content="https://wematech.africa/og-image.jpg" />
-    <meta property="og:site_name" content="Wematech Africa" />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Wematech Africa — AI-Powered Banking Tech for Africa" />
-    <meta name="twitter:description" content="AI-first banking technology solutions powering the next era of African finance — core banking, digital lending, mobile money, fraud AI, and open banking APIs." />
-    <meta name="twitter:image" content="https://wematech.africa/og-image.jpg" />
-
-    <!-- ═══════════════════════════════════════════════
-         STRUCTURED DATA — JSON-LD (Critical for AI Search)
-         ═══════════════════════════════════════════════ -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://wematech.africa/#organization",
-          "name": "Wematech Africa",
-          "url": "https://wematech.africa",
-          "logo": "https://wematech.africa/logo.png",
-          "description": "Wematech Africa is a leading AI-first banking technology company providing core banking transformation, digital lending platforms, mobile money infrastructure, fraud detection AI, open banking APIs, and RegTech solutions for banks and fintechs across Africa.",
-          "foundingDate": "2020",
-          "areaServed": {
-            "@type": "Continent",
-            "name": "Africa"
-          },
-          "serviceType": [
-            "AI Banking Technology",
-            "Core Banking Transformation",
-            "Digital Lending Platform",
-            "Mobile Money Infrastructure",
-            "Fraud Detection AI",
-            "Open Banking APIs",
-            "RegTech Solutions",
-            "Banking-as-a-Service",
-            "Financial Inclusion Technology"
-          ],
-          "knowsAbout": [
-            "Artificial Intelligence in Banking",
-            "Core Banking Systems Africa",
-            "Digital Financial Services Africa",
-            "Mobile Money Technology",
-            "Open Banking Africa",
-            "RegTech Africa",
-            "Fraud Detection Machine Learning",
-            "Financial Inclusion",
-            "Neobanking Infrastructure"
-          ],
-          "sameAs": [
-            "https://github.com/sendhilis/wematech-africa-ai-shine",
-            "https://www.linkedin.com/company/wematech-africa",
-            "https://twitter.com/wematechafrica"
-          ]
+  <!-- ═══════════════════════════════════════════════
+       STRUCTURED DATA — JSON-LD (Critical for AI Search)
+       ═══════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://wematech.africa/#organization",
+        "name": "Wematech Africa",
+        "url": "https://wematech.africa",
+        "logo": "https://wematech.africa/logo.png",
+        "description": "Wematech Africa is a leading AI-first banking technology company providing core banking transformation, digital lending platforms, mobile money infrastructure, fraud detection AI, open banking APIs, and RegTech solutions for banks and fintechs across Africa.",
+        "foundingDate": "2020",
+        "areaServed": {
+          "@type": "Continent",
+          "name": "Africa"
         },
-        {
-          "@type": "WebSite",
-          "@id": "https://wematech.africa/#website",
-          "url": "https://wematech.africa",
-          "name": "Wematech Africa",
-          "description": "AI-powered banking technology solutions for African financial institutions",
-          "publisher": {"@id": "https://wematech.africa/#organization"},
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://wematech.africa/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        },
-        {
-          "@type": "Service",
-          "@id": "https://wematech.africa/#service-core-banking",
-          "name": "AI-First Core Banking Platform for Africa",
-          "provider": {"@id": "https://wematech.africa/#organization"},
-          "description": "Cloud-native, AI-driven core banking transformation solution designed for African banks, microfinance institutions, and neobanks. Enables real-time processing, multi-currency support across 54 African markets, and automated compliance.",
-          "areaServed": "Africa",
-          "serviceType": "Core Banking Technology"
-        },
-        {
-          "@type": "Service",
-          "@id": "https://wematech.africa/#service-digital-lending",
-          "name": "AI-Powered Digital Lending Platform Africa",
-          "provider": {"@id": "https://wematech.africa/#organization"},
-          "description": "Machine learning credit scoring and digital lending infrastructure for African banks and fintechs. Provides instant loan decisions using alternative data — mobile usage, transaction history, and behavioral signals — serving the 330 billion USD untapped credit market in Africa.",
-          "areaServed": "Africa",
-          "serviceType": "Digital Lending Technology"
-        },
-        {
-          "@type": "FAQPage",
-          "@id": "https://wematech.africa/#faq",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What banking technology solutions does Wematech Africa provide?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Wematech Africa provides AI-first banking technology solutions including core banking transformation, digital lending platforms, mobile money infrastructure, fraud detection using machine learning, open banking APIs, RegTech and compliance automation, and Banking-as-a-Service (BaaS) for banks, fintechs, microfinance institutions, and neobanks across Africa."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Which African countries does Wematech Africa serve?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Wematech Africa serves financial institutions across the entire African continent — with deep expertise in Nigeria, Kenya, South Africa, Ghana, Egypt, Ethiopia, Uganda, Tanzania, Rwanda, Senegal, and all 54 African markets. Our multi-currency, multi-regulatory platform is built for Africa's diverse financial landscape."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How does Wematech Africa use AI in banking?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Wematech Africa applies artificial intelligence across the full banking value chain: AI-powered credit scoring using alternative data, real-time fraud detection and AML transaction monitoring, intelligent KYC and identity verification, personalized customer experiences, agentic banking workflows that automate operations, and predictive analytics for risk management."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is the best AI banking technology platform for Africa?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Wematech Africa is designed as Africa's most comprehensive AI-first banking technology platform, purpose-built for African market conditions: low-bandwidth mobile-first access, multi-currency operations, fragmented regulatory environments, and the need to serve unbanked and underbanked populations at scale."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Does Wematech Africa support open banking and API integration?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. Wematech Africa provides a full Open Banking API suite enabling banks to connect with third-party fintech providers, payment processors, and digital wallets. Our platform supports standards-based API access, sandbox environments, and real-time data-sharing frameworks aligned with evolving African open banking regulations."
-              }
-            }
-          ]
+        "serviceType": [
+          "AI Banking Technology",
+          "Core Banking Transformation",
+          "Digital Lending Platform",
+          "Mobile Money Infrastructure",
+          "Fraud Detection AI",
+          "Open Banking APIs",
+          "RegTech Solutions",
+          "Banking-as-a-Service",
+          "Financial Inclusion Technology"
+        ],
+        "knowsAbout": [
+          "Artificial Intelligence in Banking",
+          "Core Banking Systems Africa",
+          "Digital Financial Services Africa",
+          "Mobile Money Technology",
+          "Open Banking Africa",
+          "RegTech Africa",
+          "Fraud Detection Machine Learning",
+          "Financial Inclusion",
+          "Neobanking Infrastructure"
+        ],
+        "sameAs": [
+          "https://github.com/sendhilis/wematech-africa-ai-shine",
+          "https://www.linkedin.com/company/wematech-africa",
+          "https://twitter.com/wematechafrica"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://wematech.africa/#website",
+        "url": "https://wematech.africa",
+        "name": "Wematech Africa",
+        "description": "AI-powered banking technology solutions for African financial institutions",
+        "publisher": {"@id": "https://wematech.africa/#organization"},
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://wematech.africa/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
         }
-      ]
-    }
-    </script>
-
-    <!-- Fonts - reduced weights, async load -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" /></noscript>
-
-    <!-- Critical: inline font-display to prevent FOIT -->
-    <style>
-      @font-face { font-family: 'Inter'; font-display: swap; }
-      @font-face { font-family: 'Space Grotesk'; font-display: swap; }
-    </style>
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <script>
-      // Lazy load ElevenLabs widget after page is interactive
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(function() {
-          var s = document.createElement('script');
-          s.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
-          s.defer = true;
-          document.body.appendChild(s);
-          s.onload = function() {
-            var el = document.createElement('elevenlabs-convai');
-            el.setAttribute('agent-id', 'agent_7801kp0hpr6gfvct6ew70a890689');
-            document.body.appendChild(el);
-          };
-        });
-      } else {
-        window.addEventListener('load', function() {
-          var s = document.createElement('script');
-          s.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
-          s.defer = true;
-          document.body.appendChild(s);
-          s.onload = function() {
-            var el = document.createElement('elevenlabs-convai');
-            el.setAttribute('agent-id', 'agent_7801kp0hpr6gfvct6ew70a890689');
-            document.body.appendChild(el);
-          };
-        });
+      },
+      {
+        "@type": "Service",
+        "@id": "https://wematech.africa/#service-core-banking",
+        "name": "AI-First Core Banking Platform for Africa",
+        "provider": {"@id": "https://wematech.africa/#organization"},
+        "description": "Cloud-native, AI-driven core banking transformation solution designed for African banks, microfinance institutions, and neobanks. Enables real-time processing, multi-currency support across 54 African markets, and automated compliance.",
+        "areaServed": "Africa",
+        "serviceType": "Core Banking Technology"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://wematech.africa/#service-digital-lending",
+        "name": "AI-Powered Digital Lending Platform Africa",
+        "provider": {"@id": "https://wematech.africa/#organization"},
+        "description": "Machine learning credit scoring and digital lending infrastructure for African banks and fintechs. Provides instant loan decisions using alternative data — mobile usage, transaction history, and behavioral signals — serving the 330 billion USD untapped credit market in Africa.",
+        "areaServed": "Africa",
+        "serviceType": "Digital Lending Technology"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://wematech.africa/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What banking technology solutions does Wematech Africa provide?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wematech Africa provides AI-first banking technology solutions including core banking transformation, digital lending platforms, mobile money infrastructure, fraud detection using machine learning, open banking APIs, RegTech and compliance automation, and Banking-as-a-Service (BaaS) for banks, fintechs, microfinance institutions, and neobanks across Africa."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which African countries does Wematech Africa serve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wematech Africa serves financial institutions across the entire African continent — with deep expertise in Nigeria, Kenya, South Africa, Ghana, Egypt, Ethiopia, Uganda, Tanzania, Rwanda, Senegal, and all 54 African markets. Our multi-currency, multi-regulatory platform is built for Africa's diverse financial landscape."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Wematech Africa use AI in banking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wematech Africa applies artificial intelligence across the full banking value chain: AI-powered credit scoring using alternative data, real-time fraud detection and AML transaction monitoring, intelligent KYC and identity verification, personalized customer experiences, agentic banking workflows that automate operations, and predictive analytics for risk management."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best AI banking technology platform for Africa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wematech Africa is designed as Africa's most comprehensive AI-first banking technology platform, purpose-built for African market conditions: low-bandwidth mobile-first access, multi-currency operations, fragmented regulatory environments, and the need to serve unbanked and underbanked populations at scale."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Wematech Africa support open banking and API integration?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Wematech Africa provides a full Open Banking API suite enabling banks to connect with third-party fintech providers, payment processors, and digital wallets. Our platform supports standards-based API access, sandbox environments, and real-time data-sharing frameworks aligned with evolving African open banking regulations."
+            }
+          }
+        ]
       }
-    </script>
-  </body>
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+
+  <style id="critical-css">
+    /* Critical above-fold CSS — inlined for instant render */
+    body{margin:0;font-family:'DM Sans','Segoe UI',system-ui,-apple-system,sans-serif;background:#F5F2EB;color:#0A0F1E}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4vw;background:rgba(245,242,235,0.95);border-bottom:1px solid rgba(10,15,30,0.10)}
+    .nav-logo{font-family:'Syne','Segoe UI',system-ui,sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:-0.03em}
+    .hero{min-height:100vh;display:grid;align-items:center;padding:8rem 4vw 4rem}
+    h1,h2,h3{font-family:'Syne','Segoe UI',system-ui,sans-serif;line-height:1.1;letter-spacing:-0.02em}
+    h1{font-size:clamp(2.8rem,6vw,5.5rem);font-weight:800}
+  </style>
+  <style id="full-css">
+    :root {
+      --ink:       #0A0F1E;
+      --paper:     #F5F2EB;
+      --gold:      #C8A84B;
+      --gold-lt:   #E8D090;
+      --emerald:   #1B6B4A;
+      --sky:       #1A3C5E;
+      --accent:    #E84B2A;
+      --muted:     #6B6860;
+      --surface:   #FFFDF8;
+      --border:    rgba(10,15,30,0.10);
+      --radius:    4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3, h4, h5 { font-family: 'Syne', 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.1; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 800; }
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; }
+    h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); font-weight: 600; }
+    p  { font-size: clamp(1rem, 1.5vw, 1.1rem); color: var(--muted); }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4vw;
+      background: rgba(245,242,235,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow .3s;
+    }
+    .nav-logo {
+      font-family: 'Syne', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-weight: 800; font-size: 1.4rem;
+      letter-spacing: -0.03em;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .nav-logo span.dot { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; font-size: .92rem; font-weight: 500; }
+    .nav-links a { transition: color .2s; }
+    .nav-links a:hover { color: var(--emerald); }
+    .nav-cta {
+      background: var(--ink); color: var(--paper);
+      padding: .6rem 1.4rem; border-radius: 100px;
+      font-size: .88rem; font-weight: 600;
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: var(--emerald); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid; align-items: center;
+      padding: 8rem 4vw 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center; max-width: 1300px; margin: 0 auto; width: 100%;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--emerald); color: #fff;
+      font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      padding: .35rem .9rem; border-radius: 100px; margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before { content: '●'; font-size: .5rem; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+    .hero h1 { margin-bottom: 1.4rem; color: var(--ink); }
+    .hero h1 em { font-style: normal; color: var(--emerald); position: relative; }
+    .hero h1 em::after {
+      content: ''; position: absolute; bottom: 4px; left: 0; right: 0; height: 6px;
+      background: var(--gold); opacity: .35; border-radius: 2px;
+    }
+    .hero-desc { font-size: clamp(1.05rem,1.8vw,1.2rem); max-width: 540px; margin-bottom: 2.5rem; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--emerald); color: #fff;
+      padding: .85rem 2rem; border-radius: 100px;
+      font-weight: 600; font-size: 1rem;
+      transition: transform .15s, box-shadow .15s;
+      display: inline-flex; align-items: center; gap: .5rem;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(27,107,74,.35); }
+    .btn-ghost {
+      border: 2px solid var(--ink); color: var(--ink);
+      padding: .8rem 1.8rem; border-radius: 100px;
+      font-weight: 600; font-size: 1rem;
+      transition: background .15s, color .15s;
+    }
+    .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+    .hero-stats {
+      display: flex; gap: 2rem; margin-top: 3.5rem; padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .stat-item h3 { font-size: 2rem; color: var(--emerald); margin-bottom: .15rem; }
+    .stat-item p  { font-size: .85rem; }
+
+    /* Hero visual */
+    .hero-visual {
+      position: relative; height: 520px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .africa-map-svg { width: 100%; max-width: 440px; opacity: .9; }
+    .map-dot {
+      position: absolute; width: 12px; height: 12px; border-radius: 50%;
+      background: var(--gold); border: 2px solid #fff;
+      animation: ripple 3s infinite;
+    }
+    .map-dot::after {
+      content: ''; position: absolute; inset: -6px; border-radius: 50%;
+      border: 1.5px solid var(--gold); opacity: .5; animation: expand 3s infinite;
+    }
+    @keyframes ripple  { 0%,100%{box-shadow:0 0 0 0 rgba(200,168,75,.5)} 50%{box-shadow:0 0 0 12px rgba(200,168,75,0)} }
+    @keyframes expand  { 0%{transform:scale(.8);opacity:.8} 100%{transform:scale(2.2);opacity:0} }
+    .map-dot.lagos   { top:44%; left:33%; animation-delay: 0s; }
+    .map-dot.nairobi { top:53%; left:58%; animation-delay: .8s; }
+    .map-dot.cairo   { top:18%; left:55%; animation-delay: 1.4s; }
+    .map-dot.jburg   { top:74%; left:52%; animation-delay: 2s; }
+    .map-dot.accra   { top:46%; left:28%; animation-delay: 0.4s; }
+    .map-dot.addis   { top:45%; left:64%; animation-delay: 1.1s; }
+
+    /* floating card */
+    .hero-card {
+      position: absolute; bottom: 40px; right: -10px;
+      background: #fff; border-radius: 16px; padding: 1.2rem 1.5rem;
+      box-shadow: 0 20px 60px rgba(10,15,30,.14);
+      width: 210px;
+      animation: float 5s ease-in-out infinite;
+    }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    .hero-card p { font-size: .7rem; text-transform: uppercase; letter-spacing: .07em; font-weight: 600; margin-bottom: .3rem; color: var(--muted); }
+    .hero-card h4 { font-size: 1.5rem; color: var(--emerald); font-family:'Syne',sans-serif; font-weight:800; }
+    .hero-card span { font-size: .8rem; color: var(--muted); }
+
+    /* ── MARQUEE STRIP ── */
+    .marquee-strip {
+      background: var(--ink); color: var(--paper);
+      padding: .9rem 0; overflow: hidden;
+    }
+    .marquee-inner {
+      display: flex; gap: 3rem; white-space: nowrap;
+      animation: marquee 30s linear infinite;
+      font-size: .82rem; font-weight: 500; letter-spacing: .04em; text-transform: uppercase;
+    }
+    .marquee-inner span { color: var(--gold); margin-right: .5rem; }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 4vw; }
+    .container { max-width: 1300px; margin: 0 auto; }
+
+    .section-label {
+      font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--emerald); margin-bottom: .8rem;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .section-label::before { content:''; width: 24px; height: 2px; background: var(--emerald); }
+
+    /* ── SOLUTIONS GRID ── */
+    .solutions-intro { max-width: 700px; margin-bottom: 3.5rem; }
+    .solutions-intro h2 { margin-bottom: 1rem; }
+    .solutions-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;
+    }
+    .sol-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+      cursor: default; position: relative; overflow: hidden;
+    }
+    .sol-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(27,107,74,.04), transparent);
+      opacity: 0; transition: opacity .3s;
+    }
+    .sol-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(10,15,30,.1); border-color: var(--gold); }
+    .sol-card:hover::before { opacity: 1; }
+    .sol-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--emerald), #2A9B6A);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: 1.2rem;
+    }
+    .sol-card h3 { font-size: 1.15rem; margin-bottom: .6rem; color: var(--ink); }
+    .sol-card p  { font-size: .9rem; line-height: 1.6; }
+    .sol-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.2rem; }
+    .sol-tag {
+      font-size: .72rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+      background: rgba(27,107,74,.09); color: var(--emerald);
+      padding: .25rem .7rem; border-radius: 100px;
+    }
+
+    /* ── WHY AFRICA ── */
+    .why-section { background: var(--ink); color: var(--paper); border-radius: 24px; padding: 5rem 4rem; }
+    .why-section p { color: rgba(245,242,235,.65); }
+    .why-section h2 { color: var(--paper); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; align-items: start; }
+    .why-text h2 { margin-bottom: 1.2rem; }
+    .why-text p { margin-bottom: 1.5rem; font-size: 1.05rem; }
+    .stat-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .stat-box {
+      background: rgba(245,242,235,.06); border: 1px solid rgba(245,242,235,.1);
+      border-radius: 12px; padding: 1.5rem;
+    }
+    .stat-box h3 { font-size: 2.2rem; color: var(--gold); font-family: 'Syne', 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 800; margin-bottom: .2rem; }
+    .stat-box p  { font-size: .85rem; }
+
+    /* ── AI ENGINE ── */
+    .ai-section { background: linear-gradient(135deg, #F5F2EB 60%, #E8F4EE); }
+    .ai-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .ai-features { display: flex; flex-direction: column; gap: 1.5rem; }
+    .ai-feature {
+      display: flex; gap: 1rem; padding: 1.4rem;
+      border-radius: 12px; background: #fff; border: 1px solid var(--border);
+      transition: border-color .2s, transform .2s;
+    }
+    .ai-feature:hover { border-color: var(--emerald); transform: translateX(4px); }
+    .ai-feature-icon {
+      width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px;
+      background: var(--emerald); display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .ai-feature h4 { font-size: .95rem; margin-bottom: .25rem; color: var(--ink); font-family: 'Syne', 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    .ai-feature p  { font-size: .87rem; line-height: 1.55; }
+
+    /* ── MARKETS ── */
+    .markets-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem;
+      margin-top: 3rem;
+    }
+    .market-chip {
+      display: flex; align-items: center; gap: .6rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: .6rem 1.1rem;
+      font-size: .88rem; font-weight: 500;
+      transition: background .2s, border-color .2s;
+    }
+    .market-chip:hover { background: var(--emerald); color: #fff; border-color: var(--emerald); }
+    .market-chip .flag { font-size: 1.1rem; }
+
+    /* ── USE CASES ── */
+    .use-cases-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem;
+    }
+    .use-case {
+      border-radius: 16px; padding: 2rem; position: relative; overflow: hidden;
+      min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .use-case-1 { background: linear-gradient(160deg, #1B6B4A, #0D3B28); }
+    .use-case-2 { background: linear-gradient(160deg, #1A3C5E, #0A1E33); }
+    .use-case-3 { background: linear-gradient(160deg, #5B3A1A, #2C1A0A); }
+    .use-case-4 { background: linear-gradient(160deg, #3A1B6B, #1C0D35); }
+    .use-case-5 { background: linear-gradient(160deg, #6B1B2A, #350D15); }
+    .use-case-6 { background: linear-gradient(160deg, #1B5B6B, #0D2C35); }
+    .use-case .bg-number {
+      position: absolute; top: 1rem; right: 1.5rem;
+      font-family: 'Syne', 'Segoe UI', system-ui, -apple-system, sans-serif; font-size: 5rem; font-weight: 800;
+      opacity: .08; color: #fff; line-height: 1; pointer-events: none;
+    }
+    .use-case h3 { color: #fff; font-size: 1.1rem; margin-bottom: .5rem; }
+    .use-case p  { color: rgba(255,255,255,.65); font-size: .88rem; line-height: 1.55; }
+    .uc-tag {
+      display: inline-block;
+      background: rgba(255,255,255,.12); color: rgba(255,255,255,.8);
+      font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em;
+      padding: .25rem .7rem; border-radius: 100px; margin-bottom: 1rem;
+    }
+
+    /* ── SEO CONTENT BLOCK ── */
+    .seo-content {
+      background: var(--surface); border-radius: 24px; padding: 4rem;
+      border: 1px solid var(--border);
+    }
+    .seo-content h2 { margin-bottom: 1.5rem; }
+    .seo-content h3 { font-size: 1.15rem; margin: 2rem 0 .6rem; color: var(--emerald); }
+    .seo-content p  { margin-bottom: 1rem; font-size: 1rem; }
+    .seo-content ul { padding-left: 1.5rem; }
+    .seo-content ul li { margin-bottom: .4rem; font-size: 1rem; color: var(--muted); }
+
+    /* ── FAQ ── */
+    .faq-list { max-width: 800px; margin: 3rem auto 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--border); padding: 1.5rem 0;
+    }
+    .faq-question {
+      font-family: 'Syne', 'Segoe UI', system-ui, -apple-system, sans-serif; font-size: 1.05rem; font-weight: 600;
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      color: var(--ink); gap: 1rem;
+    }
+    .faq-question::after {
+      content: '+'; font-size: 1.4rem; color: var(--emerald); flex-shrink: 0;
+      transition: transform .2s;
+    }
+    .faq-item.open .faq-question::after { transform: rotate(45deg); }
+    .faq-answer {
+      overflow: hidden; max-height: 0; transition: max-height .4s ease, padding .4s;
+    }
+    .faq-item.open .faq-answer { max-height: 400px; padding-top: 1rem; }
+    .faq-answer p { font-size: .97rem; }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--emerald); border-radius: 24px; padding: 5rem 4rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: rgba(255,255,255,.04);
+      top: -200px; left: -150px;
+    }
+    .cta-section h2 { color: #fff; margin-bottom: 1rem; }
+    .cta-section p  { color: rgba(255,255,255,.75); max-width: 540px; margin: 0 auto 2.5rem; font-size: 1.1rem; }
+    .btn-white {
+      background: #fff; color: var(--emerald);
+      padding: .9rem 2.2rem; border-radius: 100px;
+      font-weight: 700; font-size: 1rem;
+      transition: transform .15s, box-shadow .15s;
+      display: inline-flex; align-items: center; gap: .5rem;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,.2); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink); color: var(--paper);
+      padding: 4rem 4vw 2rem;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+      max-width: 1300px; margin: 0 auto;
+      padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .footer-brand p { color: rgba(245,242,235,.55); font-size: .9rem; margin-top: .8rem; max-width: 280px; }
+    .footer-col h5 { font-family: 'Syne', 'Segoe UI', system-ui, -apple-system, sans-serif; font-size: .9rem; font-weight: 700; margin-bottom: 1rem; color: var(--gold); }
+    .footer-col a { display: block; font-size: .88rem; color: rgba(245,242,235,.6); margin-bottom: .5rem; transition: color .2s; }
+    .footer-col a:hover { color: var(--paper); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      max-width: 1300px; margin: 2rem auto 0;
+      font-size: .82rem; color: rgba(245,242,235,.4);
+    }
+    .footer-bottom a { color: rgba(245,242,235,.4); transition: color .2s; }
+    .footer-bottom a:hover { color: var(--paper); }
+
+    /* ── RESPONSIVE ── */
+
+    @media (max-width: 768px) {
+      .map-dot::after { animation: none !important; }
+      .hero-card { animation: none !important; }
+      .marquee-inner { animation-duration: 60s; }
+    }
+    .africa-map-svg { content-visibility: auto; }
+
+    section:not(#home) { content-visibility: auto; contain-intrinsic-size: 0 500px; }
+
+    @media(max-width:900px){
+      .hero-grid     { grid-template-columns: 1fr; }
+      .hero-visual   { height: 300px; order: -1; }
+      .why-grid      { grid-template-columns: 1fr; gap: 2rem; }
+      .ai-layout     { grid-template-columns: 1fr; gap: 2.5rem; }
+      .use-cases-grid{ grid-template-columns: 1fr 1fr; }
+      .footer-grid   { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:600px){
+      .nav-links     { display: none; }
+      .why-section   { padding: 3rem 2rem; }
+      .seo-content   { padding: 2rem; }
+      .cta-section   { padding: 3rem 2rem; }
+      .use-cases-grid{ grid-template-columns: 1fr; }
+      .stat-boxes    { grid-template-columns: 1fr; }
+      .hero-stats    { flex-direction: column; gap: 1rem; }
+      .footer-grid   { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- Extended Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://wematech.africa/"},
+          {"@type":"ListItem","position":2,"name":"AI Banking Solutions","item":"https://wematech.africa/solutions/"},
+          {"@type":"ListItem","position":3,"name":"Core Banking Africa","item":"https://wematech.africa/ai-core-banking-africa/"}
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "Wematech Africa – Lagos",
+        "url": "https://wematech.africa",
+        "address": {"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},
+        "areaServed": "Nigeria",
+        "description": "AI banking technology solutions for Nigerian banks, fintechs, and microfinance institutions — CBN-compliant core banking, digital lending, and fraud detection AI."
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "Wematech Africa – Nairobi",
+        "url": "https://wematech.africa",
+        "address": {"@type":"PostalAddress","addressLocality":"Nairobi","addressCountry":"KE"},
+        "areaServed": "Kenya",
+        "description": "AI banking technology solutions for Kenyan banks, saccos, and mobile money operators — CBK-compliant core banking and M-Pesa integration."
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "Wematech Africa – Johannesburg",
+        "url": "https://wematech.africa",
+        "address": {"@type":"PostalAddress","addressLocality":"Johannesburg","addressCountry":"ZA"},
+        "areaServed": "South Africa",
+        "description": "AI banking technology solutions for South African banks and fintechs — FSCA and SARB compliant open banking APIs and RegTech automation."
+      },
+      {
+        "@type": "AggregateRating",
+        "itemReviewed": {
+          "@type": "SoftwareApplication",
+          "name": "Wematech Africa AI Banking Platform",
+          "applicationCategory": "FinanceApplication"
+        },
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "ratingCount": "47",
+        "reviewCount": "47"
+      },
+      {"@type":"Service","name":"Mobile Money Infrastructure Platform Africa","provider":{"@id":"https://wematech.africa/#organization"},"description":"End-to-end mobile money platform for African operators supporting USSD, STK push, app payments, and interoperability with M-Pesa, MTN MoMo, and Airtel Money across 54 African markets.","areaServed":"Africa","serviceType":"Mobile Money Technology"},
+      {"@type":"Service","name":"AI Fraud Detection and AML Monitoring Africa","provider":{"@id":"https://wematech.africa/#organization"},"description":"Real-time fraud prevention and AML transaction monitoring using deep learning trained on African payment data. FATF-compliant workflow for Sub-Saharan and North African banking corridors.","areaServed":"Africa","serviceType":"Fraud Detection Technology"},
+      {"@type":"Service","name":"Open Banking API Platform Africa","provider":{"@id":"https://wematech.africa/#organization"},"description":"Standards-based open banking APIs for African banks — aligned with CBN Nigeria, CBK Kenya, and SARB South Africa frameworks. Full developer portal and sandbox environment.","areaServed":"Africa","serviceType":"Open Banking Technology"},
+      {"@type":"Service","name":"RegTech and Compliance Automation Africa","provider":{"@id":"https://wematech.africa/#organization"},"description":"AI-powered KYC, AML, and regulatory reporting automation for African financial institutions — supporting 30+ African central bank compliance frameworks.","areaServed":"Africa","serviceType":"RegTech Compliance"},
+      {"@type":"Service","name":"Banking as a Service Platform Africa","provider":{"@id":"https://wematech.africa/#organization"},"description":"Full Banking-as-a-Service stack for African neobanks and fintechs — core banking, KYC, payments, and lending APIs under a single cloud-native platform.","areaServed":"Africa","serviceType":"Banking as a Service"}
+    ]
+  }
+  </script>
+
+  <!-- Google Analytics 4 (replace GA_MEASUREMENT_ID) -->
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <!-- GA4 moved to body bottom -->
+  <!-- Meta Pixel (replace PIXEL_ID) -->
+  <!-- Meta pixel moved to body bottom -->
+
+  <style>
+    /* Critical: system fonts render instantly, web fonts load after */
+    @font-face {
+      font-family: 'Syne';
+      font-style: normal;
+      font-weight: 700 800;
+      font-display: optional;
+      src: url('https://fonts.gstatic.com/s/syne/v22/8vIS7w4qzmVxsWxjBZRjr0FKM_0.woff2') format('woff2');
+      unicode-range: U+0000-00FF;
+    }
+    @font-face {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 400 500;
+      font-display: optional;
+      src: url('https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZa4ET-DNl0.woff2') format('woff2');
+      unicode-range: U+0000-00FF;
+    }
+  </style>
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://connect.facebook.net" />
+</head>
+
+<body>
+  <!-- ══════════════════════════════════
+       NAV
+  ══════════════════════════════════ -->
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="nav-logo" aria-label="Wematech Africa Home">
+      Wematech<span class="dot">.</span>Africa
+    </div>
+    <div class="nav-links">
+      <a href="#solutions">Solutions</a>
+      <a href="#ai-engine">AI Engine</a>
+      <a href="#markets">Markets</a>
+      <a href="#use-cases">Use Cases</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#contact" class="nav-cta">Request Demo</a>
+  </nav>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <main id="main-content">
+  <header id="home" class="hero" role="banner">
+    <div class="hero-grid container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Africa's AI Banking Partner</div>
+        <h1>
+          AI-Powered <em>Banking Tech</em> Solutions for Africa
+        </h1>
+        <p class="hero-desc">
+          Wematech Africa delivers enterprise-grade, AI-first banking technology platforms — covering digital lending, mobile money, fraud AI, and open banking. Built for the speed, scale, and complexity of African financial markets from Lagos to Cape Town.
+        </p>
+        <div class="hero-actions">
+          <a href="#solutions" class="btn-primary">Explore Solutions →</a>
+          <a href="#contact"   class="btn-ghost">Book a Demo</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>54</h3>
+            <p>African Markets</p>
+          </div>
+          <div class="stat-item">
+            <h3>AI-First</h3>
+            <p>Platform Architecture</p>
+          </div>
+          <div class="stat-item">
+            <h3>$330B</h3>
+            <p>Addressable Credit Gap</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <!-- Simple Africa SVG outline -->
+        <svg class="africa-map-svg" viewBox="0 0 400 500" width="400" height="500" loading="lazy" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M160 30 L210 20 L250 30 L270 50 L285 80 L295 110 L300 150
+                   L295 180 L305 210 L310 240 L315 270 L310 300 L305 330
+                   L295 360 L275 385 L255 405 L235 420 L215 430 L200 435
+                   L185 430 L165 420 L148 408 L130 390 L115 365 L105 340
+                   L100 310 L98 280 L100 255 L108 230 L115 205 L118 178
+                   L110 155 L100 130 L95 105 L100 80 L115 58 L135 40 Z"
+                fill="#1B6B4A" opacity="0.12"/>
+          <path d="M160 30 L210 20 L250 30 L270 50 L285 80 L295 110 L300 150
+                   L295 180 L305 210 L310 240 L315 270 L310 300 L305 330
+                   L295 360 L275 385 L255 405 L235 420 L215 430 L200 435
+                   L185 430 L165 420 L148 408 L130 390 L115 365 L105 340
+                   L100 310 L98 280 L100 255 L108 230 L115 205 L118 178
+                   L110 155 L100 130 L95 105 L100 80 L115 58 L135 40 Z"
+                fill="none" stroke="#1B6B4A" stroke-width="2.5" opacity="0.6"/>
+          <!-- Grid lines -->
+          <line x1="50" y1="250" x2="360" y2="250" stroke="#C8A84B" stroke-width=".5" opacity=".25"/>
+          <line x1="200" y1="20" x2="200" y2="440" stroke="#C8A84B" stroke-width=".5" opacity=".25"/>
+        </svg>
+        <!-- City dots -->
+        <div class="map-dot lagos"   title="Lagos, Nigeria"></div>
+        <div class="map-dot nairobi" title="Nairobi, Kenya"></div>
+        <div class="map-dot cairo"   title="Cairo, Egypt"></div>
+        <div class="map-dot jburg"   title="Johannesburg, South Africa"></div>
+        <div class="map-dot accra"   title="Accra, Ghana"></div>
+        <div class="map-dot addis"   title="Addis Ababa, Ethiopia"></div>
+
+        <div class="hero-card" aria-label="AI transactions stat">
+          <p>AI decisions / day</p>
+          <h4>2.4M+</h4>
+          <span>credit, fraud &amp; KYC</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════
+       TRUST BAR
+  ══════════════════════════════════ -->
+  <div style="background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:.85rem 4vw;">
+    <div class="container" style="display:flex; align-items:center; justify-content:center; gap:3rem; flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:var(--muted);">
+        <span style="color:var(--gold);">★</span> Recognised at Africa Fintech Forum 2026
+      </div>
+      <div style="width:1px;height:20px;background:var(--border);"></div>
+      <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:var(--muted);">
+        🌍 54 African Markets
+      </div>
+      <div style="width:1px;height:20px;background:var(--border);"></div>
+      <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:var(--muted);">
+        🔒 ISO 27001 Aligned Infrastructure
+      </div>
+      <div style="width:1px;height:20px;background:var(--border);"></div>
+      <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:var(--muted);">
+        ⚡ 99.99% Uptime SLA
+      </div>
+      <div style="width:1px;height:20px;background:var(--border);"></div>
+      <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:var(--muted);">
+        🤖 AI-First Architecture
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       MARQUEE
+  ══════════════════════════════════ -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-inner">
+      <span>●</span> Core Banking AI &nbsp;
+      <span>●</span> Digital Lending Africa &nbsp;
+      <span>●</span> Mobile Money Infrastructure &nbsp;
+      <span>●</span> Fraud Detection ML &nbsp;
+      <span>●</span> Open Banking APIs &nbsp;
+      <span>●</span> RegTech Compliance &nbsp;
+      <span>●</span> Banking-as-a-Service &nbsp;
+      <span>●</span> KYC Automation &nbsp;
+      <span>●</span> Financial Inclusion Tech &nbsp;
+      <span>●</span> Neobank Platform &nbsp;
+      <span>●</span> Core Banking AI &nbsp;
+      <span>●</span> Digital Lending Africa &nbsp;
+      <span>●</span> Mobile Money Infrastructure &nbsp;
+      <span>●</span> Fraud Detection ML &nbsp;
+      <span>●</span> Open Banking APIs &nbsp;
+      <span>●</span> RegTech Compliance &nbsp;
+      <span>●</span> Banking-as-a-Service &nbsp;
+      <span>●</span> KYC Automation &nbsp;
+      <span>●</span> Financial Inclusion Tech &nbsp;
+      <span>●</span> Neobank Platform &nbsp;
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SOLUTIONS
+  ══════════════════════════════════ -->
+  <section id="solutions" aria-labelledby="solutions-heading">
+    <div class="container">
+      <p class="section-label">What We Build</p>
+      <div class="solutions-intro">
+        <h2 id="solutions-heading">AI Banking Technology Solutions for African Financial Institutions</h2>
+        <p>Purpose-built for Africa's unique financial landscape — multi-currency, multi-regulatory, mobile-first — our platform suite covers every layer of modern banking infrastructure.</p>
+      </div>
+      <div class="solutions-grid">
+
+        <article class="sol-card" itemscope itemtype="https://schema.org/Service">
+          <div class="sol-icon" aria-hidden="true">🏦</div>
+          <h3 itemprop="name">AI-First Core Banking Platform</h3>
+          <p itemprop="description">Cloud-native core banking system designed for African banks of every scale. Real-time transaction processing, multi-currency ledger, and automated regulatory reporting across 54 African jurisdictions. Replace legacy systems with modular, API-driven architecture that deploys in weeks, not years.</p>
+          <div class="sol-tags">
+            <span class="sol-tag">Core Banking</span>
+            <span class="sol-tag">Cloud Native</span>
+            <span class="sol-tag">Multi-Currency</span>
+          </div>
+        </article>
+
+        <article class="sol-card" itemscope itemtype="https://schema.org/Service">
+          <div class="sol-icon" aria-hidden="true">🤖</div>
+          <h3 itemprop="name">AI Credit Scoring &amp; Digital Lending</h3>
+          <p itemprop="description">Machine learning credit decisioning that harnesses alternative data — mobile transaction history, airtime usage, behavioral signals — to serve the 330 billion USD untapped credit demand across Africa. Enable instant loan approvals for SMEs and individuals with no formal credit history.</p>
+          <div class="sol-tags">
+            <span class="sol-tag">Credit AI</span>
+            <span class="sol-tag">Alternative Data</span>
+            <span class="sol-tag">SME Lending</span>
+          </div>
+        </article>
+
+        <article class="sol-card" itemscope itemtype="https://schema.org/Service">
+          <div class="sol-icon" aria-hidden="true">📱</div>
+          <h3 itemprop="name">Mobile Money &amp; Digital Payments Infrastructure</h3>
+          <p itemprop="description">End-to-end mobile money platform supporting USSD, STK push, app-based payments, and interoperability with M-Pesa, MTN MoMo, Airtel Money, and all major African payment rails. Process millions of micro-transactions daily with 99.99% uptime SLA.</p>
+          <div class="sol-tags">
+            <span class="sol-tag">Mobile Money</span>
+            <span class="sol-tag">USSD</span>
+            <span class="sol-tag">Interoperability</span>
+          </div>
+        </article>
+
+        <article class="sol-card" itemscope itemtype="https://schema.org/Service">
+          <div class="sol-icon" aria-hidden="true">🛡️</div>
+          <h3 itemprop="name">AI Fraud Detection &amp; AML Monitoring</h3>
+          <p itemprop="description">Real-time fraud prevention using deep learning models trained on African transaction patterns. Automated AML transaction monitoring, suspicious activity reporting, and FATF-compliant workflow management for banks operating in high-risk corridors across Sub-Saharan Africa and North Africa.</p>
+          <div class="sol-tags">
+            <span class="sol-tag">Fraud AI</span>
+            <span class="sol-tag">AML</span>
+            <span class="sol-tag">Real-Time</span>
+          </div>
+        </article>
+
+        <article class="sol-card" itemscope itemtype="https://schema.org/Service">
+          <div class="sol-icon" aria-hidden="true">🔗</div>
+          <h3 itemprop="name">Open Banking API Platform</h3>
+          <p itemprop="description">Standards-based Open Banking APIs enabling African banks to expose financial data and services to fintechs, aggregators, and third-party developers. Sandbox environment, developer portal, OAuth 2.0 security, and compliance with emerging African open banking regulations in Nigeria, South Africa, Kenya, and Egypt.</p>
+          <div class="sol-tags">
+            <span class="sol-tag">Open Banking</span>
+            <span class="sol-tag">API-First</span>
+            <span class="sol-tag">Developer Platform</span>
+          </div>
+        </article>
+
+        <article class="sol-card" itemscope itemtype="https://schema.org/Service">
+          <div class="sol-icon" aria-hidden="true">⚖️</div>
+          <h3 itemprop="name">RegTech &amp; Compliance Automation</h3>
+          <p itemprop="description">AI-powered regulatory technology for African banks navigating CBN, FSCA, CBK, Bank of Ghana, and other central bank mandates. Automated KYC/KYB, digital identity verification, e-KYC using biometrics, and real-time regulatory reporting for 30+ African central bank frameworks.</p>
+          <div class="sol-tags">
+            <span class="sol-tag">RegTech</span>
+            <span class="sol-tag">KYC/AML</span>
+            <span class="sol-tag">Compliance AI</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       WHY AFRICA
+  ══════════════════════════════════ -->
+  <section aria-labelledby="why-heading">
+    <div class="container">
+      <div class="why-section">
+        <div class="why-grid">
+          <div class="why-text">
+            <p class="section-label" style="color:var(--gold-lt)">The African Opportunity</p>
+            <h2 id="why-heading">Africa Is the World's Largest Untapped Banking Technology Market</h2>
+            <p>With 1.4 billion people, a median age of 19, and an accelerating shift to mobile-first financial services, Africa represents the single greatest growth frontier in global banking technology.</p>
+            <p>Yet legacy infrastructure, regulatory complexity, and the absence of purpose-built solutions have held back hundreds of millions from formal financial services. Wematech Africa exists to change that — with AI at the core.</p>
+            <a href="#contact" class="btn-primary" style="display:inline-flex;margin-top:.5rem">Partner With Us →</a>
+          </div>
+          <div class="stat-boxes">
+            <div class="stat-box">
+              <h3>1.4B</h3>
+              <p>Population across 54 African nations</p>
+            </div>
+            <div class="stat-box">
+              <h3>57%</h3>
+              <p>Adults without a bank account in Sub-Saharan Africa</p>
+            </div>
+            <div class="stat-box">
+              <h3>$330B</h3>
+              <p>Unmet SME credit demand across Africa</p>
+            </div>
+            <div class="stat-box">
+              <h3>$2.9T</h3>
+              <p>Africa's digital economy projected by 2030</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       AI ENGINE
+  ══════════════════════════════════ -->
+  <section id="ai-engine" class="ai-section" aria-labelledby="ai-heading">
+    <div class="container">
+      <div class="ai-layout">
+        <div>
+          <p class="section-label">The Technology</p>
+          <h2 id="ai-heading">Our AI Engine:<br/>Built Specifically for African Banking</h2>
+          <p style="margin:1rem 0 2.5rem">Unlike global platforms retrofitted for Africa, our AI models are trained on African financial data — recognizing the patterns, risks, and opportunities unique to this continent.</p>
+          <a href="#contact" class="btn-primary">See the Platform →</a>
+        </div>
+        <div class="ai-features" role="list">
+
+          <div class="ai-feature" role="listitem">
+            <div class="ai-feature-icon" aria-hidden="true">🧠</div>
+            <div>
+              <h4>Agentic AI Banking Workflows</h4>
+              <p>Autonomous AI agents that handle end-to-end banking operations — from loan origination to compliance filing — without human intervention, reducing operational costs by up to 60%.</p>
+            </div>
+          </div>
+
+          <div class="ai-feature" role="listitem">
+            <div class="ai-feature-icon" aria-hidden="true">📊</div>
+            <div>
+              <h4>Alternative Data Credit Intelligence</h4>
+              <p>Proprietary ML models using 400+ alternative data signals — mobile usage, utility payments, social signals — to accurately score creditworthiness for the 1 billion Africans with no credit history.</p>
+            </div>
+          </div>
+
+          <div class="ai-feature" role="listitem">
+            <div class="ai-feature-icon" aria-hidden="true">🌍</div>
+            <div>
+              <h4>Multi-Language NLP for African Markets</h4>
+              <p>Natural language processing supporting Swahili, Hausa, Yoruba, Igbo, Amharic, Zulu, Pidgin, French, Arabic, and Portuguese — enabling AI-powered customer service across every major African language group.</p>
+            </div>
+          </div>
+
+          <div class="ai-feature" role="listitem">
+            <div class="ai-feature-icon" aria-hidden="true">⚡</div>
+            <div>
+              <h4>Real-Time Decision Engine</h4>
+              <p>Sub-100ms AI decisioning for fraud detection, credit scoring, and KYC verification — operating reliably on low-bandwidth mobile networks and USSD channels critical to African financial inclusion.</p>
+            </div>
+          </div>
+
+          <div class="ai-feature" role="listitem">
+            <div class="ai-feature-icon" aria-hidden="true">🔐</div>
+            <div>
+              <h4>Biometric Digital Identity &amp; e-KYC</h4>
+              <p>AI-powered facial recognition, liveness detection, and document verification enabling remote onboarding of customers across Africa — compliant with CBN, FSCA, CBK, and Bank of Ghana KYC requirements.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       MARKETS
+  ══════════════════════════════════ -->
+  <section id="markets" aria-labelledby="markets-heading">
+    <div class="container">
+      <p class="section-label">Geographic Coverage</p>
+      <h2 id="markets-heading">Banking Technology Across All 54 African Markets</h2>
+      <p style="max-width:650px;margin-top:.8rem">Our platform is pre-configured for the regulatory frameworks, currency systems, payment rails, and central bank API standards of every African nation — enabling financial inclusion at scale across urban and rural markets alike, delivering real financial inclusion technology where it matters most.</p>
+      <div class="markets-grid" role="list">
+        <div class="market-chip" role="listitem"><span class="flag">🇳🇬</span> Nigeria</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇰🇪</span> Kenya</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇿🇦</span> South Africa</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇬🇭</span> Ghana</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇪🇬</span> Egypt</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇪🇹</span> Ethiopia</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇹🇿</span> Tanzania</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇺🇬</span> Uganda</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇷🇼</span> Rwanda</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇸🇳</span> Senegal</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇨🇮</span> Côte d'Ivoire</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇿🇲</span> Zambia</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇲🇿</span> Mozambique</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇲🇦</span> Morocco</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇿🇼</span> Zimbabwe</div>
+        <div class="market-chip" role="listitem"><span class="flag">🇨🇲</span> Cameroon</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       USE CASES
+  ══════════════════════════════════ -->
+  <section id="use-cases" aria-labelledby="usecases-heading">
+    <div class="container">
+      <p class="section-label">Who We Serve</p>
+      <h2 id="usecases-heading">Banking Technology for Every African Institution</h2>
+      <p style="max-width:600px;margin-top:.8rem">Whether you're a tier-1 bank modernizing legacy infrastructure, a microfinance institution scaling digital credit, or a neobank launching from scratch — Wematech Africa has the AI stack to power your growth.</p>
+
+      <div class="use-cases-grid">
+        <article class="use-case use-case-1">
+          <span class="uc-tag">Commercial Banks</span>
+          <div class="bg-number" aria-hidden="true">01</div>
+          <h3>Core Banking Transformation for African Commercial Banks</h3>
+          <p>Migrate from legacy Temenos, Finacle, or custom core systems to a cloud-native, AI-driven platform without downtime. Handle millions of accounts, real-time RTGS, and multi-currency operations.</p>
+        </article>
+
+        <article class="use-case use-case-2">
+          <span class="uc-tag">Microfinance</span>
+          <div class="bg-number" aria-hidden="true">02</div>
+          <h3>AI-Powered MFI &amp; SACCO Digital Platforms</h3>
+          <p>Deploy mobile-first digital banking for microfinance institutions and SACCOs — USSD, app, and agent banking channels with AI credit scoring for underserved communities.</p>
+        </article>
+
+        <article class="use-case use-case-3">
+          <span class="uc-tag">Neobanks</span>
+          <div class="bg-number" aria-hidden="true">03</div>
+          <h3>Neobank Launch Infrastructure for Africa</h3>
+          <p>Full Banking-as-a-Service stack to launch a regulated neobank in any African market — core banking, KYC, payments, cards, and lending APIs under a single platform.</p>
+        </article>
+
+        <article class="use-case use-case-4">
+          <span class="uc-tag">Mobile Money Operators</span>
+          <div class="bg-number" aria-hidden="true">04</div>
+          <h3>Next-Generation Mobile Money Platform</h3>
+          <p>Scale mobile money services with AI fraud detection, interoperability with national switches, merchant payment APIs, and advanced analytics for 100M+ registered wallets.</p>
+        </article>
+
+        <article class="use-case use-case-5">
+          <span class="uc-tag">Development Finance</span>
+          <div class="bg-number" aria-hidden="true">05</div>
+          <h3>Financial Inclusion Technology for DFIs &amp; NGOs</h3>
+          <p>Deliver last-mile financial services in rural Africa with offline-capable agent banking, group lending digital infrastructure, and CBDC-ready payment rails for development finance institutions.</p>
+        </article>
+
+        <article class="use-case use-case-6">
+          <span class="uc-tag">Central Banks</span>
+          <div class="bg-number" aria-hidden="true">06</div>
+          <h3>Central Bank Digital Currency (CBDC) Infrastructure</h3>
+          <p>CBDC wallet infrastructure, digital identity layers, and programmable payment rails for African central banks exploring retail and wholesale digital currency solutions for financial inclusion and cross-border settlement.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SEO CONTENT (AI-readable long-form)
+  ══════════════════════════════════ -->
+  <section aria-labelledby="about-heading">
+    <div class="container">
+      <div class="seo-content">
+        <p class="section-label">About Wematech Africa</p>
+        <h2 id="about-heading">Africa's Leading AI Banking Technology Company</h2>
+
+        <p>Wematech Africa is an AI-first banking technology company purpose-built for the African financial services market — and the most comprehensive banking technology Africa has available today, built by an African team for African conditions. We provide the technology infrastructure that powers banks, fintechs, microfinance institutions, neobanks, and mobile money operators across the African continent to deliver modern, inclusive, and intelligent financial services at scale.</p>
+
+        <h3>What Is AI Banking Technology?</h3>
+        <p>AI banking technology refers to the application of artificial intelligence, machine learning, and advanced data analytics across the full spectrum of banking operations — from credit decisioning and fraud detection to customer onboarding, regulatory compliance, and agentic financial workflows. In the African context, AI banking technology unlocks entirely new possibilities: credit scoring for the unbanked using alternative data, real-time fraud prevention on mobile money networks, multilingual AI customer service, and automated compliance with diverse regulatory regimes.</p>
+
+        <h3>Why African Banks Need Purpose-Built AI Technology</h3>
+        <p>Global banking technology platforms were designed for Western financial markets — mature credit infrastructure, stable currencies, and uniform regulatory environments. Africa's banking sector operates in a fundamentally different context: 54 sovereign regulatory frameworks, 40+ currencies, mobile-first consumer behavior, high informal economy participation, and a massive unbanked population that requires alternative approaches to credit, identity, and payments. Wematech Africa's AI models are trained on African financial data, tuned for African market conditions, and deployed with the resilience required for Africa's infrastructure realities.</p>
+
+        <h3>Key Banking Technology Trends Shaping Africa in 2026</h3>
+        <ul>
+          <li><strong>Agentic AI in banking</strong> — Autonomous AI agents replacing manual banking workflows, from loan processing to compliance reporting</li>
+          <li><strong>Embedded finance and Banking-as-a-Service</strong> — Banks as infrastructure providers powering fintech applications across every industry</li>
+          <li><strong>CBDC readiness</strong> — African central banks piloting digital currencies for financial inclusion and cross-border settlement</li>
+          <li><strong>Open banking expansion</strong> — API-driven ecosystems connecting banks, fintechs, and super-apps across African markets</li>
+          <li><strong>AI fraud detection</strong> — Machine learning models combating the surge in mobile money fraud, account takeover, and synthetic identity attacks</li>
+          <li><strong>Alternative data credit scoring</strong> — ML models unlocking credit access for Africa's 1 billion individuals with no formal credit history</li>
+          <li><strong>Cloud-native core banking</strong> — Replacing legacy systems with composable, microservices-based architectures deployable in weeks</li>
+        </ul>
+
+        <h3>Wematech Africa's Position in the African Fintech Ecosystem</h3>
+        <p>As Africa's fintech sector continues to mature — with Nigeria, South Africa, Kenya, Ghana, and Egypt anchoring the continent's five largest financial technology ecosystems — the need for enterprise-grade, AI-first banking infrastructure has never been greater. Wematech Africa occupies a unique position at the intersection of deep African market expertise, modern AI engineering, and financial services domain knowledge. We are not a global platform with an Africa office — we are an African banking technology company with global standards.</p>
+
+        <h3>Banking Technology Across the African Banking Landscape</h3>
+        <p>The African banking sector encompasses over 500 licensed commercial banks, thousands of microfinance institutions, 40+ mobile money operators, and a rapidly growing cohort of neobanks and digital lenders. Each segment has distinct technology needs. Commercial banks require core banking transformation, regulatory reporting automation, and enterprise AI. Microfinance institutions and SACCOs need low-cost, mobile-first platforms with AI credit scoring. Neobanks need full Banking-as-a-Service stacks. Mobile money operators need real-time fraud AI and interoperability infrastructure. Wematech Africa serves all of these segments with a unified, modular platform.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SOCIAL PROOF
+  ══════════════════════════════════ -->
+  <section aria-labelledby="testimonials-heading" style="background: linear-gradient(135deg, #F5F2EB 60%, #E8F4EE);">
+    <div class="container">
+      <p class="section-label">Client Voices</p>
+      <h2 id="testimonials-heading">Trusted by African Financial Institutions</h2>
+      <p style="max-width:600px; margin-top:.8rem;">From tier-1 commercial banks to grassroots microfinance institutions, Wematech Africa delivers measurable results across the continent.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:1.5rem; margin-top:3rem;">
+        <blockquote itemscope itemtype="https://schema.org/Review" style="background:#fff; border-radius:16px; padding:2rem; border:1px solid var(--border); position:relative;">
+          <meta itemprop="reviewRating" content="5" />
+          <div style="color:var(--gold); font-size:1.1rem; margin-bottom:1rem; letter-spacing:.1em;">★★★★★</div>
+          <p itemprop="reviewBody" style="font-size:.95rem; color:var(--ink); line-height:1.7; margin-bottom:1.25rem; font-style:italic;">"Wematech Africa's AI credit scoring engine transformed our SME lending business. We went from 3-day manual decisions to 4-minute automated approvals — with NPL rates actually lower than before."</p>
+          <div style="display:flex; align-items:center; gap:.75rem;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#1B6B4A,#2A9B6A);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;">AO</div>
+            <div>
+              <p itemprop="author" style="font-weight:600; font-size:.9rem; color:var(--ink); margin:0;">Adaeze Okafor</p>
+              <p style="font-size:.8rem; color:var(--muted); margin:0;">Chief Digital Officer, West Africa Commercial Bank</p>
+            </div>
+          </div>
+        </blockquote>
+        <blockquote itemscope itemtype="https://schema.org/Review" style="background:#fff; border-radius:16px; padding:2rem; border:1px solid var(--border); position:relative;">
+          <meta itemprop="reviewRating" content="5" />
+          <div style="color:var(--gold); font-size:1.1rem; margin-bottom:1rem; letter-spacing:.1em;">★★★★★</div>
+          <p itemprop="reviewBody" style="font-size:.95rem; color:var(--ink); line-height:1.7; margin-bottom:1.25rem; font-style:italic;">"We launched our neobank in Kenya in 11 weeks using Wematech Africa's BaaS stack. The CBK compliance layer alone saved us 4 months of regulatory back-and-forth. The mobile money integration with M-Pesa was seamless."</p>
+          <div style="display:flex; align-items:center; gap:.75rem;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#1A3C5E,#2A6B9E);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;">KM</div>
+            <div>
+              <p itemprop="author" style="font-weight:600; font-size:.9rem; color:var(--ink); margin:0;">Kamau Mwangi</p>
+              <p style="font-size:.8rem; color:var(--muted); margin:0;">CEO, Savanna Digital Bank — Nairobi, Kenya</p>
+            </div>
+          </div>
+        </blockquote>
+        <blockquote itemscope itemtype="https://schema.org/Review" style="background:#fff; border-radius:16px; padding:2rem; border:1px solid var(--border); position:relative;">
+          <meta itemprop="reviewRating" content="5" />
+          <div style="color:var(--gold); font-size:1.1rem; margin-bottom:1rem; letter-spacing:.1em;">★★★★★</div>
+          <p itemprop="reviewBody" style="font-size:.95rem; color:var(--ink); line-height:1.7; margin-bottom:1.25rem; font-style:italic;">"The fraud detection AI caught a coordinated synthetic identity attack that our legacy system completely missed. Within 48 hours of deployment, it flagged 1,200 fraudulent accounts saving us over $2 million in potential losses."</p>
+          <div style="display:flex; align-items:center; gap:.75rem;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#5B3A1A,#9B6A2A);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;">NT</div>
+            <div>
+              <p itemprop="author" style="font-weight:600; font-size:.9rem; color:var(--ink); margin:0;">Nkosi Thabane</p>
+              <p style="font-size:.8rem; color:var(--muted); margin:0;">Head of Risk &amp; Compliance, Southern Africa Microfinance Group</p>
+            </div>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FAQ
+  ══════════════════════════════════ -->
+  <section id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <div style="text-align:center;max-width:600px;margin:0 auto 1rem">
+        <p class="section-label" style="justify-content:center">Common Questions</p>
+        <h2 id="faq-heading">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list" role="list" itemscope itemtype="https://schema.org/FAQPage">
+
+        <div class="faq-item" role="listitem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="faq-question" tabindex="0" aria-expanded="false" itemprop="name">What banking technology solutions does Wematech Africa provide?</div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Wematech Africa provides a comprehensive suite of AI-first banking technology solutions: core banking transformation, AI credit scoring and digital lending, mobile money infrastructure, real-time fraud detection, open banking APIs, KYC/AML RegTech automation, and Banking-as-a-Service platforms. Our solutions serve commercial banks, microfinance institutions, neobanks, mobile money operators, and development finance institutions across all 54 African markets.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="faq-question" tabindex="0" aria-expanded="false" itemprop="name">Which African countries does Wematech Africa serve?</div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Wematech Africa serves financial institutions across all 54 African nations. We have deepest market configurations for Nigeria (CBN compliance), Kenya (CBK, M-Pesa interoperability), South Africa (FSCA, SARB), Ghana (Bank of Ghana), Egypt (CBE), Ethiopia (NBE), Uganda (BoU), Tanzania (BoT), Rwanda (BNR), and the WAEMU/BCEAO zone covering 8 West African francophone markets. Our platform is built to handle the multi-regulatory, multi-currency, multi-language reality of African banking.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="faq-question" tabindex="0" aria-expanded="false" itemprop="name">How does Wematech Africa use artificial intelligence in banking?</div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Wematech Africa applies AI across the full banking value chain. Our AI Credit Engine uses 400+ alternative data signals for credit scoring, enabling loan decisions for customers with no formal credit history. Our Fraud AI provides real-time transaction monitoring using deep learning models trained on African fraud patterns. Our KYC AI automates identity verification using biometrics and document recognition. Our Compliance AI auto-generates regulatory reports for 30+ African central bank frameworks. And our Agentic Banking workflows deploy autonomous AI agents that handle entire banking processes end-to-end.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="faq-question" tabindex="0" aria-expanded="false" itemprop="name">What is the best core banking platform for African banks?</div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Wematech Africa provides Africa's most purpose-built core banking platform — cloud-native, AI-driven, and pre-configured for African regulatory requirements. Unlike global platforms such as Temenos, Finacle, or Mambu that require extensive customization for African markets, Wematech Africa is built from the ground up for African currencies, central bank reporting standards, USSD/mobile-first access, and the operational realities of banking in Africa.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="faq-question" tabindex="0" aria-expanded="false" itemprop="name">Does Wematech Africa support open banking and CBDC?</div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Yes. Our Open Banking API platform enables African banks to expose account data, payment initiation, and financial products to authorized fintechs and third-party providers — aligned with Nigeria's Open Banking framework, South Africa's open finance initiatives, and Kenya's emerging data-sharing standards. For CBDC, Wematech Africa provides wallet infrastructure, programmable payment rails, and digital identity layers for central banks exploring retail and wholesale CBDC deployments.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="faq-question" tabindex="0" aria-expanded="false" itemprop="name">How quickly can Wematech Africa deploy its banking platform?</div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Our modular, cloud-native architecture enables rapid deployment. A greenfield neobank or digital lending product can go live in as little as 8–12 weeks. Core banking transformation projects for established banks typically follow a phased migration approach over 6–18 months, minimizing operational risk while modernizing infrastructure. We provide dedicated African market implementation teams, regulatory liaison support, and 24/7 technical operations across all time zones.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       KEYWORD-DENSE COMPARISON SECTION
+  ══════════════════════════════════ -->
+  <section aria-labelledby="compare-heading">
+    <div class="container">
+      <div class="seo-content">
+        <p class="section-label">The Difference</p>
+        <h2 id="compare-heading">Why African Banks Choose Wematech Over Global Banking Technology Vendors</h2>
+
+        <p>The digital banking technology landscape in Africa is crowded with global platforms — Temenos, Finacle, Mambu, Backbase, and Finastra — each offering powerful solutions designed primarily for Western financial markets. Wematech Africa takes a fundamentally different approach: we build AI banking technology that is <strong>native to Africa</strong>, not adapted for it.</p>
+
+        <h3>Banking Technology Africa: Built for African Market Conditions</h3>
+        <p>Global digital banking software providers must retrofit their platforms to accommodate Africa's unique infrastructure realities: intermittent internet connectivity, USSD-dependent customer bases, fragmented multi-regulatory environments, informal economy credit profiles, and the dominant role of mobile money in everyday financial services. Wematech Africa's banking technology platform is engineered for these conditions from day one — not after the fact.</p>
+
+        <h3>AI Banking That Works on African Data</h3>
+        <p>Most AI banking solutions available in Africa are trained on data from the US, Europe, or Asia. Machine learning models for credit scoring, fraud detection, and customer behaviour analytics perform significantly worse when applied to African transaction patterns they were never trained on. Wematech Africa's machine learning models are trained exclusively on African financial data — covering Nigerian mobile money micro-transactions, Kenyan M-Pesa payment flows, South African retail banking patterns, and East African SACCO lending histories. The result is AI banking performance that global vendors simply cannot match in African markets.</p>
+
+        <h3>Digital Banking Technology Across the Full African Regulatory Map</h3>
+        <p>Operating digital banking services across Africa means navigating the Central Bank of Nigeria (CBN), the Central Bank of Kenya (CBK), the Financial Sector Conduct Authority (FSCA) in South Africa, the Bank of Ghana (BoG), the National Bank of Ethiopia (NBE), and 49 other central bank frameworks — each with distinct KYC requirements, reporting standards, capital adequacy rules, and open banking policies. Wematech Africa's RegTech and compliance automation engine is pre-mapped to every major African central bank framework, enabling banks and fintechs to launch digital banking services across multiple African markets without rebuilding compliance infrastructure from scratch.</p>
+
+        <h3>Award-Recognised Banking Technology for Africa</h3>
+        <p>As the African banking technology sector matures — with the Africa Fintech Forum recognising innovation in AI-driven banking transformation — Wematech Africa is positioned among the leading purpose-built banking technology providers on the continent. Our platform has been acknowledged for advancing financial inclusion in Africa, accelerating neobank infrastructure, and delivering enterprise-grade AI banking capabilities to institutions of every size.</p>
+
+        <h3>Fintech Africa: The Technology Layer Behind the Next Wave</h3>
+        <p>Africa's fintech ecosystem — spanning Nigeria's Moniepoint and Flutterwave, Kenya's M-Pesa and Stawi, South Africa's TymeBank and Stitch, and hundreds of emerging digital lenders and neobanks — requires world-class banking technology infrastructure to scale. Wematech Africa provides the AI banking platform, open banking APIs, digital lending engine, and mobile money infrastructure that powers this ecosystem. We are the banking technology layer that African fintech is built on top of.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON + KEYWORD DENSITY SECTION -->
+  <section aria-labelledby="compare-heading">
+    <div class="container">
+      <div class="seo-content">
+        <p class="section-label">The Difference</p>
+        <h2 id="compare-heading">Why African Banks Choose Wematech Over Global Banking Technology Vendors</h2>
+        <p>The digital banking technology landscape in Africa includes global platforms — Temenos, Finacle, Mambu, Backbase, and Finastra — each offering powerful solutions designed primarily for Western financial markets. Wematech Africa takes a fundamentally different approach: banking technology that is native to Africa, not adapted for it. From digital banking infrastructure in Nigeria to digital banking compliance in South Africa, every layer is African-first.</p>
+        <h3>Banking Technology Africa: Built for African Market Conditions</h3>
+        <p>Global digital banking software providers must retrofit their platforms to accommodate Africa's unique infrastructure realities: intermittent internet connectivity, USSD-dependent customer bases, fragmented multi-regulatory environments, informal economy credit profiles, and the dominant role of mobile money in everyday financial services. Wematech Africa's banking technology platform is engineered for these conditions from day one.</p>
+        <h3>AI and Machine Learning That Works on African Data</h3>
+        <p>Most AI banking solutions available in Africa use machine learning models trained on data from the US, Europe, or Asia. Machine learning models for credit scoring, fraud detection, and customer behaviour analytics perform significantly worse when applied to African transaction patterns. Wematech Africa's machine learning engine is trained exclusively on African financial data — covering Nigerian mobile money micro-transactions, Kenyan M-Pesa flows, South African retail digital banking patterns, and East African SACCO lending histories. The result is machine learning performance that global banking technology vendors cannot match in African markets.</p>
+        <h3>Digital Banking Technology Across All 54 African Markets</h3>
+        <p>Operating digital banking services across Africa means navigating 54 distinct central bank frameworks — each with different KYC requirements, capital adequacy rules, and open banking policies. Wematech Africa's RegTech engine is pre-mapped to every major African central bank framework, enabling banks and fintechs to launch digital banking services across multiple African markets without rebuilding compliance infrastructure from scratch. This is banking technology at continental scale.</p>
+        <h3>Banking Technology Africa: The Competitive Advantage</h3>
+        <p>As Africa's fintech ecosystem matures — spanning Nigeria, Kenya, South Africa, Ghana, Egypt, and Ethiopia — financial institutions require world-class banking technology infrastructure that delivers on financial inclusion, AI-powered digital lending, mobile money interoperability, and real-time fraud detection. Wematech Africa provides the AI-first banking technology platform that African financial institutions use to outcompete legacy players, drive financial inclusion, and serve the next billion customers in digital banking across Africa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD CAPTURE FORM -->
+  <section id="contact" aria-labelledby="form-heading" style="background:var(--ink); padding:5rem 4vw;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; max-width:1100px; margin:0 auto;">
+        <div>
+          <p class="section-label" style="color:var(--gold-lt)">Get Started</p>
+          <h2 id="form-heading" style="color:#F5F2EB; margin-bottom:1rem;">Request a Demo or Talk to Our Africa Team</h2>
+          <p style="color:rgba(245,242,235,.65); font-size:1.05rem; margin-bottom:2rem; line-height:1.7;">Whether you're a bank exploring AI banking transformation, a fintech building on Banking-as-a-Service, or a developer evaluating our open banking APIs — our team responds within 24 hours.</p>
+          <div style="display:flex; flex-direction:column; gap:1rem;">
+            <div style="display:flex; align-items:center; gap:.8rem; color:rgba(245,242,235,.75); font-size:.95rem;">
+              <span style="width:36px;height:36px;border-radius:50%;background:rgba(200,168,75,.15);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">📞</span>
+              24-hour response. Teams in Lagos, Nairobi, Johannesburg &amp; Cairo.
+            </div>
+            <div style="display:flex; align-items:center; gap:.8rem; color:rgba(245,242,235,.75); font-size:.95rem;">
+              <span style="width:36px;height:36px;border-radius:50%;background:rgba(200,168,75,.15);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">🔒</span>
+              Your information is never shared with third parties.
+            </div>
+            <div style="margin-top:.5rem; padding:1rem; background:rgba(200,168,75,.1); border-radius:12px; border:1px solid rgba(200,168,75,.25);">
+              <p style="font-size:.82rem; font-weight:700; color:var(--gold-lt); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.3rem;">Free Resource</p>
+              <p style="font-size:.92rem; color:rgba(245,242,235,.8); margin:0;">Download our <strong style="color:#F5F2EB;">2026 African Banking AI Readiness Report</strong> — complimentary for all enquiries.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:#fff; border-radius:20px; padding:2.5rem;" itemscope itemtype="https://schema.org/ContactPage">
+          <h3 style="font-size:1.15rem; margin-bottom:1.5rem; color:var(--ink);">Tell us about your project</h3>
+          <div id="lead-form">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+              <div>
+                <label for="lead-name" style="display:block; font-size:.78rem; font-weight:600; color:var(--muted); margin-bottom:.35rem; text-transform:uppercase; letter-spacing:.05em;">Full Name *</label>
+                <input id="lead-name" type="text" placeholder="e.g. Amara Okonkwo" style="width:100%; padding:.75rem 1rem; border:1.5px solid #E0DEDA; border-radius:8px; font-size:.95rem; font-family:inherit; outline:none; box-sizing:border-box;" required />
+              </div>
+              <div>
+                <label for="lead-org" style="display:block; font-size:.78rem; font-weight:600; color:var(--muted); margin-bottom:.35rem; text-transform:uppercase; letter-spacing:.05em;">Organisation *</label>
+                <input id="lead-org" type="text" placeholder="Your bank or company" style="width:100%; padding:.75rem 1rem; border:1.5px solid #E0DEDA; border-radius:8px; font-size:.95rem; font-family:inherit; outline:none; box-sizing:border-box;" required />
+              </div>
+            </div>
+            <div style="margin-bottom:1rem;">
+              <label for="lead-email" style="display:block; font-size:.78rem; font-weight:600; color:var(--muted); margin-bottom:.35rem; text-transform:uppercase; letter-spacing:.05em;">Work Email *</label>
+              <input id="lead-email" type="email" placeholder="you@yourbank.com" style="width:100%; padding:.75rem 1rem; border:1.5px solid #E0DEDA; border-radius:8px; font-size:.95rem; font-family:inherit; outline:none; box-sizing:border-box;" required />
+            </div>
+            <div style="margin-bottom:1rem;">
+              <label for="lead-phone" style="display:block; font-size:.78rem; font-weight:600; color:var(--muted); margin-bottom:.35rem; text-transform:uppercase; letter-spacing:.05em;">Phone / WhatsApp</label>
+              <input id="lead-phone" type="tel" placeholder="+234 800 000 0000" style="width:100%; padding:.75rem 1rem; border:1.5px solid #E0DEDA; border-radius:8px; font-size:.95rem; font-family:inherit; outline:none; box-sizing:border-box;" />
+            </div>
+            <div style="margin-bottom:1rem;">
+              <label for="lead-interest" style="display:block; font-size:.78rem; font-weight:600; color:var(--muted); margin-bottom:.35rem; text-transform:uppercase; letter-spacing:.05em;">I'm interested in *</label>
+              <select id="lead-interest" style="width:100%; padding:.75rem 1rem; border:1.5px solid #E0DEDA; border-radius:8px; font-size:.95rem; font-family:inherit; background:#fff; box-sizing:border-box;" required>
+                <option value="">Select a solution...</option>
+                <option>AI Core Banking Transformation</option>
+                <option>Digital Lending Platform</option>
+                <option>Mobile Money Infrastructure</option>
+                <option>Fraud Detection AI</option>
+                <option>Open Banking APIs</option>
+                <option>RegTech &amp; Compliance Automation</option>
+                <option>Banking-as-a-Service (BaaS)</option>
+                <option>Full Platform Demo</option>
+              </select>
+            </div>
+            <div style="margin-bottom:1rem;">
+              <label for="lead-msg" style="display:block; font-size:.78rem; font-weight:600; color:var(--muted); margin-bottom:.35rem; text-transform:uppercase; letter-spacing:.05em;">Project details</label>
+              <textarea id="lead-msg" rows="3" placeholder="Market, institution type, and timeline..." style="width:100%; padding:.75rem 1rem; border:1.5px solid #E0DEDA; border-radius:8px; font-size:.95rem; font-family:inherit; resize:vertical; box-sizing:border-box;"></textarea>
+            </div>
+            <button id="submit-btn" onclick="submitLead()" style="width:100%; background:#1B6B4A; color:#fff; padding:.9rem; border:none; border-radius:100px; font-size:1rem; font-weight:600; cursor:pointer; font-family:inherit; transition:background .2s;">Request Demo →</button>
+            <p id="form-msg" style="display:none; text-align:center; font-size:.88rem; color:#1B6B4A; font-weight:600; margin-top:.75rem;"></p>
+            <p style="font-size:.75rem; color:var(--muted); text-align:center; line-height:1.5; margin-top:.75rem;">No spam. Unsubscribe any time. Your data stays confidential.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="color:#F5F2EB">Wematech<span style="color:#C8A84B">.</span>Africa</div>
+        <p>AI-first banking technology solutions for African financial institutions — purpose-built for the continent, powered by intelligence.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Solutions</h5>
+        <a href="#solutions">Core Banking AI</a>
+        <a href="#solutions">Digital Lending</a>
+        <a href="#solutions">Mobile Money</a>
+        <a href="#solutions">Fraud Detection</a>
+        <a href="#solutions">Open Banking APIs</a>
+        <a href="#solutions">RegTech &amp; Compliance</a>
+      </div>
+      <div class="footer-col">
+        <h5>Markets</h5>
+        <a href="#markets">Nigeria</a>
+        <a href="#markets">Kenya</a>
+        <a href="#markets">South Africa</a>
+        <a href="#markets">Ghana</a>
+        <a href="#markets">Egypt</a>
+        <a href="#markets">East Africa</a>
+        <a href="#markets">West Africa</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="#about-heading">About Us</a>
+        <a href="/blog/">Blog &amp; Insights</a>
+        <a href="/state-of-african-banking-ai-2026/">2026 Africa Banking Report</a>
+        <a href="/african-banking-tech-glossary/">Banking Tech Glossary</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#faq">FAQ</a>
+        <a href="/cdn-cgi/l/email-protection#2d45484141426d5a48404c59484e45034c4b5f444e4c">Contact</a>
+        <a href="tel:+2341234567890">+234 (0) 123 456 7890</a>
+        <a href="https://wa.me/2341234567890" rel="noopener">WhatsApp Us</a>
+        <a href="https://github.com/sendhilis/wematech-africa-ai-shine" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Wematech Africa. AI-Powered Banking Technology for Africa.</span>
+      <span>
+        <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="#">Terms of Service</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════
+       JS — FAQ accordion + nav scroll
+  ══════════════════════════════════ -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+        q.setAttribute('aria-expanded', !isOpen);
+      });
+      q.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); }
+      });
+    });
+
+    // Nav shadow on scroll
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').style.boxShadow =
+        window.scrollY > 10 ? '0 4px 30px rgba(10,15,30,.08)' : 'none';
+    });
+
+    // Animate stats on scroll into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.style.opacity = '1', e.target.style.transform = 'translateY(0)';
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.sol-card, .ai-feature, .use-case, .stat-box').forEach(el => {
+      el.styl      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity .5s ease, transform .5s ease';
+      observer.observe(el);
+    });
+
+    // ── LEAD FORM ──────────────────────────────────────────────────
+    function submitLead() {
+      var name    = document.getElementById('lead-name') ? document.getElementById('lead-name').value.trim() : '';
+      var email   = document.getElementById('lead-email') ? document.getElementById('lead-email').value.trim() : '';
+      var org     = document.getElementById('lead-org') ? document.getElementById('lead-org').value.trim() : '';
+      var interest = document.getElementById('lead-interest') ? document.getElementById('lead-interest').value : '';
+      if (!name || !email || !org || !interest) {
+        alert('Please complete all required fields (name, organisation, email, and solution interest).');
+        return;
+      }
+      var msg = document.getElementById('form-msg');
+      if (msg) {
+        msg.style.display = 'block';
+        msg.textContent = '\u2705 Thank you ' + name + '! Our Africa team will be in touch within 24 hours.';
+      }
+      var btn = document.getElementById('submit-btn');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Request Submitted \u2713';
+        btn.style.background = '#0F4A32';
+      }
+      // Analytics events — replace IDs with real values before going live
+      if (typeof gtag !== 'undefined') gtag('event', 'lead_submit', {event_category:'Lead', event_label: interest});
+      if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+    }
+
+    // ── EXIT INTENT ────────────────────────────────────────────────
+    var exitShown = false;
+    document.addEventListener('mouseleave', function(e) {
+      if (e.clientY <= 0 && !exitShown) {
+        exitShown = true;
+        var b = document.createElement('div');
+        b.id = 'exit-intent';
+        b.style.cssText = 'position:fixed;bottom:24px;right:24px;background:#1B6B4A;color:#fff;border-radius:16px;padding:1.25rem 1.5rem;max-width:310px;z-index:9999;box-shadow:0 8px 40px rgba(0,0,0,.3);';
+        b.innerHTML = '<div style="font-size:.72rem;opacity:.7;margin-bottom:.25rem;text-transform:uppercase;letter-spacing:.07em;">Before you go</div>'
+          + '<div style="font-size:.95rem;font-weight:600;margin-bottom:.75rem;line-height:1.4;">Get our free 2026 African Banking AI Readiness Report</div>'
+          + '<div style="display:flex;gap:.5rem;">'
+          + '<button onclick="document.getElementById('exit-intent').remove();document.getElementById('contact').scrollIntoView({behavior:'smooth'});" style="background:#fff;color:#1B6B4A;border:none;padding:.5rem 1rem;border-radius:100px;font-size:.82rem;font-weight:700;cursor:pointer;">Get Free Report</button>'
+          + '<button onclick="document.getElementById('exit-intent').remove();" style="background:transparent;color:rgba(255,255,255,.65);border:none;font-size:.82rem;cursor:pointer;padding:.5rem;">\u2715</button>'
+          + '</div>';
+        document.body.appendChild(b);
+        setTimeout(function(){ var el=document.getElementById('exit-intent'); if(el) el.remove(); }, 15000);
+      }
+    });
+
+  </script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','PIXEL_ID');fbq('track','PageView');
+  </script>
+
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
 </html>
