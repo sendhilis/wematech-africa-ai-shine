@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoIcon from "@/assets/wematech-icon.png";
+import logoIcon from "@/assets/wematech-icon.webp";
 
 const Footer = () => {
   return (

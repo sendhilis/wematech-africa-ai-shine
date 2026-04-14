@@ -4,7 +4,7 @@ import { ArrowLeft, Calendar, Clock, User, Tag, Smartphone, Users, Sprout, Heart
 import Navbar from "@/components/Navbar";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import blogImage from "@/assets/blog-mobile-money-kenya.jpg";
+import blogImage from "@/assets/blog-mobile-money-kenya.webp";
 
 const BlogPost_MobileMoneyKenya = () => {
   return (

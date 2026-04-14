@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logoIcon from "@/assets/wematech-icon.png";
+import logoIcon from "@/assets/wematech-icon.webp";
 
 const navLinks = [
   { label: "Home", path: "/" },

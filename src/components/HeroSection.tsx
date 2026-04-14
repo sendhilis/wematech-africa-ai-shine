@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Cpu, Globe } from "lucide-react";
-import heroImage from "@/assets/hero-africa.jpg";
+import heroImage from "@/assets/hero-africa.webp";
 
 const HeroSection = () => {
   return (
     <header role="banner" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Digital Africa" className="w-full h-full object-cover opacity-30" />
+        <img src={heroImage} alt="Digital Africa" className="w-full h-full object-cover opacity-30" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
       </div>
