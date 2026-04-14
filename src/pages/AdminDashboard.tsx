@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { LogOut, Users, CalendarDays, Mail, Building2, BarChart3, RefreshCw } from "lucide-react";
+import { LogOut, Users, CalendarDays, Mail, Building2, BarChart3, RefreshCw, Target } from "lucide-react";
 import type { Tables } from "@/integrations/supabase/types";
 
 type ContactSubmission = Tables<"contact_submissions">;

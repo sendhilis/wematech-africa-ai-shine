@@ -37,6 +37,7 @@ const App = () => (
             <Route path="/blog/mobile-money-financial-inclusion-kenya" element={<BlogPost_MobileMoneyKenya />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin/seo-warroom" element={<SEOWarRoom />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
