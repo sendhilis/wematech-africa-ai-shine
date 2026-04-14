@@ -61,6 +61,23 @@ const Footer = () => {
               <li>Nairobi, Kenya</li>
               <li>Addis Ababa, Ethiopia</li>
             </ul>
+            <div className="mt-4">
+              <a
+                href="https://www.f6s.com/member/sendhil-k?follow=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Follow Sendhil K on F6S"
+              >
+                <img
+                  src="https://www.f6s.com/images/f6s-follow-secondary.png"
+                  width="78"
+                  height="22"
+                  alt="Follow Sendhil K on F6S"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                  loading="lazy"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
