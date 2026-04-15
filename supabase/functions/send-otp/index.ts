@@ -74,8 +74,40 @@ serve(async (req: Request) => {
     // Send OTP email via Resend or log for now
     // When email domain is verified, this can be upgraded to send actual emails
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-    if (RESEND_API_KEY && LOVABLE_API_KEY) {
+    if (RESEND_API_KEY) {
+      try {
+        const emailRes = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${RESEND_API_KEY}`,
+          },
+          body: JSON.stringify({
+            from: "Wematech <onboarding@resend.dev>",
+            to: [email],
+            subject: `Your Wematech Demo Verification Code: ${code}`,
+            html: `
+              <div style="font-family:Arial,sans-serif;max-width:500px;margin:0 auto;padding:30px;">
+                <h2 style="color:#0F172A;">Verify Your Email</h2>
+                <p>Hi ${name},</p>
+                <p>Your verification code to access the Wematech demo portal is:</p>
+                <div style="background:#f1f5f9;border-radius:8px;padding:20px;text-align:center;margin:20px 0;">
+                  <span style="font-size:32px;font-weight:bold;letter-spacing:8px;color:#3B82F6;">${code}</span>
+                </div>
+                <p style="color:#64748b;font-size:13px;">This code expires in 10 minutes.</p>
+                <p style="color:#64748b;font-size:13px;">— Wematech Africa</p>
+              </div>
+            `,
+          }),
+        });
+        const emailResult = await emailRes.json();
+        console.log("[OTP] Email send result:", JSON.stringify(emailResult));
+      } catch (emailErr) {
+        console.error("Email send failed:", emailErr);
+      }
+    } else {
+      console.warn("[OTP] Missing RESEND_API_KEY — email not sent");
+    }
       try {
         const emailRes = await fetch("https://connector-gateway.lovable.dev/resend/emails", {
           method: "POST",
