@@ -76,14 +76,14 @@ serve(async (req: Request) => {
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     if (RESEND_API_KEY) {
       try {
-        await fetch("https://api.resend.com/emails", {
+        const emailRes = await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${RESEND_API_KEY}`,
           },
           body: JSON.stringify({
-            from: "Wematech <noreply@wematech.in>",
+            from: "Wematech <onboarding@resend.dev>",
             to: [email],
             subject: `Your Wematech Demo Verification Code: ${code}`,
             html: `
@@ -100,9 +100,13 @@ serve(async (req: Request) => {
             `,
           }),
         });
+        const emailResult = await emailRes.json();
+        console.log("[OTP] Email send result:", JSON.stringify(emailResult));
       } catch (emailErr) {
         console.error("Email send failed:", emailErr);
       }
+    } else {
+      console.warn("[OTP] Missing RESEND_API_KEY — email not sent");
     }
 
     return new Response(
