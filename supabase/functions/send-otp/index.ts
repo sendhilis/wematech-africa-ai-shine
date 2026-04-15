@@ -108,40 +108,6 @@ serve(async (req: Request) => {
     } else {
       console.warn("[OTP] Missing RESEND_API_KEY — email not sent");
     }
-      try {
-        const emailRes = await fetch("https://connector-gateway.lovable.dev/resend/emails", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${LOVABLE_API_KEY}`,
-            "X-Connection-Api-Key": RESEND_API_KEY,
-          },
-          body: JSON.stringify({
-            from: "Wematech <onboarding@resend.dev>",
-            to: [email],
-            subject: `Your Wematech Demo Verification Code: ${code}`,
-            html: `
-              <div style="font-family:Arial,sans-serif;max-width:500px;margin:0 auto;padding:30px;">
-                <h2 style="color:#0F172A;">Verify Your Email</h2>
-                <p>Hi ${name},</p>
-                <p>Your verification code to access the Wematech demo portal is:</p>
-                <div style="background:#f1f5f9;border-radius:8px;padding:20px;text-align:center;margin:20px 0;">
-                  <span style="font-size:32px;font-weight:bold;letter-spacing:8px;color:#3B82F6;">${code}</span>
-                </div>
-                <p style="color:#64748b;font-size:13px;">This code expires in 10 minutes.</p>
-                <p style="color:#64748b;font-size:13px;">— Wematech Africa</p>
-              </div>
-            `,
-          }),
-        });
-        const emailResult = await emailRes.json();
-        console.log("[OTP] Email send result:", JSON.stringify(emailResult));
-      } catch (emailErr) {
-        console.error("Email send failed:", emailErr);
-      }
-    } else {
-      console.warn("[OTP] Missing RESEND_API_KEY or LOVABLE_API_KEY — email not sent");
-    }
 
     return new Response(
       JSON.stringify({ success: true, message: "Verification code sent to your email." }),
