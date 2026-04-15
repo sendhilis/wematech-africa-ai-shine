@@ -74,16 +74,18 @@ serve(async (req: Request) => {
     // Send OTP email via Resend or log for now
     // When email domain is verified, this can be upgraded to send actual emails
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-    if (RESEND_API_KEY) {
+    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
+    if (RESEND_API_KEY && LOVABLE_API_KEY) {
       try {
-        await fetch("https://api.resend.com/emails", {
+        const emailRes = await fetch("https://connector-gateway.lovable.dev/resend/emails", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${RESEND_API_KEY}`,
+            "Authorization": `Bearer ${LOVABLE_API_KEY}`,
+            "X-Connection-Api-Key": RESEND_API_KEY,
           },
           body: JSON.stringify({
-            from: "Wematech <noreply@wematech.in>",
+            from: "Wematech <onboarding@resend.dev>",
             to: [email],
             subject: `Your Wematech Demo Verification Code: ${code}`,
             html: `
@@ -100,9 +102,13 @@ serve(async (req: Request) => {
             `,
           }),
         });
+        const emailResult = await emailRes.json();
+        console.log("[OTP] Email send result:", JSON.stringify(emailResult));
       } catch (emailErr) {
         console.error("Email send failed:", emailErr);
       }
+    } else {
+      console.warn("[OTP] Missing RESEND_API_KEY or LOVABLE_API_KEY — email not sent");
     }
 
     return new Response(
