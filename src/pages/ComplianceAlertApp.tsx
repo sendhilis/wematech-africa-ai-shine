@@ -34,6 +34,9 @@ import {
   type Severity,
   type Topic,
 } from "@/data/complianceAlertMock";
+import ComplianceAssistantWidget, {
+  type AssistantContext,
+} from "@/components/ComplianceAssistantWidget";
 
 // Map a Supabase compliance_circulars row to the Circular shape used by the UI.
 type DbCircular = {
@@ -329,6 +332,46 @@ const ComplianceAlertApp = () => {
       countries: config.countries.length,
     };
   }, [subscribedCirculars, config.countries.length]);
+
+  // Live context fed into the floating AI widget.
+  const assistantContext: AssistantContext = useMemo(
+    () => ({
+      subscription: {
+        organization: config.org,
+        countries: config.countries,
+        regulators: config.countries,
+        topics: [],
+        severityThreshold: "medium",
+        digestFrequency: "daily",
+      },
+      filters: {
+        severity: severityFilter,
+        topic: topicFilter,
+        search: searchQuery,
+        view,
+      },
+      stats: {
+        totalVisible: filtered.length,
+        unreadCount: unreadAlertIds.size,
+        upcomingDeadlines: upcomingDeadlines.length,
+      },
+      unreadIds: Array.from(unreadAlertIds),
+      selectedCircular,
+      visibleCirculars: filtered,
+    }),
+    [
+      config.org,
+      config.countries,
+      severityFilter,
+      topicFilter,
+      searchQuery,
+      view,
+      filtered,
+      unreadAlertIds,
+      upcomingDeadlines.length,
+      selectedCircular,
+    ]
+  );
 
   /* ---------------- ONBOARDING ---------------- */
 
@@ -769,6 +812,8 @@ const ComplianceAlertApp = () => {
             onClose={() => setSelectedCircular(null)}
           />
         )}
+
+        <ComplianceAssistantWidget context={assistantContext} />
       </div>
     );
   };
