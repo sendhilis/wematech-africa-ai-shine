@@ -18,6 +18,9 @@ const BlogPost_MobileMoneyKenya = lazy(() => import("./pages/BlogPost_MobileMone
 const AdminLogin = lazy(() => import("./pages/AdminLogin.tsx"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard.tsx"));
 const SEOWarRoom = lazy(() => import("./pages/SEOWarRoom.tsx"));
+const MicroSaaSCatalogue = lazy(() => import("./pages/MicroSaaSCatalogue.tsx"));
+const MicroSaaSProductPage = lazy(() => import("./pages/MicroSaaSProductPage.tsx"));
+const ComplianceAlertApp = lazy(() => import("./pages/ComplianceAlertApp.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient();
@@ -42,6 +45,9 @@ const App = () => (
               <Route path="/admin/login" element={<AdminLogin />} />
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/admin/seo-warroom" element={<SEOWarRoom />} />
+              <Route path="/microsaas" element={<MicroSaaSCatalogue />} />
+              <Route path="/microsaas/:slug" element={<MicroSaaSProductPage />} />
+              <Route path="/microsaas/compliance-alert/app" element={<ComplianceAlertApp />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

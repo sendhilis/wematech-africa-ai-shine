@@ -6,6 +6,7 @@ import logoIcon from "@/assets/wematech-icon.webp";
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "Solutions", path: "/solutions" },
+  { label: "Micro-SaaS", path: "/microsaas" },
   { label: "Blog", path: "/blog" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },

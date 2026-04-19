@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 
 const StatsSection = lazy(() => import("@/components/StatsSection"));
+const MicroSaaSShowcase = lazy(() => import("@/components/MicroSaaSShowcase"));
 const SolutionsOverview = lazy(() => import("@/components/SolutionsOverview"));
 const WhyWematech = lazy(() => import("@/components/WhyWematech"));
 const SEOContentBlock = lazy(() => import("@/components/SEOContentBlock"));
@@ -31,6 +32,7 @@ const Index = () => {
       <HeroSection />
       <Suspense fallback={null}>
         <StatsSection />
+        <MicroSaaSShowcase />
         <SolutionsOverview />
         <WhyWematech />
         <SEOContentBlock />
