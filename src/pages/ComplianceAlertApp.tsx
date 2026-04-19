@@ -219,9 +219,78 @@ const ComplianceAlertApp = () => {
     }
   };
 
-  const subscribedCirculars = useMemo(() => {
-    return MOCK_CIRCULARS.filter((c) => config.countries.includes(c.country));
-  }, [config.countries]);
+  // Load circulars for the user's selected countries from Supabase.
+  useEffect(() => {
+    if (!user || config.countries.length === 0) {
+      setLiveCirculars([]);
+      return;
+    }
+    let cancelled = false;
+    (async () => {
+      const [circRes, alertRes] = await Promise.all([
+        supabase
+          .from("compliance_circulars")
+          .select("*")
+          .in("country", config.countries)
+          .order("created_at", { ascending: false })
+          .limit(200),
+        supabase
+          .from("compliance_alerts")
+          .select("circular_id, read")
+          .eq("user_id", user.id)
+          .eq("read", false),
+      ]);
+      if (cancelled) return;
+      if (circRes.data) setLiveCirculars(circRes.data.map(rowToCircular));
+      if (alertRes.data) setUnreadAlertIds(new Set(alertRes.data.map((a) => a.circular_id)));
+    })();
+    return () => { cancelled = true; };
+  }, [user, config.countries]);
+
+  // Realtime: stream new alerts for this user, fetch the joined circular,
+  // prepend it to the feed, ping a toast, and slide the new card in.
+  useEffect(() => {
+    if (!user) return;
+    const channel = supabase
+      .channel(`alerts:${user.id}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "INSERT",
+          schema: "public",
+          table: "compliance_alerts",
+          filter: `user_id=eq.${user.id}`,
+        },
+        async (payload) => {
+          const circularId = (payload.new as { circular_id: string }).circular_id;
+          const { data } = await supabase
+            .from("compliance_circulars")
+            .select("*")
+            .eq("id", circularId)
+            .maybeSingle();
+          if (!data) return;
+          const c = rowToCircular(data);
+          // Only show if the user is subscribed to this country
+          setLiveCirculars((prev) => {
+            if (prev.some((p) => p.id === c.id)) return prev;
+            return [c, ...prev];
+          });
+          setUnreadAlertIds((prev) => new Set(prev).add(c.id));
+          setNewCircularId(c.id);
+          window.setTimeout(() => setNewCircularId((curr) => (curr === c.id ? null : curr)), 6000);
+          toast({
+            title: `🔔 New ${c.severity} alert · ${c.regulator}`,
+            description: c.title.length > 90 ? c.title.slice(0, 90) + "…" : c.title,
+          });
+        }
+      )
+      .subscribe();
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [user]);
+
+  const subscribedCirculars = useMemo(() => liveCirculars, [liveCirculars]);
 
   const filtered = useMemo(() => {
     return subscribedCirculars.filter((c) => {
