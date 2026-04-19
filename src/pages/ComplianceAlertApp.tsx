@@ -228,7 +228,7 @@ const ComplianceAlertApp = () => {
 
   /* ---------------- ONBOARDING ---------------- */
 
-  const completeOnboarding = () => {
+  const completeOnboarding = async () => {
     if (!config.countries.length) {
       toast({ title: "Pick at least one country", variant: "destructive" });
       return;
@@ -237,11 +237,11 @@ const ComplianceAlertApp = () => {
       toast({ title: "Add your organisation details first", variant: "destructive" });
       return;
     }
-    persist(config);
+    await persist(config);
     setStep("dashboard");
     toast({
       title: "ComplianceAlert is live ✨",
-      description: `Monitoring ${config.countries.length} regulator${config.countries.length > 1 ? "s" : ""}. First brief lands tomorrow.`,
+      description: `Monitoring ${config.countries.length} regulator${config.countries.length > 1 ? "s" : ""}. Live feed below.`,
     });
   };
 
@@ -566,17 +566,34 @@ const ComplianceAlertApp = () => {
               ComplianceAlert Dashboard
             </h1>
           </div>
-          <button
-            onClick={() => {
-              localStorage.removeItem(STORAGE_KEY);
-              setConfig(DEFAULT_CONFIG);
-              setOnboardStage(1);
-              setStep("onboard");
-            }}
-            className="text-xs text-muted-foreground hover:text-destructive self-start"
-          >
-            Reset configuration
-          </button>
+          <div className="flex items-center gap-2 self-start">
+            {saving && (
+              <span className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground">
+                <Loader2 size={12} className="animate-spin" /> Saving…
+              </span>
+            )}
+            <button
+              onClick={async () => {
+                if (!user) return;
+                if (!confirm("Reset your ComplianceAlert configuration? You'll redo onboarding.")) return;
+                await supabase.from("compliance_subscriptions").delete().eq("user_id", user.id);
+                try { localStorage.removeItem(LEGACY_STORAGE_KEY); } catch { /* noop */ }
+                setConfig({ ...DEFAULT_CONFIG, email: user.email || "" });
+                setOnboardStage(1);
+                setStep("onboard");
+                toast({ title: "Configuration reset" });
+              }}
+              className="text-xs text-muted-foreground hover:text-destructive"
+            >
+              Reset configuration
+            </button>
+            <button
+              onClick={signOut}
+              className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
+            >
+              <LogOut size={12} /> Sign out
+            </button>
+          </div>
         </div>
 
         {/* Stats */}
