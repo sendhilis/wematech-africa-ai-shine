@@ -210,15 +210,17 @@ Deno.serve(async (req) => {
 
   const supabase = createClient(SUPABASE_URL, SERVICE_KEY);
 
-  // Optional body: { countries?: string[], dryRun?: boolean }
-  let body: { countries?: string[]; dryRun?: boolean } = {};
+  // Optional body: { countries?: string[], dryRun?: boolean, sync?: boolean }
+  let body: { countries?: string[]; dryRun?: boolean; sync?: boolean } = {};
   try {
     body = await req.json();
   } catch {
     // GET / cron call — empty body fine
   }
 
-  // Find which countries to crawl: union of all active subscriptions, or override.
+  // Main crawl work — extracted so we can run it in the background via EdgeRuntime.waitUntil
+  const runCrawl = async () => {
+    // Find which countries to crawl: union of all active subscriptions, or override.
   let targetCountries: string[];
   if (body.countries && body.countries.length > 0) {
     targetCountries = body.countries;
