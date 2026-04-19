@@ -1,9 +1,17 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { X, Send, Sparkles, Loader2 } from "lucide-react";
+import { X, Send, Sparkles, Loader2, ExternalLink, Check, RefreshCw } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { toast } from "@/hooks/use-toast";
 import type { Circular } from "@/data/complianceAlertMock";
+
+// ---------- Action callbacks ----------
+
+export type AssistantActions = {
+  onOpenCircular?: (id: string) => void;
+  onMarkRead?: (id: string) => void;
+  onRunCrawler?: () => void;
+};
 
 // ---------- Types ----------
 
@@ -179,6 +187,87 @@ const SUGGESTED = [
   "Explain the most critical AML item in plain English",
 ];
 
+// Parse assistant text containing [[circular:UUID]] markers into alternating text/marker segments.
+const CIRCULAR_MARKER_RE =
+  /\[\[circular:([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})\]\]/g;
+
+type Segment =
+  | { kind: "text"; value: string }
+  | { kind: "circular"; id: string };
+
+function parseAssistantContent(content: string): Segment[] {
+  const segs: Segment[] = [];
+  let lastIndex = 0;
+  let m: RegExpExecArray | null;
+  CIRCULAR_MARKER_RE.lastIndex = 0;
+  while ((m = CIRCULAR_MARKER_RE.exec(content)) !== null) {
+    if (m.index > lastIndex) {
+      segs.push({ kind: "text", value: content.slice(lastIndex, m.index) });
+    }
+    segs.push({ kind: "circular", id: m[1] });
+    lastIndex = m.index + m[0].length;
+  }
+  if (lastIndex < content.length) {
+    segs.push({ kind: "text", value: content.slice(lastIndex) });
+  }
+  return segs;
+}
+
+const CircularChips = ({
+  id,
+  circular,
+  isUnread,
+  actions,
+}: {
+  id: string;
+  circular?: Circular;
+  isUnread: boolean;
+  actions: AssistantActions;
+}) => {
+  const label = circular
+    ? `${circular.regulator} — ${circular.title}`
+    : `Circular ${id.slice(0, 8)}`;
+  const truncated = label.length > 60 ? label.slice(0, 57) + "…" : label;
+
+  return (
+    <span className="inline-flex flex-wrap items-center gap-1 my-1 px-2 py-1 rounded-md bg-primary/10 border border-primary/20 text-xs align-baseline">
+      <span className="font-medium text-foreground" title={label}>
+        {truncated}
+      </span>
+      {actions.onOpenCircular && (
+        <button
+          type="button"
+          onClick={() => actions.onOpenCircular!(id)}
+          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary text-primary-foreground hover:opacity-90"
+          title="Open this circular"
+        >
+          <ExternalLink size={10} /> Open
+        </button>
+      )}
+      {actions.onMarkRead && isUnread && (
+        <button
+          type="button"
+          onClick={() => actions.onMarkRead!(id)}
+          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary text-secondary-foreground border border-border/50 hover:bg-secondary/70"
+          title="Mark as read"
+        >
+          <Check size={10} /> Mark read
+        </button>
+      )}
+      {actions.onRunCrawler && (
+        <button
+          type="button"
+          onClick={() => actions.onRunCrawler!()}
+          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary text-secondary-foreground border border-border/50 hover:bg-secondary/70"
+          title="Run crawler now"
+        >
+          <RefreshCw size={10} /> Crawler
+        </button>
+      )}
+    </span>
+  );
+};
+
 const ChatPanel = ({
   messages,
   isStreaming,
@@ -187,6 +276,9 @@ const ChatPanel = ({
   onSend,
   onClose,
   panelPos,
+  actions,
+  circularsById,
+  unreadIds,
 }: {
   messages: ChatMsg[];
   isStreaming: boolean;
@@ -195,6 +287,9 @@ const ChatPanel = ({
   onSend: (text?: string) => void;
   onClose: () => void;
   panelPos: Pos;
+  actions: AssistantActions;
+  circularsById: Map<string, Circular>;
+  unreadIds: Set<string>;
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -279,7 +374,21 @@ const ChatPanel = ({
             >
               {m.role === "assistant" ? (
                 <div className="prose prose-sm dark:prose-invert max-w-none prose-p:my-1.5 prose-ul:my-1.5 prose-ol:my-1.5 prose-li:my-0.5 prose-headings:my-2 prose-pre:my-2 prose-a:text-primary prose-a:underline break-words">
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{m.content || "…"}</ReactMarkdown>
+                  {parseAssistantContent(m.content || "…").map((seg, idx) =>
+                    seg.kind === "text" ? (
+                      <ReactMarkdown key={idx} remarkPlugins={[remarkGfm]}>
+                        {seg.value}
+                      </ReactMarkdown>
+                    ) : (
+                      <CircularChips
+                        key={idx}
+                        id={seg.id}
+                        circular={circularsById.get(seg.id)}
+                        isUnread={unreadIds.has(seg.id)}
+                        actions={actions}
+                      />
+                    )
+                  )}
                 </div>
               ) : (
                 <div className="whitespace-pre-wrap break-words">{m.content}</div>
@@ -335,7 +444,13 @@ const ChatPanel = ({
 
 // ---------- Main Widget ----------
 
-const ComplianceAssistantWidget = ({ context }: { context: AssistantContext }) => {
+const ComplianceAssistantWidget = ({
+  context,
+  actions = {},
+}: {
+  context: AssistantContext;
+  actions?: AssistantActions;
+}) => {
   const [pos, setPos] = useState<Pos>(() => loadPos());
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMsg[]>([]);
@@ -513,6 +628,11 @@ const ComplianceAssistantWidget = ({ context }: { context: AssistantContext }) =
           onSend={send}
           onClose={() => setOpen(false)}
           panelPos={pos}
+          actions={actions}
+          circularsById={
+            new Map((context.visibleCirculars ?? []).map((c) => [c.id, c]))
+          }
+          unreadIds={new Set(context.unreadIds ?? [])}
         />
       )}
     </>

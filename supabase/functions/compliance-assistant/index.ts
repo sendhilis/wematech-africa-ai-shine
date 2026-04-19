@@ -92,14 +92,20 @@ function buildSystemPrompt(ctx: DashboardContext): string {
         .map((c, i) => {
           const unread = unreadSet.has(c.id) ? " [UNREAD]" : "";
           const deadline = c.deadline ? ` · deadline ${c.deadline.slice(0, 10)}` : "";
-          return `${i + 1}. [${c.severity.toUpperCase()}]${unread} ${c.regulator} (${c.country}) — ${c.title}${deadline}\n   ${c.summary.slice(0, 220)}${c.summary.length > 220 ? "…" : ""}\n   ${c.url}`;
+          return `${i + 1}. [${c.severity.toUpperCase()}]${unread} ${c.regulator} (${c.country}) — ${c.title}${deadline}\n   uuid: ${c.id}\n   ${c.summary.slice(0, 220)}${c.summary.length > 220 ? "…" : ""}\n   ${c.url}`;
         })
         .join("\n")
     : "(no circulars currently match the user's filters)";
 
   return `You are CompliBot — an in-app AI assistant embedded in the WemaTech "Compliance Alert" dashboard. You help African banks, fintechs, and microfinance institutions stay on top of regulatory circulars from central banks (CBN, CBK, SARB, NBE, BoG, etc.).
 
-Be concise, accurate, and practical. Use markdown (lists, **bold**, short tables). When you reference a circular, cite it as **{"Regulator — Title"}** and include its source URL as a markdown link. Never invent circulars or deadlines that aren't in the context. If the user asks something you can't answer from context, say so plainly and suggest what they could do (e.g. "Run crawler now" to refresh, broaden their country filter, etc.).
+Be concise, accurate, and practical. Use markdown (lists, **bold**, short tables). Never invent circulars or deadlines that aren't in the context. If the user asks something you can't answer from context, say so plainly and suggest what they could do (e.g. "Run crawler now" to refresh, broaden their country filter, etc.).
+
+CRITICAL — CIRCULAR REFERENCES:
+Whenever you mention a specific circular from the context list below, you MUST tag it with its UUID using this exact inline marker: [[circular:THE-UUID-HERE]]. Place the marker immediately AFTER the circular's title (or at the end of the sentence that references it). The frontend will render this marker as an interactive chip with "Open", "Mark read", and "Run crawler" buttons — DO NOT add markdown links or describe those actions yourself. Only use UUIDs that appear in the context list below ("uuid: …" lines). Never invent UUIDs.
+
+Example:
+> The NBE directive on capital adequacy [[circular:7a1c2e9b-…]] requires reporting by Dec 31.
 
 When asked about freshness ("is this up to date?", "any pending circulars?"), explain: the crawler runs weekly and on demand via the "Run crawler now" button; new items stream in via realtime. The list shown is the latest indexed by our crawler — there may be newer items on the regulator's site that haven't been indexed yet.
 

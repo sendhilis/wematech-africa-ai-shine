@@ -813,7 +813,51 @@ const ComplianceAlertApp = () => {
           />
         )}
 
-        <ComplianceAssistantWidget context={assistantContext} />
+        <ComplianceAssistantWidget
+          context={assistantContext}
+          actions={{
+            onOpenCircular: (id) => {
+              const c = subscribedCirculars.find((x) => x.id === id);
+              if (c) openCircular(c);
+              else
+                toast({
+                  title: "Circular not in your current view",
+                  description: "It may be filtered out or no longer indexed.",
+                });
+            },
+            onMarkRead: async (id) => {
+              if (!user || !unreadAlertIds.has(id)) return;
+              setUnreadAlertIds((prev) => {
+                const next = new Set(prev);
+                next.delete(id);
+                return next;
+              });
+              await supabase
+                .from("compliance_alerts")
+                .update({ read: true })
+                .eq("user_id", user.id)
+                .eq("circular_id", id);
+              toast({ title: "Marked as read" });
+            },
+            onRunCrawler: () => {
+              toast({
+                title: "Crawler running in background",
+                description: "New alerts will stream in automatically.",
+              });
+              supabase.functions
+                .invoke("compliance-crawler", { body: {} })
+                .then(({ error }) => {
+                  if (error) {
+                    toast({
+                      title: "Couldn't start crawler",
+                      description: error.message,
+                      variant: "destructive",
+                    });
+                  }
+                });
+            },
+          }}
+        />
       </div>
     );
   };
