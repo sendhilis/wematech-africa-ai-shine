@@ -2,3 +2,6 @@ project_id = "peqfqfqafaltswxnlnii"
 
 [functions.compliance-crawler]
 verify_jwt = false
+
+[functions.compliance-deep-crawler]
+verify_jwt = false

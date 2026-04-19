@@ -758,6 +758,28 @@ const ComplianceAlertApp = () => {
               <Sparkles size={12} /> Run crawler now
             </button>
             <button
+              onClick={() => {
+                toast({
+                  title: "Deep crawl started",
+                  description: "Walking full archives + PDFs. Takes 5–15 min. Audit trail being captured.",
+                });
+                supabase.functions
+                  .invoke("compliance-deep-crawler", { body: { triggeredBy: "admin" } })
+                  .then(({ error }) => {
+                    if (error) {
+                      toast({
+                        title: "Couldn't start deep crawler",
+                        description: error.message,
+                        variant: "destructive",
+                      });
+                    }
+                  });
+              }}
+              className="inline-flex items-center gap-1 text-xs text-accent hover:underline"
+            >
+              <Sparkles size={12} /> Deep crawl + audit
+            </button>
+            <button
               onClick={signOut}
               className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
             >
