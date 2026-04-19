@@ -2,6 +2,9 @@ import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import IntentPulse from "@/components/IntentPulse";
+import SilentQualifier from "@/components/SilentQualifier";
+import CornerOracle from "@/components/CornerOracle";
 
 const StatsSection = lazy(() => import("@/components/StatsSection"));
 const MicroSaaSShowcase = lazy(() => import("@/components/MicroSaaSShowcase"));
@@ -11,9 +14,6 @@ const SEOContentBlock = lazy(() => import("@/components/SEOContentBlock"));
 const FAQSection = lazy(() => import("@/components/FAQSection"));
 const CTASection = lazy(() => import("@/components/CTASection"));
 const Footer = lazy(() => import("@/components/Footer"));
-const IntentPulse = lazy(() => import("@/components/IntentPulse"));
-const SilentQualifier = lazy(() => import("@/components/SilentQualifier"));
-const CornerOracle = lazy(() => import("@/components/CornerOracle"));
 
 const Index = () => {
   return (
