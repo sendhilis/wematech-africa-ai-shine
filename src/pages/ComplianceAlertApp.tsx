@@ -692,18 +692,23 @@ const ComplianceAlertApp = () => {
               Reset configuration
             </button>
             <button
-              onClick={async () => {
-                toast({ title: "Crawler started", description: "Fetching latest circulars from your selected regulators…" });
-                const { data, error } = await supabase.functions.invoke("compliance-crawler", { body: {} });
-                if (error) {
-                  toast({ title: "Crawler failed", description: error.message, variant: "destructive" });
-                  return;
-                }
-                const s = (data as { stats?: { circularsInserted: number; alertsCreated: number } })?.stats;
+              onClick={() => {
                 toast({
-                  title: "Crawler finished",
-                  description: s ? `${s.circularsInserted} new circulars · ${s.alertsCreated} alerts dispatched` : "Done.",
+                  title: "Crawler running in background",
+                  description: "New alerts will stream in automatically — no need to wait.",
                 });
+                // Fire-and-forget: edge function returns 202 immediately and continues via EdgeRuntime.waitUntil.
+                supabase.functions
+                  .invoke("compliance-crawler", { body: {} })
+                  .then(({ error }) => {
+                    if (error) {
+                      toast({
+                        title: "Couldn't start crawler",
+                        description: error.message,
+                        variant: "destructive",
+                      });
+                    }
+                  });
               }}
               className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
             >
