@@ -5,7 +5,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const RECIPIENT_EMAIL = "sendhil.kumar@wematech.africa";
+const RECIPIENT_EMAILS = ["sendhil.kumar@wematech.africa", "tejas@wematech.africa"];
 const RESEND_API_URL = "https://api.resend.com";
 
 interface ContactFormData {
@@ -71,7 +71,7 @@ serve(async (req: Request) => {
       },
       body: JSON.stringify({
         from: "Wematech Website <onboarding@resend.dev>",
-        to: [RECIPIENT_EMAIL],
+        to: RECIPIENT_EMAILS,
         reply_to: data.email,
         subject: `New Enquiry: ${data.solutionInterest} — ${fullName}`,
         html: htmlContent,
@@ -88,7 +88,7 @@ serve(async (req: Request) => {
       );
     }
 
-    console.log(`Enquiry email sent to ${RECIPIENT_EMAIL} from ${data.email}`, emailJson);
+    console.log(`Enquiry email sent to ${RECIPIENT_EMAILS.join(", ")} from ${data.email}`, emailJson);
 
     return new Response(
       JSON.stringify({ success: true, message: "Enquiry submitted successfully" }),
