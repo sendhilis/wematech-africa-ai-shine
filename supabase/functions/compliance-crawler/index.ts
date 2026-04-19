@@ -231,10 +231,7 @@ Deno.serve(async (req) => {
       .eq("is_active", true);
     if (error) {
       console.error("Failed to load subs", error);
-      return new Response(JSON.stringify({ error: error.message }), {
-        status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      return { ok: false, error: error.message };
     }
     const set = new Set<string>();
     (subs ?? []).forEach((s: { countries: string[] }) =>
@@ -326,16 +323,12 @@ Deno.serve(async (req) => {
 
         const alertRows = (matchSubs ?? [])
           .filter((s: { regulators: string[]; topics: string[]; severity_threshold: string }) => {
-            // Severity threshold
             const minRank = SEVERITY_RANK[s.severity_threshold] ?? 2;
             if (incomingRank < minRank) return false;
-            // Regulator filter: only enforced if the user explicitly listed a regulator NAME
-            // (not a country code). Country filter above is authoritative.
             const hasRegulatorNameFilter = s.regulators.some(
               (r) => r.length > 2 && !/^[A-Z]{2}$/.test(r)
             );
             if (hasRegulatorNameFilter && !s.regulators.includes(src.regulator)) return false;
-            // Topic filter (empty = all)
             if (s.topics.length > 0) {
               const overlap = s.topics.some((t) => inserted.topics.includes(t));
               if (!overlap) return false;
@@ -361,8 +354,35 @@ Deno.serve(async (req) => {
     }
   }
 
-  return new Response(JSON.stringify({ ok: true, stats }), {
-    status: 200,
-    headers: { ...corsHeaders, "Content-Type": "application/json" },
-  });
+  console.log("Crawl finished", stats);
+  return { ok: true, stats };
+  };
+
+  // If sync requested (e.g. from cron with small scope), await and return full result.
+  if (body.sync) {
+    const result = await runCrawl();
+    return new Response(JSON.stringify(result), {
+      status: result.ok ? 200 : 500,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
+  // Default: fire-and-forget. Return 202 immediately; crawl continues in background.
+  // EdgeRuntime.waitUntil keeps the worker alive until the promise resolves.
+  // @ts-expect-error EdgeRuntime is provided by Supabase Edge runtime, not in Deno types.
+  EdgeRuntime.waitUntil(
+    runCrawl().catch((e) => console.error("Background crawl failed", e))
+  );
+
+  return new Response(
+    JSON.stringify({
+      ok: true,
+      accepted: true,
+      message: "Crawler started in background. New circulars will stream in via realtime.",
+    }),
+    {
+      status: 202,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    }
+  );
 });
