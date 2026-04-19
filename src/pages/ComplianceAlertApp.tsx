@@ -30,11 +30,41 @@ import { useAuth } from "@/hooks/useAuth";
 import {
   AFRICAN_COUNTRIES,
   REGION_BUNDLES,
-  MOCK_CIRCULARS,
   type Circular,
   type Severity,
   type Topic,
 } from "@/data/complianceAlertMock";
+
+// Map a Supabase compliance_circulars row to the Circular shape used by the UI.
+type DbCircular = {
+  id: string;
+  country: string;
+  regulator: string;
+  title: string;
+  summary: string | null;
+  severity: string;
+  topics: string[];
+  source_url: string;
+  published_at: string | null;
+  deadline: string | null;
+  created_at: string;
+};
+
+const rowToCircular = (r: DbCircular): Circular => ({
+  id: r.id,
+  country: r.country,
+  regulator: r.regulator,
+  reference: r.id.slice(0, 8).toUpperCase(),
+  title: r.title,
+  publishedAt: r.published_at || r.created_at,
+  deadline: r.deadline,
+  severity: (r.severity as Severity) || "medium",
+  topic: ((r.topics?.[0] as Topic) || "Reporting") as Topic,
+  affects: [],
+  summary: r.summary || "",
+  actions: [],
+  url: r.source_url,
+});
 
 type Step = "onboard" | "dashboard";
 type View = "feed" | "deadlines" | "archive" | "channels";
@@ -132,6 +162,11 @@ const ComplianceAlertApp = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCircular, setSelectedCircular] = useState<Circular | null>(null);
 
+  // Live circulars from Supabase + realtime stream
+  const [liveCirculars, setLiveCirculars] = useState<Circular[]>([]);
+  const [unreadAlertIds, setUnreadAlertIds] = useState<Set<string>>(new Set());
+  const [newCircularId, setNewCircularId] = useState<string | null>(null);
+
   // Load subscription from Supabase on mount
   useEffect(() => {
     if (!user) return;
@@ -184,9 +219,78 @@ const ComplianceAlertApp = () => {
     }
   };
 
-  const subscribedCirculars = useMemo(() => {
-    return MOCK_CIRCULARS.filter((c) => config.countries.includes(c.country));
-  }, [config.countries]);
+  // Load circulars for the user's selected countries from Supabase.
+  useEffect(() => {
+    if (!user || config.countries.length === 0) {
+      setLiveCirculars([]);
+      return;
+    }
+    let cancelled = false;
+    (async () => {
+      const [circRes, alertRes] = await Promise.all([
+        supabase
+          .from("compliance_circulars")
+          .select("*")
+          .in("country", config.countries)
+          .order("created_at", { ascending: false })
+          .limit(200),
+        supabase
+          .from("compliance_alerts")
+          .select("circular_id, read")
+          .eq("user_id", user.id)
+          .eq("read", false),
+      ]);
+      if (cancelled) return;
+      if (circRes.data) setLiveCirculars(circRes.data.map(rowToCircular));
+      if (alertRes.data) setUnreadAlertIds(new Set(alertRes.data.map((a) => a.circular_id)));
+    })();
+    return () => { cancelled = true; };
+  }, [user, config.countries]);
+
+  // Realtime: stream new alerts for this user, fetch the joined circular,
+  // prepend it to the feed, ping a toast, and slide the new card in.
+  useEffect(() => {
+    if (!user) return;
+    const channel = supabase
+      .channel(`alerts:${user.id}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "INSERT",
+          schema: "public",
+          table: "compliance_alerts",
+          filter: `user_id=eq.${user.id}`,
+        },
+        async (payload) => {
+          const circularId = (payload.new as { circular_id: string }).circular_id;
+          const { data } = await supabase
+            .from("compliance_circulars")
+            .select("*")
+            .eq("id", circularId)
+            .maybeSingle();
+          if (!data) return;
+          const c = rowToCircular(data);
+          // Only show if the user is subscribed to this country
+          setLiveCirculars((prev) => {
+            if (prev.some((p) => p.id === c.id)) return prev;
+            return [c, ...prev];
+          });
+          setUnreadAlertIds((prev) => new Set(prev).add(c.id));
+          setNewCircularId(c.id);
+          window.setTimeout(() => setNewCircularId((curr) => (curr === c.id ? null : curr)), 6000);
+          toast({
+            title: `🔔 New ${c.severity} alert · ${c.regulator}`,
+            description: c.title.length > 90 ? c.title.slice(0, 90) + "…" : c.title,
+          });
+        }
+      )
+      .subscribe();
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [user]);
+
+  const subscribedCirculars = useMemo(() => liveCirculars, [liveCirculars]);
 
   const filtered = useMemo(() => {
     return subscribedCirculars.filter((c) => {
@@ -542,7 +646,7 @@ const ComplianceAlertApp = () => {
 
   const renderDashboard = () => {
     const NAV_ITEMS: { id: View; label: string; icon: typeof Bell; badge?: number }[] = [
-      { id: "feed", label: "Live feed", icon: Bell, badge: stats.critical },
+      { id: "feed", label: "Live feed", icon: Bell, badge: unreadAlertIds.size },
       { id: "deadlines", label: "Deadlines", icon: Calendar, badge: stats.dueIn7 },
       { id: "archive", label: "Search archive", icon: Search },
       { id: "channels", label: "Alert channels", icon: MessageSquare },
@@ -695,6 +799,21 @@ const ComplianceAlertApp = () => {
     </div>
   );
 
+  const openCircular = async (c: Circular) => {
+    setSelectedCircular(c);
+    if (!user || !unreadAlertIds.has(c.id)) return;
+    setUnreadAlertIds((prev) => {
+      const next = new Set(prev);
+      next.delete(c.id);
+      return next;
+    });
+    await supabase
+      .from("compliance_alerts")
+      .update({ read: true })
+      .eq("user_id", user.id)
+      .eq("circular_id", c.id);
+  };
+
   const renderFeed = () => (
     <div>
       {renderFilters()}
@@ -702,15 +821,17 @@ const ComplianceAlertApp = () => {
         {filtered.length === 0 ? (
           <EmptyState
             icon={<Bell size={28} className="text-muted-foreground" />}
-            title="No circulars match your filter"
-            description="Try changing severity or topic, or add more countries to expand coverage."
+            title="No circulars yet"
+            description="Click 'Run crawler now' above to fetch the latest circulars from your selected regulators, or wait for the weekly auto-crawl."
           />
         ) : (
           filtered.map((c) => (
             <CircularCard
               key={c.id}
               circular={c}
-              onClick={() => setSelectedCircular(c)}
+              onClick={() => openCircular(c)}
+              unread={unreadAlertIds.has(c.id)}
+              isNew={newCircularId === c.id}
             />
           ))
         )}
@@ -738,7 +859,7 @@ const ComplianceAlertApp = () => {
           return (
             <button
               key={c.id}
-              onClick={() => setSelectedCircular(c)}
+              onClick={() => openCircular(c)}
               className="w-full text-left glass-card-hover p-5 flex items-center gap-4"
             >
               <div
@@ -792,7 +913,8 @@ const ComplianceAlertApp = () => {
           <CircularCard
             key={c.id}
             circular={c}
-            onClick={() => setSelectedCircular(c)}
+            onClick={() => openCircular(c)}
+            unread={unreadAlertIds.has(c.id)}
           />
         ))}
       </div>
@@ -994,9 +1116,13 @@ const StatCard = ({
 const CircularCard = ({
   circular,
   onClick,
+  unread = false,
+  isNew = false,
 }: {
   circular: Circular;
   onClick: () => void;
+  unread?: boolean;
+  isNew?: boolean;
 }) => {
   const sev = SEVERITY_STYLES[circular.severity];
   const days = daysUntil(circular.deadline);
@@ -1004,12 +1130,23 @@ const CircularCard = ({
   return (
     <button
       onClick={onClick}
-      className="w-full text-left glass-card-hover p-5 group"
+      className={`relative w-full text-left glass-card-hover p-5 group ${
+        isNew ? "animate-in slide-in-from-top-4 fade-in duration-500 ring-2 ring-accent/60 shadow-[0_0_0_4px_hsl(var(--accent)/0.15)]" : ""
+      } ${unread ? "border-l-4 border-l-accent" : ""}`}
     >
+      {isNew && (
+        <span className="absolute -top-2 -right-2 inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent text-accent-foreground shadow-md">
+          <span className="h-1.5 w-1.5 rounded-full bg-accent-foreground animate-pulse" />
+          New
+        </span>
+      )}
       <div className="flex items-start gap-3">
         <div className="text-2xl flex-shrink-0" aria-hidden>{country?.flag}</div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap mb-1.5">
+            {unread && !isNew && (
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-label="Unread" />
+            )}
             <span className={`text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded border ${sev.class}`}>
               <span className={`inline-block h-1.5 w-1.5 rounded-full mr-1 ${sev.dot}`} />
               {sev.label}
