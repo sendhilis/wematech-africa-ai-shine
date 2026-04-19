@@ -20,9 +20,13 @@ import {
   Sparkles,
   ChevronRight,
   X,
+  LogOut,
+  Loader2,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/hooks/useAuth";
 import {
   AFRICAN_COUNTRIES,
   REGION_BUNDLES,
@@ -45,7 +49,7 @@ type AlertConfig = {
   slackWebhook: string;
 };
 
-const STORAGE_KEY = "wematech_compliance_alert_config";
+const LEGACY_STORAGE_KEY = "wematech_compliance_alert_config";
 
 const DEFAULT_CONFIG: AlertConfig = {
   org: "",
@@ -85,11 +89,42 @@ const daysUntil = (iso: string | null) => {
 const fmtDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
 
+const rowToConfig = (row: any): AlertConfig => ({
+  org: row.organization_name || "",
+  contact: "",
+  email: row.channel_email || "",
+  countries: row.countries || [],
+  channels: {
+    email: !!row.channel_email,
+    whatsapp: !!row.channel_whatsapp,
+    slack: !!row.channel_slack_webhook,
+  },
+  whatsappNumber: row.channel_whatsapp || "",
+  slackWebhook: row.channel_slack_webhook || "",
+});
+
+const configToRow = (c: AlertConfig, userId: string) => ({
+  user_id: userId,
+  organization_name: c.org,
+  countries: c.countries,
+  regulators: c.countries,
+  topics: [],
+  severity_threshold: "medium",
+  channel_email: c.channels.email ? c.email : null,
+  channel_whatsapp: c.channels.whatsapp ? c.whatsappNumber : null,
+  channel_slack_webhook: c.channels.slack ? c.slackWebhook : null,
+  digest_frequency: "daily",
+  is_active: true,
+});
+
 const ComplianceAlertApp = () => {
+  const { user, signOut } = useAuth();
   const [config, setConfig] = useState<AlertConfig>(DEFAULT_CONFIG);
   const [step, setStep] = useState<Step>("onboard");
   const [view, setView] = useState<View>("feed");
   const [onboardStage, setOnboardStage] = useState<1 | 2 | 3>(1);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
 
   // Filters
   const [severityFilter, setSeverityFilter] = useState<Severity | "all">("all");
@@ -97,25 +132,56 @@ const ComplianceAlertApp = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCircular, setSelectedCircular] = useState<Circular | null>(null);
 
-  // Restore on load
+  // Load subscription from Supabase on mount
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        const saved: AlertConfig = JSON.parse(raw);
-        if (saved.countries?.length && saved.org) {
-          setConfig(saved);
-          setStep("dashboard");
-        }
-      }
-    } catch {
-      /* noop */
-    }
-  }, []);
+    if (!user) return;
+    let cancelled = false;
+    (async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from("compliance_subscriptions")
+        .select("*")
+        .eq("user_id", user.id)
+        .maybeSingle();
 
-  const persist = (next: AlertConfig) => {
+      if (cancelled) return;
+
+      if (error) {
+        console.error("Load subscription failed:", error);
+      }
+
+      if (data) {
+        setConfig(rowToConfig(data));
+        setStep("dashboard");
+      } else {
+        try {
+          const raw = localStorage.getItem(LEGACY_STORAGE_KEY);
+          if (raw) {
+            const legacy: AlertConfig = JSON.parse(raw);
+            if (legacy.org && legacy.countries?.length) {
+              setConfig({ ...legacy, email: legacy.email || user.email || "" });
+            }
+          }
+        } catch { /* noop */ }
+        setConfig((prev) => ({ ...prev, email: prev.email || user.email || "" }));
+      }
+      setLoading(false);
+    })();
+    return () => { cancelled = true; };
+  }, [user]);
+
+  const persist = async (next: AlertConfig) => {
     setConfig(next);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    if (!user) return;
+    setSaving(true);
+    const { error } = await supabase
+      .from("compliance_subscriptions")
+      .upsert(configToRow(next, user.id), { onConflict: "user_id" });
+    setSaving(false);
+    if (error) {
+      console.error("Save subscription failed:", error);
+      toast({ title: "Couldn't save changes", description: error.message, variant: "destructive" });
+    }
   };
 
   const subscribedCirculars = useMemo(() => {
