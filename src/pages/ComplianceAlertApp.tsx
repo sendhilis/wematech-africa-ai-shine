@@ -162,6 +162,11 @@ const ComplianceAlertApp = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCircular, setSelectedCircular] = useState<Circular | null>(null);
 
+  // Live circulars from Supabase + realtime stream
+  const [liveCirculars, setLiveCirculars] = useState<Circular[]>([]);
+  const [unreadAlertIds, setUnreadAlertIds] = useState<Set<string>>(new Set());
+  const [newCircularId, setNewCircularId] = useState<string | null>(null);
+
   // Load subscription from Supabase on mount
   useEffect(() => {
     if (!user) return;
