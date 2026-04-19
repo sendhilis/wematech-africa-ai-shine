@@ -6,6 +6,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DemoAccessProvider } from "@/contexts/DemoAccessContext";
+import { AuthProvider } from "@/hooks/useAuth";
+import RequireAuth from "@/components/RequireAuth";
 import Index from "./pages/Index.tsx";
 
 // Lazy-load all non-homepage routes to reduce initial bundle
@@ -21,6 +23,7 @@ const SEOWarRoom = lazy(() => import("./pages/SEOWarRoom.tsx"));
 const MicroSaaSCatalogue = lazy(() => import("./pages/MicroSaaSCatalogue.tsx"));
 const MicroSaaSProductPage = lazy(() => import("./pages/MicroSaaSProductPage.tsx"));
 const ComplianceAlertApp = lazy(() => import("./pages/ComplianceAlertApp.tsx"));
+const Auth = lazy(() => import("./pages/Auth.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient();
@@ -29,33 +32,44 @@ const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <DemoAccessProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Suspense fallback={<div className="min-h-screen bg-background" />}>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/solutions" element={<Solutions />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/ai-transforming-core-banking-nigeria" element={<BlogPost_AICoreBankingNigeria />} />
-              <Route path="/blog/mobile-money-financial-inclusion-kenya" element={<BlogPost_MobileMoneyKenya />} />
-              <Route path="/admin/login" element={<AdminLogin />} />
-              <Route path="/admin" element={<AdminDashboard />} />
-              <Route path="/admin/seo-warroom" element={<SEOWarRoom />} />
-              <Route path="/microsaas" element={<MicroSaaSCatalogue />} />
-              <Route path="/microsaas/:slug" element={<MicroSaaSProductPage />} />
-              <Route path="/microsaas/compliance-alert/app" element={<ComplianceAlertApp />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </BrowserRouter>
-        </DemoAccessProvider>
+        <AuthProvider>
+          <DemoAccessProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <Suspense fallback={<div className="min-h-screen bg-background" />}>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/solutions" element={<Solutions />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/ai-transforming-core-banking-nigeria" element={<BlogPost_AICoreBankingNigeria />} />
+                  <Route path="/blog/mobile-money-financial-inclusion-kenya" element={<BlogPost_MobileMoneyKenya />} />
+                  <Route path="/admin/login" element={<AdminLogin />} />
+                  <Route path="/admin" element={<AdminDashboard />} />
+                  <Route path="/admin/seo-warroom" element={<SEOWarRoom />} />
+                  <Route path="/microsaas" element={<MicroSaaSCatalogue />} />
+                  <Route path="/microsaas/:slug" element={<MicroSaaSProductPage />} />
+                  <Route path="/auth" element={<Auth />} />
+                  <Route
+                    path="/microsaas/compliance-alert/app"
+                    element={
+                      <RequireAuth>
+                        <ComplianceAlertApp />
+                      </RequireAuth>
+                    }
+                  />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
+            </BrowserRouter>
+          </DemoAccessProvider>
+        </AuthProvider>
       </TooltipProvider>
     </QueryClientProvider>
   </HelmetProvider>
 );
 
 export default App;
+
