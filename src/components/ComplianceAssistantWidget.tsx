@@ -444,7 +444,13 @@ const ChatPanel = ({
 
 // ---------- Main Widget ----------
 
-const ComplianceAssistantWidget = ({ context }: { context: AssistantContext }) => {
+const ComplianceAssistantWidget = ({
+  context,
+  actions = {},
+}: {
+  context: AssistantContext;
+  actions?: AssistantActions;
+}) => {
   const [pos, setPos] = useState<Pos>(() => loadPos());
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMsg[]>([]);
@@ -622,6 +628,11 @@ const ComplianceAssistantWidget = ({ context }: { context: AssistantContext }) =
           onSend={send}
           onClose={() => setOpen(false)}
           panelPos={pos}
+          actions={actions}
+          circularsById={
+            new Map((context.visibleCirculars ?? []).map((c) => [c.id, c]))
+          }
+          unreadIds={new Set(context.unreadIds ?? [])}
         />
       )}
     </>
