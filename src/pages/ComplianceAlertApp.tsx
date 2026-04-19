@@ -859,7 +859,7 @@ const ComplianceAlertApp = () => {
           return (
             <button
               key={c.id}
-              onClick={() => setSelectedCircular(c)}
+              onClick={() => openCircular(c)}
               className="w-full text-left glass-card-hover p-5 flex items-center gap-4"
             >
               <div
