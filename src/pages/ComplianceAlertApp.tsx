@@ -646,7 +646,7 @@ const ComplianceAlertApp = () => {
 
   const renderDashboard = () => {
     const NAV_ITEMS: { id: View; label: string; icon: typeof Bell; badge?: number }[] = [
-      { id: "feed", label: "Live feed", icon: Bell, badge: stats.critical },
+      { id: "feed", label: "Live feed", icon: Bell, badge: unreadAlertIds.size },
       { id: "deadlines", label: "Deadlines", icon: Calendar, badge: stats.dueIn7 },
       { id: "archive", label: "Search archive", icon: Search },
       { id: "channels", label: "Alert channels", icon: MessageSquare },
@@ -799,6 +799,21 @@ const ComplianceAlertApp = () => {
     </div>
   );
 
+  const openCircular = async (c: Circular) => {
+    setSelectedCircular(c);
+    if (!user || !unreadAlertIds.has(c.id)) return;
+    setUnreadAlertIds((prev) => {
+      const next = new Set(prev);
+      next.delete(c.id);
+      return next;
+    });
+    await supabase
+      .from("compliance_alerts")
+      .update({ read: true })
+      .eq("user_id", user.id)
+      .eq("circular_id", c.id);
+  };
+
   const renderFeed = () => (
     <div>
       {renderFilters()}
@@ -806,15 +821,17 @@ const ComplianceAlertApp = () => {
         {filtered.length === 0 ? (
           <EmptyState
             icon={<Bell size={28} className="text-muted-foreground" />}
-            title="No circulars match your filter"
-            description="Try changing severity or topic, or add more countries to expand coverage."
+            title="No circulars yet"
+            description="Click 'Run crawler now' above to fetch the latest circulars from your selected regulators, or wait for the weekly auto-crawl."
           />
         ) : (
           filtered.map((c) => (
             <CircularCard
               key={c.id}
               circular={c}
-              onClick={() => setSelectedCircular(c)}
+              onClick={() => openCircular(c)}
+              unread={unreadAlertIds.has(c.id)}
+              isNew={newCircularId === c.id}
             />
           ))
         )}
@@ -896,7 +913,8 @@ const ComplianceAlertApp = () => {
           <CircularCard
             key={c.id}
             circular={c}
-            onClick={() => setSelectedCircular(c)}
+            onClick={() => openCircular(c)}
+            unread={unreadAlertIds.has(c.id)}
           />
         ))}
       </div>
