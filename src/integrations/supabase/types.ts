@@ -14,6 +14,146 @@ export type Database = {
   }
   public: {
     Tables: {
+      compliance_alerts: {
+        Row: {
+          circular_id: string
+          created_at: string
+          dispatched_email: boolean
+          dispatched_slack: boolean
+          dispatched_whatsapp: boolean
+          id: string
+          read: boolean
+          user_id: string
+        }
+        Insert: {
+          circular_id: string
+          created_at?: string
+          dispatched_email?: boolean
+          dispatched_slack?: boolean
+          dispatched_whatsapp?: boolean
+          id?: string
+          read?: boolean
+          user_id: string
+        }
+        Update: {
+          circular_id?: string
+          created_at?: string
+          dispatched_email?: boolean
+          dispatched_slack?: boolean
+          dispatched_whatsapp?: boolean
+          id?: string
+          read?: boolean
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "compliance_alerts_circular_id_fkey"
+            columns: ["circular_id"]
+            isOneToOne: false
+            referencedRelation: "compliance_circulars"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      compliance_circulars: {
+        Row: {
+          body: string | null
+          country: string
+          created_at: string
+          deadline: string | null
+          fingerprint: string
+          id: string
+          published_at: string | null
+          regulator: string
+          severity: string
+          source_url: string
+          summary: string | null
+          title: string
+          topics: string[]
+        }
+        Insert: {
+          body?: string | null
+          country: string
+          created_at?: string
+          deadline?: string | null
+          fingerprint: string
+          id?: string
+          published_at?: string | null
+          regulator: string
+          severity?: string
+          source_url: string
+          summary?: string | null
+          title: string
+          topics?: string[]
+        }
+        Update: {
+          body?: string | null
+          country?: string
+          created_at?: string
+          deadline?: string | null
+          fingerprint?: string
+          id?: string
+          published_at?: string | null
+          regulator?: string
+          severity?: string
+          source_url?: string
+          summary?: string | null
+          title?: string
+          topics?: string[]
+        }
+        Relationships: []
+      }
+      compliance_subscriptions: {
+        Row: {
+          channel_email: string | null
+          channel_slack_webhook: string | null
+          channel_whatsapp: string | null
+          countries: string[]
+          created_at: string
+          digest_frequency: string
+          id: string
+          is_active: boolean
+          organization_name: string
+          regulators: string[]
+          severity_threshold: string
+          topics: string[]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          channel_email?: string | null
+          channel_slack_webhook?: string | null
+          channel_whatsapp?: string | null
+          countries?: string[]
+          created_at?: string
+          digest_frequency?: string
+          id?: string
+          is_active?: boolean
+          organization_name: string
+          regulators?: string[]
+          severity_threshold?: string
+          topics?: string[]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          channel_email?: string | null
+          channel_slack_webhook?: string | null
+          channel_whatsapp?: string | null
+          countries?: string[]
+          created_at?: string
+          digest_frequency?: string
+          id?: string
+          is_active?: boolean
+          organization_name?: string
+          regulators?: string[]
+          severity_threshold?: string
+          topics?: string[]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       contact_submissions: {
         Row: {
           created_at: string
@@ -104,15 +244,75 @@ export type Database = {
         }
         Relationships: []
       }
+      profiles: {
+        Row: {
+          country: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+          job_title: string | null
+          organization: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          country?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          job_title?: string | null
+          organization?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          country?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          job_title?: string | null
+          organization?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -239,6 +439,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+    },
   },
 } as const
