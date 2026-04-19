@@ -1098,9 +1098,13 @@ const StatCard = ({
 const CircularCard = ({
   circular,
   onClick,
+  unread = false,
+  isNew = false,
 }: {
   circular: Circular;
   onClick: () => void;
+  unread?: boolean;
+  isNew?: boolean;
 }) => {
   const sev = SEVERITY_STYLES[circular.severity];
   const days = daysUntil(circular.deadline);
@@ -1108,12 +1112,23 @@ const CircularCard = ({
   return (
     <button
       onClick={onClick}
-      className="w-full text-left glass-card-hover p-5 group"
+      className={`relative w-full text-left glass-card-hover p-5 group ${
+        isNew ? "animate-in slide-in-from-top-4 fade-in duration-500 ring-2 ring-accent/60 shadow-[0_0_0_4px_hsl(var(--accent)/0.15)]" : ""
+      } ${unread ? "border-l-4 border-l-accent" : ""}`}
     >
+      {isNew && (
+        <span className="absolute -top-2 -right-2 inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent text-accent-foreground shadow-md">
+          <span className="h-1.5 w-1.5 rounded-full bg-accent-foreground animate-pulse" />
+          New
+        </span>
+      )}
       <div className="flex items-start gap-3">
         <div className="text-2xl flex-shrink-0" aria-hidden>{country?.flag}</div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap mb-1.5">
+            {unread && !isNew && (
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-label="Unread" />
+            )}
             <span className={`text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded border ${sev.class}`}>
               <span className={`inline-block h-1.5 w-1.5 rounded-full mr-1 ${sev.dot}`} />
               {sev.label}
