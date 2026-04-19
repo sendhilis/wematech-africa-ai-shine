@@ -588,6 +588,24 @@ const ComplianceAlertApp = () => {
               Reset configuration
             </button>
             <button
+              onClick={async () => {
+                toast({ title: "Crawler started", description: "Fetching latest circulars from your selected regulators…" });
+                const { data, error } = await supabase.functions.invoke("compliance-crawler", { body: {} });
+                if (error) {
+                  toast({ title: "Crawler failed", description: error.message, variant: "destructive" });
+                  return;
+                }
+                const s = (data as { stats?: { circularsInserted: number; alertsCreated: number } })?.stats;
+                toast({
+                  title: "Crawler finished",
+                  description: s ? `${s.circularsInserted} new circulars · ${s.alertsCreated} alerts dispatched` : "Done.",
+                });
+              }}
+              className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
+            >
+              <Sparkles size={12} /> Run crawler now
+            </button>
+            <button
               onClick={signOut}
               className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
             >
