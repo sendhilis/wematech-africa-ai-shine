@@ -879,7 +879,17 @@ const ComplianceAlertApp = () => {
         <meta name="robots" content="noindex" />
       </Helmet>
       <Navbar />
-      <main className="pt-24 pb-16">{step === "onboard" ? renderOnboarding() : renderDashboard()}</main>
+      <main className="pt-24 pb-16">
+        {loading ? (
+          <div className="flex items-center justify-center py-32 text-muted-foreground">
+            <Loader2 size={20} className="animate-spin mr-2" /> Loading your dashboard…
+          </div>
+        ) : step === "onboard" ? (
+          renderOnboarding()
+        ) : (
+          renderDashboard()
+        )}
+      </main>
     </div>
   );
 };
