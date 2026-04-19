@@ -327,8 +327,12 @@ Deno.serve(async (req) => {
             // Severity threshold
             const minRank = SEVERITY_RANK[s.severity_threshold] ?? 2;
             if (incomingRank < minRank) return false;
-            // Regulator filter (empty = all)
-            if (s.regulators.length > 0 && !s.regulators.includes(src.regulator)) return false;
+            // Regulator filter: only enforced if the user explicitly listed a regulator NAME
+            // (not a country code). Country filter above is authoritative.
+            const hasRegulatorNameFilter = s.regulators.some(
+              (r) => r.length > 2 && !/^[A-Z]{2}$/.test(r)
+            );
+            if (hasRegulatorNameFilter && !s.regulators.includes(src.regulator)) return false;
             // Topic filter (empty = all)
             if (s.topics.length > 0) {
               const overlap = s.topics.some((t) => inserted.topics.includes(t));
