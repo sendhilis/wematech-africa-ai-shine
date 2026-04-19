@@ -374,7 +374,21 @@ const ChatPanel = ({
             >
               {m.role === "assistant" ? (
                 <div className="prose prose-sm dark:prose-invert max-w-none prose-p:my-1.5 prose-ul:my-1.5 prose-ol:my-1.5 prose-li:my-0.5 prose-headings:my-2 prose-pre:my-2 prose-a:text-primary prose-a:underline break-words">
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{m.content || "…"}</ReactMarkdown>
+                  {parseAssistantContent(m.content || "…").map((seg, idx) =>
+                    seg.kind === "text" ? (
+                      <ReactMarkdown key={idx} remarkPlugins={[remarkGfm]}>
+                        {seg.value}
+                      </ReactMarkdown>
+                    ) : (
+                      <CircularChips
+                        key={idx}
+                        id={seg.id}
+                        circular={circularsById.get(seg.id)}
+                        isUnread={unreadIds.has(seg.id)}
+                        actions={actions}
+                      />
+                    )
+                  )}
                 </div>
               ) : (
                 <div className="whitespace-pre-wrap break-words">{m.content}</div>
