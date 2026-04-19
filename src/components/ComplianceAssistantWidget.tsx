@@ -187,6 +187,87 @@ const SUGGESTED = [
   "Explain the most critical AML item in plain English",
 ];
 
+// Parse assistant text containing [[circular:UUID]] markers into alternating text/marker segments.
+const CIRCULAR_MARKER_RE =
+  /\[\[circular:([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})\]\]/g;
+
+type Segment =
+  | { kind: "text"; value: string }
+  | { kind: "circular"; id: string };
+
+function parseAssistantContent(content: string): Segment[] {
+  const segs: Segment[] = [];
+  let lastIndex = 0;
+  let m: RegExpExecArray | null;
+  CIRCULAR_MARKER_RE.lastIndex = 0;
+  while ((m = CIRCULAR_MARKER_RE.exec(content)) !== null) {
+    if (m.index > lastIndex) {
+      segs.push({ kind: "text", value: content.slice(lastIndex, m.index) });
+    }
+    segs.push({ kind: "circular", id: m[1] });
+    lastIndex = m.index + m[0].length;
+  }
+  if (lastIndex < content.length) {
+    segs.push({ kind: "text", value: content.slice(lastIndex) });
+  }
+  return segs;
+}
+
+const CircularChips = ({
+  id,
+  circular,
+  isUnread,
+  actions,
+}: {
+  id: string;
+  circular?: Circular;
+  isUnread: boolean;
+  actions: AssistantActions;
+}) => {
+  const label = circular
+    ? `${circular.regulator} — ${circular.title}`
+    : `Circular ${id.slice(0, 8)}`;
+  const truncated = label.length > 60 ? label.slice(0, 57) + "…" : label;
+
+  return (
+    <span className="inline-flex flex-wrap items-center gap-1 my-1 px-2 py-1 rounded-md bg-primary/10 border border-primary/20 text-xs align-baseline">
+      <span className="font-medium text-foreground" title={label}>
+        {truncated}
+      </span>
+      {actions.onOpenCircular && (
+        <button
+          type="button"
+          onClick={() => actions.onOpenCircular!(id)}
+          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary text-primary-foreground hover:opacity-90"
+          title="Open this circular"
+        >
+          <ExternalLink size={10} /> Open
+        </button>
+      )}
+      {actions.onMarkRead && isUnread && (
+        <button
+          type="button"
+          onClick={() => actions.onMarkRead!(id)}
+          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary text-secondary-foreground border border-border/50 hover:bg-secondary/70"
+          title="Mark as read"
+        >
+          <Check size={10} /> Mark read
+        </button>
+      )}
+      {actions.onRunCrawler && (
+        <button
+          type="button"
+          onClick={() => actions.onRunCrawler!()}
+          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary text-secondary-foreground border border-border/50 hover:bg-secondary/70"
+          title="Run crawler now"
+        >
+          <RefreshCw size={10} /> Crawler
+        </button>
+      )}
+    </span>
+  );
+};
+
 const ChatPanel = ({
   messages,
   isStreaming,
@@ -195,6 +276,9 @@ const ChatPanel = ({
   onSend,
   onClose,
   panelPos,
+  actions,
+  circularsById,
+  unreadIds,
 }: {
   messages: ChatMsg[];
   isStreaming: boolean;
@@ -203,6 +287,9 @@ const ChatPanel = ({
   onSend: (text?: string) => void;
   onClose: () => void;
   panelPos: Pos;
+  actions: AssistantActions;
+  circularsById: Map<string, Circular>;
+  unreadIds: Set<string>;
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
