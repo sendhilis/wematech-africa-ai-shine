@@ -106,6 +106,7 @@ const Contact = () => {
                     <div>
                       <p className="text-sm font-semibold text-foreground">Email</p>
                       <p className="text-sm text-muted-foreground">sendhil.kumar@wematech.africa</p>
+                      <p className="text-sm text-muted-foreground">tejas@wematech.africa</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
