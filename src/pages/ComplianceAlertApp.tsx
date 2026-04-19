@@ -30,11 +30,41 @@ import { useAuth } from "@/hooks/useAuth";
 import {
   AFRICAN_COUNTRIES,
   REGION_BUNDLES,
-  MOCK_CIRCULARS,
   type Circular,
   type Severity,
   type Topic,
 } from "@/data/complianceAlertMock";
+
+// Map a Supabase compliance_circulars row to the Circular shape used by the UI.
+type DbCircular = {
+  id: string;
+  country: string;
+  regulator: string;
+  title: string;
+  summary: string | null;
+  severity: string;
+  topics: string[];
+  source_url: string;
+  published_at: string | null;
+  deadline: string | null;
+  created_at: string;
+};
+
+const rowToCircular = (r: DbCircular): Circular => ({
+  id: r.id,
+  country: r.country,
+  regulator: r.regulator,
+  reference: r.id.slice(0, 8).toUpperCase(),
+  title: r.title,
+  publishedAt: r.published_at || r.created_at,
+  deadline: r.deadline,
+  severity: (r.severity as Severity) || "medium",
+  topic: ((r.topics?.[0] as Topic) || "Reporting") as Topic,
+  affects: [],
+  summary: r.summary || "",
+  actions: [],
+  url: r.source_url,
+});
 
 type Step = "onboard" | "dashboard";
 type View = "feed" | "deadlines" | "archive" | "channels";
