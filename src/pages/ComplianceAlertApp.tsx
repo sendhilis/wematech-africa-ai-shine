@@ -34,6 +34,9 @@ import {
   type Severity,
   type Topic,
 } from "@/data/complianceAlertMock";
+import ComplianceAssistantWidget, {
+  type AssistantContext,
+} from "@/components/ComplianceAssistantWidget";
 
 // Map a Supabase compliance_circulars row to the Circular shape used by the UI.
 type DbCircular = {
@@ -769,6 +772,8 @@ const ComplianceAlertApp = () => {
             onClose={() => setSelectedCircular(null)}
           />
         )}
+
+        <ComplianceAssistantWidget context={assistantContext} />
       </div>
     );
   };
