@@ -63,6 +63,8 @@ export type Database = {
           deadline: string | null
           fingerprint: string
           id: string
+          last_artifact_id: string | null
+          last_crawled_at: string | null
           published_at: string | null
           regulator: string
           severity: string
@@ -78,6 +80,8 @@ export type Database = {
           deadline?: string | null
           fingerprint: string
           id?: string
+          last_artifact_id?: string | null
+          last_crawled_at?: string | null
           published_at?: string | null
           regulator: string
           severity?: string
@@ -93,6 +97,8 @@ export type Database = {
           deadline?: string | null
           fingerprint?: string
           id?: string
+          last_artifact_id?: string | null
+          last_crawled_at?: string | null
           published_at?: string | null
           regulator?: string
           severity?: string
@@ -101,7 +107,15 @@ export type Database = {
           title?: string
           topics?: string[]
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "compliance_circulars_last_artifact_id_fkey"
+            columns: ["last_artifact_id"]
+            isOneToOne: false
+            referencedRelation: "crawl_artifacts"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       compliance_subscriptions: {
         Row: {
@@ -184,6 +198,104 @@ export type Database = {
           message?: string | null
           organization?: string | null
           solution_interest?: string | null
+        }
+        Relationships: []
+      }
+      crawl_artifacts: {
+        Row: {
+          byte_size: number
+          captured_at: string
+          circular_id: string | null
+          content_sha256: string
+          country: string
+          crawl_run_id: string | null
+          created_at: string
+          id: string
+          regulator: string
+          source_type: string
+          source_url: string
+          storage_path: string
+        }
+        Insert: {
+          byte_size?: number
+          captured_at?: string
+          circular_id?: string | null
+          content_sha256: string
+          country: string
+          crawl_run_id?: string | null
+          created_at?: string
+          id?: string
+          regulator: string
+          source_type?: string
+          source_url: string
+          storage_path: string
+        }
+        Update: {
+          byte_size?: number
+          captured_at?: string
+          circular_id?: string | null
+          content_sha256?: string
+          country?: string
+          crawl_run_id?: string | null
+          created_at?: string
+          id?: string
+          regulator?: string
+          source_type?: string
+          source_url?: string
+          storage_path?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "crawl_artifacts_circular_id_fkey"
+            columns: ["circular_id"]
+            isOneToOne: false
+            referencedRelation: "compliance_circulars"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      crawl_runs: {
+        Row: {
+          artifacts_stored: number
+          circulars_inserted: number
+          countries: string[]
+          errors: Json
+          finished_at: string | null
+          id: string
+          mode: string
+          pages_scraped: number
+          pdfs_scraped: number
+          started_at: string
+          status: string
+          triggered_by: string | null
+        }
+        Insert: {
+          artifacts_stored?: number
+          circulars_inserted?: number
+          countries?: string[]
+          errors?: Json
+          finished_at?: string | null
+          id?: string
+          mode?: string
+          pages_scraped?: number
+          pdfs_scraped?: number
+          started_at?: string
+          status?: string
+          triggered_by?: string | null
+        }
+        Update: {
+          artifacts_stored?: number
+          circulars_inserted?: number
+          countries?: string[]
+          errors?: Json
+          finished_at?: string | null
+          id?: string
+          mode?: string
+          pages_scraped?: number
+          pdfs_scraped?: number
+          started_at?: string
+          status?: string
+          triggered_by?: string | null
         }
         Relationships: []
       }
