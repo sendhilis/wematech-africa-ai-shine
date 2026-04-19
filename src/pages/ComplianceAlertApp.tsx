@@ -333,6 +333,46 @@ const ComplianceAlertApp = () => {
     };
   }, [subscribedCirculars, config.countries.length]);
 
+  // Live context fed into the floating AI widget.
+  const assistantContext: AssistantContext = useMemo(
+    () => ({
+      subscription: {
+        organization: config.org,
+        countries: config.countries,
+        regulators: config.countries,
+        topics: [],
+        severityThreshold: "medium",
+        digestFrequency: "daily",
+      },
+      filters: {
+        severity: severityFilter,
+        topic: topicFilter,
+        search: searchQuery,
+        view,
+      },
+      stats: {
+        totalVisible: filtered.length,
+        unreadCount: unreadAlertIds.size,
+        upcomingDeadlines: upcomingDeadlines.length,
+      },
+      unreadIds: Array.from(unreadAlertIds),
+      selectedCircular,
+      visibleCirculars: filtered,
+    }),
+    [
+      config.org,
+      config.countries,
+      severityFilter,
+      topicFilter,
+      searchQuery,
+      view,
+      filtered,
+      unreadAlertIds,
+      upcomingDeadlines.length,
+      selectedCircular,
+    ]
+  );
+
   /* ---------------- ONBOARDING ---------------- */
 
   const completeOnboarding = async () => {
