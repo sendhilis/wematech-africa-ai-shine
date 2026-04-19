@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles, Zap, Clock } from "lucide-react";
 import { microSaaSProducts } from "@/data/microsaas";
 
+// rebuild marker
+
 const MicroSaaSShowcase = () => {
   // Duplicate for seamless marquee
   const loop = [...microSaaSProducts, ...microSaaSProducts];
