@@ -70,7 +70,7 @@ serve(async (req: Request) => {
         "Authorization": `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Wematech Website <onboarding@resend.dev>",
+        from: "Wematech Website <noreply@wematech.africa>",
         to: RECIPIENT_EMAILS,
         reply_to: data.email,
         subject: `New Enquiry: ${data.solutionInterest} — ${fullName}`,
