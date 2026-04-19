@@ -1,9 +1,17 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { X, Send, Sparkles, Loader2 } from "lucide-react";
+import { X, Send, Sparkles, Loader2, ExternalLink, Check, RefreshCw } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { toast } from "@/hooks/use-toast";
 import type { Circular } from "@/data/complianceAlertMock";
+
+// ---------- Action callbacks ----------
+
+export type AssistantActions = {
+  onOpenCircular?: (id: string) => void;
+  onMarkRead?: (id: string) => void;
+  onRunCrawler?: () => void;
+};
 
 // ---------- Types ----------
 
