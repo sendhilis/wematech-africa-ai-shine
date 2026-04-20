@@ -135,15 +135,25 @@ const Blog = () => {
                 to={`/blog/${post.slug}`}
                 className="glass-card-hover overflow-hidden group flex flex-col"
               >
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    width={1200}
-                    height={630}
-                  />
+                <div className="aspect-video overflow-hidden bg-secondary/40">
+                  {post.image ? (
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      width={1200}
+                      height={630}
+                    />
+                  ) : (
+                    <div
+                      className={`w-full h-full bg-gradient-to-br ${post.gradient ?? "from-primary/20 to-accent/10"} flex items-center justify-center p-6 group-hover:scale-105 transition-transform duration-500`}
+                    >
+                      <span className="font-heading text-lg sm:text-xl font-bold text-foreground/80 text-center leading-tight line-clamp-4">
+                        {post.title}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex flex-wrap gap-2 mb-3">
