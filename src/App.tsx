@@ -17,6 +17,11 @@ const Contact = lazy(() => import("./pages/Contact.tsx"));
 const Blog = lazy(() => import("./pages/Blog.tsx"));
 const BlogPost_AICoreBankingNigeria = lazy(() => import("./pages/BlogPost_AICoreBankingNigeria.tsx"));
 const BlogPost_MobileMoneyKenya = lazy(() => import("./pages/BlogPost_MobileMoneyKenya.tsx"));
+const BlogPost_DigitalLendingAfrica = lazy(() => import("./pages/BlogPost_DigitalLendingAfrica.tsx"));
+const BlogPost_BankingTechnologyNigeria = lazy(() => import("./pages/BlogPost_BankingTechnologyNigeria.tsx"));
+const BlogPost_BankingTechnologyKenya = lazy(() => import("./pages/BlogPost_BankingTechnologyKenya.tsx"));
+const BlogPost_BankingTechnologySouthAfrica = lazy(() => import("./pages/BlogPost_BankingTechnologySouthAfrica.tsx"));
+const BlogPost_BestBankingTechnologyVendorAfrica2026 = lazy(() => import("./pages/BlogPost_BestBankingTechnologyVendorAfrica2026.tsx"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin.tsx"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard.tsx"));
 const SEOWarRoom = lazy(() => import("./pages/SEOWarRoom.tsx"));
@@ -46,6 +51,11 @@ const App = () => (
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/ai-transforming-core-banking-nigeria" element={<BlogPost_AICoreBankingNigeria />} />
                   <Route path="/blog/mobile-money-financial-inclusion-kenya" element={<BlogPost_MobileMoneyKenya />} />
+                  <Route path="/blog/digital-lending-africa" element={<BlogPost_DigitalLendingAfrica />} />
+                  <Route path="/blog/banking-technology-nigeria" element={<BlogPost_BankingTechnologyNigeria />} />
+                  <Route path="/blog/banking-technology-kenya" element={<BlogPost_BankingTechnologyKenya />} />
+                  <Route path="/blog/banking-technology-south-africa" element={<BlogPost_BankingTechnologySouthAfrica />} />
+                  <Route path="/blog/best-banking-technology-vendor-africa-2026" element={<BlogPost_BestBankingTechnologyVendorAfrica2026 />} />
                   <Route path="/admin/login" element={<AdminLogin />} />
                   <Route path="/admin" element={<AdminDashboard />} />
                   <Route path="/admin/seo-warroom" element={<SEOWarRoom />} />
