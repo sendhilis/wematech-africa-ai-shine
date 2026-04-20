@@ -7,7 +7,74 @@ import Footer from "@/components/Footer";
 import blogImage from "@/assets/blog-ai-core-banking-nigeria.webp";
 import blogImage2 from "@/assets/blog-mobile-money-kenya.webp";
 
-const blogPosts = [
+type BlogPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  image?: string;
+  gradient?: string;
+  author: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+};
+
+const blogPosts: BlogPost[] = [
+  {
+    slug: "best-banking-technology-vendor-africa-2026",
+    title: "Best Banking Technology Vendor Africa 2026 — The Honest Comparison",
+    excerpt:
+      "Wematech Africa vs Temenos, Mambu, Oradian, Backbase, and Finastra — a direct, criterion-by-criterion comparison of the six platforms most evaluated by African financial institutions in 2026.",
+    gradient: "from-primary/30 via-primary/10 to-accent/20",
+    author: "Wematech Research Team",
+    date: "April 2026",
+    readTime: "8 min read",
+    tags: ["Vendor Comparison", "Core Banking", "Africa"],
+  },
+  {
+    slug: "banking-technology-nigeria",
+    title: "Banking Technology Nigeria — AI-First, CBN-Compliant, Ready in Weeks",
+    excerpt:
+      "Pre-configured for CBN compliance including the March 2026 AML AI mandate. Covers 44 licensed banks, 900+ MFIs, and 200+ fintechs — no customisation required.",
+    gradient: "from-emerald-500/30 via-primary/10 to-accent/20",
+    author: "Wematech Africa",
+    date: "April 2026",
+    readTime: "9 min read",
+    tags: ["Nigeria", "CBN", "Core Banking"],
+  },
+  {
+    slug: "banking-technology-kenya",
+    title: "Banking Technology Kenya — M-Pesa Native, CBK Compliant, SACCO Ready",
+    excerpt:
+      "AI-first banking technology for Kenya with native M-Pesa integration, CBK regulatory compliance, and SACCO digital banking infrastructure across 39 banks and 4,000+ SACCOs.",
+    gradient: "from-accent/30 via-primary/10 to-primary/20",
+    author: "Wematech Africa",
+    date: "April 2026",
+    readTime: "7 min read",
+    tags: ["Kenya", "M-Pesa", "SACCO"],
+  },
+  {
+    slug: "banking-technology-south-africa",
+    title: "Banking Technology South Africa — FSCA Compliant, COFI Bill Ready",
+    excerpt:
+      "AI-first banking technology pre-configured for FSCA conduct requirements, SARB prudential standards, NCA consumer credit, and the COFI Bill transitioning throughout 2026.",
+    gradient: "from-primary/25 via-accent/15 to-primary/10",
+    author: "Wematech Africa",
+    date: "April 2026",
+    readTime: "6 min read",
+    tags: ["South Africa", "FSCA", "COFI"],
+  },
+  {
+    slug: "digital-lending-africa",
+    title: "Digital Lending Platform Africa — AI Credit Scoring, Instant Decisions",
+    excerpt:
+      "Score and approve any African customer in under 4 seconds using 400+ alternative data signals. Unlock the $330B unmet SME credit demand across the continent.",
+    gradient: "from-accent/35 via-primary/15 to-primary/10",
+    author: "Wematech Africa",
+    date: "April 2026",
+    readTime: "7 min read",
+    tags: ["Digital Lending", "AI Credit Scoring", "Africa"],
+  },
   {
     slug: "mobile-money-financial-inclusion-kenya",
     title: "How Mobile Money Infrastructure is Driving Financial Inclusion in Kenya",
