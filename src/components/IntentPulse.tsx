@@ -20,7 +20,7 @@ const defaultIntents: SectionIntent[] = [
     cta: { label: "Explore solutions →", to: "/solutions" },
   },
   {
-    sectionId: "why-wematech",
+    sectionId: "why-katimoja",
     message: "You want to know what makes us different from the rest.",
     cta: { label: "Our story →", to: "/about" },
   },

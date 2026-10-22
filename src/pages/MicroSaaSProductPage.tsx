@@ -17,7 +17,7 @@ const MicroSaaSProductPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>{product.name} — Wematech Micro-SaaS</title>
+        <title>{product.name} — Katimoja Micro-SaaS</title>
         <meta name="description" content={product.tagline} />
         <link rel="canonical" href={`https://wematech.africa/microsaas/${product.slug}`} />
       </Helmet>
@@ -175,7 +175,7 @@ const MicroSaaSProductPage = () => {
       <section className="py-16 border-t border-border/30">
         <div className="section-container">
           <h2 className="font-heading text-2xl font-bold text-foreground mb-6">
-            Other Wematech Micro-SaaS
+            Other Katimoja Micro-SaaS
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {others.map((o) => {

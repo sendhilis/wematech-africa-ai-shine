@@ -53,7 +53,7 @@ serve(async (req: Request) => {
 
     const fullName = `${data.firstName} ${data.lastName}`;
     const htmlContent = `
-      <h2>New Enquiry from Wematech Website</h2>
+      <h2>New Enquiry from Katimoja Website</h2>
       <table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
         <tr><td style="padding: 8px; font-weight: bold;">Name:</td><td style="padding: 8px;">${escapeHtml(fullName)}</td></tr>
         <tr><td style="padding: 8px; font-weight: bold;">Email:</td><td style="padding: 8px;">${escapeHtml(data.email)}</td></tr>
@@ -70,7 +70,7 @@ serve(async (req: Request) => {
         "Authorization": `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Wematech Website <noreply@wematech.africa>",
+        from: "Katimoja Website <noreply@wematech.africa>",
         to: RECIPIENT_EMAILS,
         reply_to: data.email,
         subject: `New Enquiry: ${data.solutionInterest} — ${fullName}`,

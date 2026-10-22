@@ -4,7 +4,7 @@ const SEOContentBlock = () => {
       <div className="section-container">
         <div className="glass-card glow-border p-8 sm:p-12 max-w-4xl mx-auto">
           <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-4 block">
-            About Wematech Africa
+            About Katimoja Africa
           </span>
           <h2
             id="seo-about-heading"
@@ -15,7 +15,7 @@ const SEOContentBlock = () => {
 
           <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">
             <p>
-              Wematech Africa is an AI-first banking technology company purpose-built for the African
+              Katimoja Africa is an AI-first banking technology company purpose-built for the African
               financial services market. We provide the technology infrastructure that powers banks,
               fintechs, microfinance institutions, neobanks, and mobile money operators across the
               African continent to deliver modern, inclusive, and intelligent financial services at

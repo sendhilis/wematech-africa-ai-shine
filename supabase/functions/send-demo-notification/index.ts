@@ -5,7 +5,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const WEMATECH_EMAIL = "sendhil.kumar@techmonk.world";
+const KATIMOJA_EMAIL = "sendhil.kumar@techmonk.world";
 
 interface DemoBookingData {
   name: string;
@@ -36,8 +36,8 @@ serve(async (req: Request) => {
     console.log(`  Demo Date: ${data.demoDate}`);
     console.log(`  Organization: ${data.organization || "N/A"}`);
 
-    // Log notification for Wematech team
-    console.log(`[WEMATECH NOTIFICATION] To: ${WEMATECH_EMAIL}`);
+    // Log notification for Katimoja team
+    console.log(`[KATIMOJA NOTIFICATION] To: ${KATIMOJA_EMAIL}`);
     console.log(`  New demo booking from ${data.name} (${data.email})`);
     console.log(`  Date: ${data.demoDate}`);
     console.log(`  Organization: ${data.organization || "N/A"}`);
@@ -48,7 +48,7 @@ serve(async (req: Request) => {
         success: true,
         message: "Demo booking confirmed. Notifications queued.",
         customerEmail: data.email,
-        notifiedTeam: WEMATECH_EMAIL,
+        notifiedTeam: KATIMOJA_EMAIL,
       }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );

@@ -35,14 +35,14 @@ const reasons = [
 
 const WhyWematech = () => {
   return (
-    <section id="why-wematech" className="py-24 relative">
+    <section id="why-katimoja" className="py-24 relative">
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-accent/3 blur-[180px]" />
       
       <div className="section-container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-4 block">
-              Why Wematech
+              Why Katimoja
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Built for Africa.

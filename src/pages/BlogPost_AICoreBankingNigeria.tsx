@@ -13,14 +13,14 @@ const BlogPost_AICoreBankingNigeria = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>How AI is Transforming Core Banking in Nigeria | Wematech Africa</title>
+        <title>How AI is Transforming Core Banking in Nigeria | Katimoja Africa</title>
         <meta
           name="description"
           content="Discover how AI is reshaping core banking in Nigeria — from fraud detection and credit scoring to digital lending and customer experience. A guide for Nigerian financial institutions."
         />
-        <link rel="canonical" href="https://www.wematech.in/blog/ai-transforming-core-banking-nigeria" />
+        <link rel="canonical" href="https://wematech.africa/blog/ai-transforming-core-banking-nigeria" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://www.wematech.in/blog/ai-transforming-core-banking-nigeria" />
+        <meta property="og:url" content="https://wematech.africa/blog/ai-transforming-core-banking-nigeria" />
         <meta property="og:title" content="How AI is Transforming Core Banking in Nigeria" />
         <meta property="og:description" content="Discover how AI is reshaping core banking in Nigeria — from fraud detection and credit scoring to digital lending and customer experience." />
         <script type="application/ld+json">
@@ -29,10 +29,10 @@ const BlogPost_AICoreBankingNigeria = () => {
             "@type": "BlogPosting",
             headline: "How AI is Transforming Core Banking in Nigeria",
             description: "Discover how AI is reshaping core banking in Nigeria — from fraud detection and credit scoring to digital lending and customer experience.",
-            author: { "@type": "Organization", name: "Wematech Africa" },
+            author: { "@type": "Organization", name: "Katimoja Africa" },
             datePublished: "2026-04-12",
-            publisher: { "@type": "Organization", name: "Wematech Africa", url: "https://www.wematech.in" },
-            mainEntityOfPage: "https://www.wematech.in/blog/ai-transforming-core-banking-nigeria",
+            publisher: { "@type": "Organization", name: "Katimoja Africa", url: "https://wematech.africa" },
+            mainEntityOfPage: "https://wematech.africa/blog/ai-transforming-core-banking-nigeria",
           })}
         </script>
       </Helmet>
@@ -53,7 +53,7 @@ const BlogPost_AICoreBankingNigeria = () => {
               How AI is Transforming Core Banking in Nigeria
             </h1>
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-8">
-              <span className="flex items-center gap-1.5"><User size={14} /> Wematech Africa</span>
+              <span className="flex items-center gap-1.5"><User size={14} /> Katimoja Africa</span>
               <span className="flex items-center gap-1.5"><Calendar size={14} /> April 2026</span>
               <span className="flex items-center gap-1.5"><Clock size={14} /> 8 min read</span>
             </div>
@@ -120,7 +120,7 @@ const BlogPost_AICoreBankingNigeria = () => {
                   <div className="mt-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
                     <p className="text-sm text-foreground/80">
                       <ChevronRight size={14} className="inline text-primary mr-1" />
-                      Wematech's <Link to="/solutions#ai-banking-core" className="text-primary hover:underline font-semibold">AI Banking Core</Link> platform delivers agentic AI for fraud detection, orchestration, and 9,000+ automated decisions per hour.
+                      Katimoja's <Link to="/solutions#ai-banking-core" className="text-primary hover:underline font-semibold">AI Banking Core</Link> platform delivers agentic AI for fraud detection, orchestration, and 9,000+ automated decisions per hour.
                     </p>
                   </div>
                 </div>
@@ -202,7 +202,7 @@ const BlogPost_AICoreBankingNigeria = () => {
                   <div className="mt-4 p-4 rounded-xl bg-accent/5 border border-accent/10">
                     <p className="text-sm text-foreground/80">
                       <ChevronRight size={14} className="inline text-accent mr-1" />
-                      Wematech's <Link to="/solutions#tigiverse" className="text-primary hover:underline font-semibold">TigiVerse AI Copilot</Link> enables banks to deploy domain-specific AI agents for credit, compliance, trade finance, treasury, and customer service.
+                      Katimoja's <Link to="/solutions#tigiverse" className="text-primary hover:underline font-semibold">TigiVerse AI Copilot</Link> enables banks to deploy domain-specific AI agents for credit, compliance, trade finance, treasury, and customer service.
                     </p>
                   </div>
                 </div>
@@ -312,7 +312,7 @@ const BlogPost_AICoreBankingNigeria = () => {
                 The question for Nigerian banks is not whether to adopt AI, but how fast to move and where to start.
               </p>
               <p>
-                At Wematech Africa, we build AI-first core banking technology specifically designed for African financial institutions — with deep expertise in Nigeria, Kenya, South Africa, and across the continent. Our platform integrates with existing infrastructure, deploys rapidly, and delivers measurable outcomes from day one.
+                At Katimoja Africa, we build AI-first core banking technology specifically designed for African financial institutions — with deep expertise in Nigeria, Kenya, South Africa, and across the continent. Our platform integrates with existing infrastructure, deploys rapidly, and delivers measurable outcomes from day one.
               </p>
             </div>
           </section>
@@ -323,7 +323,7 @@ const BlogPost_AICoreBankingNigeria = () => {
               Ready to explore what AI-powered core banking looks like for your institution?
             </p>
             <Link to="/contact" className="btn-primary inline-block text-sm px-8 py-3">
-              Get in Touch with Wematech Africa
+              Get in Touch with Katimoja Africa
             </Link>
           </div>
 

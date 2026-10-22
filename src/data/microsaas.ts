@@ -118,7 +118,7 @@ export const microSaaSProducts: MicroSaaSProduct[] = [
     ],
     bigStat: { value: "2× MRR", label: "Bank earns + retains" },
     whyImpulse:
-      "Banks pay Wematech a platform fee, then charge SMEs $5–15/mo on top. Pays for itself immediately.",
+      "Banks pay Katimoja a platform fee, then charge SMEs $5–15/mo on top. Pays for itself immediately.",
     pricing: [
       { amount: "$199", period: "Up to 500 SMEs" },
       { amount: "$499", period: "Up to 2,000 SMEs" },
@@ -181,7 +181,7 @@ export const microSaaSProducts: MicroSaaSProduct[] = [
       "Building even an MVP from scratch costs $200K+",
     ],
     features: [
-      "Wematech BaaS API credentials (sandbox + production)",
+      "Katimoja BaaS API credentials (sandbox + production)",
       "Pre-built React Native mobile app template",
       "KYC integration: Smile ID or Onfido out of box",
       "CBN/CBK licence application guide + templates",

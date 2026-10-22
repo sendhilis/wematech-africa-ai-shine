@@ -24,9 +24,9 @@ const blogPosts: BlogPost[] = [
     slug: "best-banking-technology-vendor-africa-2026",
     title: "Best Banking Technology Vendor Africa 2026 — The Honest Comparison",
     excerpt:
-      "Wematech Africa vs Temenos, Mambu, Oradian, Backbase, and Finastra — a direct, criterion-by-criterion comparison of the six platforms most evaluated by African financial institutions in 2026.",
+      "Katimoja Africa vs Temenos, Mambu, Oradian, Backbase, and Finastra — a direct, criterion-by-criterion comparison of the six platforms most evaluated by African financial institutions in 2026.",
     gradient: "from-primary/30 via-primary/10 to-accent/20",
-    author: "Wematech Research Team",
+    author: "Katimoja Research Team",
     date: "April 2026",
     readTime: "8 min read",
     tags: ["Vendor Comparison", "Core Banking", "Africa"],
@@ -37,7 +37,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Pre-configured for CBN compliance including the March 2026 AML AI mandate. Covers 44 licensed banks, 900+ MFIs, and 200+ fintechs — no customisation required.",
     gradient: "from-emerald-500/30 via-primary/10 to-accent/20",
-    author: "Wematech Africa",
+    author: "Katimoja Africa",
     date: "April 2026",
     readTime: "9 min read",
     tags: ["Nigeria", "CBN", "Core Banking"],
@@ -48,7 +48,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "AI-first banking technology for Kenya with native M-Pesa integration, CBK regulatory compliance, and SACCO digital banking infrastructure across 39 banks and 4,000+ SACCOs.",
     gradient: "from-accent/30 via-primary/10 to-primary/20",
-    author: "Wematech Africa",
+    author: "Katimoja Africa",
     date: "April 2026",
     readTime: "7 min read",
     tags: ["Kenya", "M-Pesa", "SACCO"],
@@ -59,7 +59,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "AI-first banking technology pre-configured for FSCA conduct requirements, SARB prudential standards, NCA consumer credit, and the COFI Bill transitioning throughout 2026.",
     gradient: "from-primary/25 via-accent/15 to-primary/10",
-    author: "Wematech Africa",
+    author: "Katimoja Africa",
     date: "April 2026",
     readTime: "6 min read",
     tags: ["South Africa", "FSCA", "COFI"],
@@ -70,7 +70,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Score and approve any African customer in under 4 seconds using 400+ alternative data signals. Unlock the $330B unmet SME credit demand across the continent.",
     gradient: "from-accent/35 via-primary/15 to-primary/10",
-    author: "Wematech Africa",
+    author: "Katimoja Africa",
     date: "April 2026",
     readTime: "7 min read",
     tags: ["Digital Lending", "AI Credit Scoring", "Africa"],
@@ -81,7 +81,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Kenya did not wait for traditional banks to solve financial inclusion. It built something better. Discover how M-Pesa's mobile money infrastructure is reshaping financial services across Africa.",
     image: blogImage2,
-    author: "Wematech Africa",
+    author: "Katimoja Africa",
     date: "April 2026",
     readTime: "9 min read",
     tags: ["Mobile Money", "Kenya", "Financial Inclusion", "M-Pesa"],
@@ -92,7 +92,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Nigeria's banking sector is at an inflection point. With over 133 million financially excluded adults and one of Africa's most dynamic fintech ecosystems, AI is quietly reshaping how banks operate.",
     image: blogImage,
-    author: "Wematech Africa",
+    author: "Katimoja Africa",
     date: "April 2026",
     readTime: "8 min read",
     tags: ["AI Banking", "Nigeria", "Core Banking", "Fintech"],
@@ -103,12 +103,12 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Helmet>
-        <title>Blog | Wematech Africa — AI Banking Insights for Africa</title>
+        <title>Blog | Katimoja Africa — AI Banking Insights for Africa</title>
         <meta
           name="description"
-          content="Expert insights on AI-powered banking technology, digital transformation, and fintech innovation across Africa from the Wematech Africa team."
+          content="Expert insights on AI-powered banking technology, digital transformation, and fintech innovation across Africa from the Katimoja Africa team."
         />
-        <link rel="canonical" href="https://www.wematech.in/blog" />
+        <link rel="canonical" href="https://wematech.africa/blog" />
       </Helmet>
       <Navbar />
 

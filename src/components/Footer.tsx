@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-4">
-              <img src={logoIcon} alt="WeMaTech" className="h-12 w-12 drop-shadow-[0_0_12px_hsl(40_92%_56%/0.4)]" />
+              <img src={logoIcon} alt="Katimoja" className="h-12 w-12 drop-shadow-[0_0_12px_hsl(40_92%_56%/0.4)]" />
               <div className="flex flex-col">
                 <span className="text-xl font-bold font-heading text-foreground">
                   Wema<span className="text-accent">Tech</span>
@@ -83,7 +83,7 @@ const Footer = () => {
 
         <div className="border-t border-border/30 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Wematech. All rights reserved.
+            © {new Date().getFullYear()} Katimoja. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
             Powering Africa's Digital Financial Future

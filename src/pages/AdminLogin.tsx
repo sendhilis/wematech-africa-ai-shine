@@ -37,7 +37,7 @@ const AdminLogin = () => {
             <Lock className="h-6 w-6 text-primary" />
           </div>
           <CardTitle className="text-2xl text-foreground">Admin Login</CardTitle>
-          <CardDescription>Sign in to access the Wematech admin dashboard</CardDescription>
+          <CardDescription>Sign in to access the Katimoja admin dashboard</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin} className="space-y-4">
@@ -46,7 +46,7 @@ const AdminLogin = () => {
               <Input
                 id="email"
                 type="email"
-                placeholder="admin@wematech.in"
+                placeholder="Your work email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
