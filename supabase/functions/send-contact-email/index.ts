@@ -5,7 +5,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const RECIPIENT_EMAILS = ["sendhil.kumar@wematech.africa", "tejas@wematech.africa"];
+const RECIPIENT_EMAILS = ["info@katimoja.africa"];
 const RESEND_API_URL = "https://api.resend.com";
 
 interface ContactFormData {
