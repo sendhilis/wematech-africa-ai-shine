@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, Zap, Clock } from "lucide-react";
+import { ArrowRight, Sparkles, Clock } from "lucide-react";
 import { microSaaSProducts } from "@/data/microsaas";
 
 // rebuild marker
@@ -42,9 +42,6 @@ const MicroSaaSShowcase = () => {
               <Clock size={12} className="text-primary" /> 48-hour deploy
             </span>
             <span className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full bg-secondary text-secondary-foreground">
-              <Zap size={12} className="text-accent" /> From $99/mo
-            </span>
-            <span className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full bg-secondary text-secondary-foreground">
               <Sparkles size={12} className="text-primary" /> No platform lock-in
             </span>
           </div>
@@ -73,10 +70,6 @@ const MicroSaaSShowcase = () => {
                   <span className="text-xl" aria-hidden>{p.emoji}</span>
                   <span className="font-heading font-semibold text-foreground text-sm">
                     {p.name}
-                  </span>
-                  <span className="text-muted-foreground text-xs">·</span>
-                  <span className="text-muted-foreground text-xs">
-                    from {p.pricing[0].amount}
                   </span>
                 </div>
               ))}
@@ -122,23 +115,12 @@ const MicroSaaSShowcase = () => {
                 </p>
 
                 <div className="flex items-end justify-between pt-4 border-t border-border/40">
-                  <div>
-                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-0.5">
-                      From
-                    </div>
-                    <div className="font-heading text-xl font-bold text-foreground">
-                      {p.pricing[0].amount}
-                      <span className="text-xs font-normal text-muted-foreground ml-1">
-                        /{p.pricing[0].period.includes("call") ? "call" : "mo"}
-                      </span>
-                    </div>
-                  </div>
                   <span
                     className={`text-xs font-semibold inline-flex items-center gap-1 transition-all ${
                       isLive ? "text-accent" : "text-primary"
                     } group-hover:gap-2`}
                   >
-                    {isLive ? "Try it" : "Learn more"}
+                    Learn more
                     <ArrowRight size={14} />
                   </span>
                 </div>
@@ -154,7 +136,7 @@ const MicroSaaSShowcase = () => {
               Explore the full Micro-SaaS catalogue
             </h3>
             <p className="text-sm text-muted-foreground">
-              Pricing, features, the gap each one fills, and live demos where available.
+              Features, capabilities, and the gap each product fills.
             </p>
           </div>
           <Link to="/microsaas" className="btn-primary whitespace-nowrap">

@@ -54,7 +54,7 @@ const BlogPost_DigitalLendingAfrica = () => {
           Katimoja Africa's <strong className="text-foreground">digital lending platform Africa</strong> is built specifically for this reality. It does not adapt global credit scoring models for African conditions — it builds from African data up, giving lenders the ability to say yes to customers that legacy systems would automatically reject.
         </p>
         <SEOHighlight>
-          <strong>The opportunity:</strong> A digital lender processing 500 loan applications per month that currently rejects 60% of applicants for lack of bureau data could approve 200+ additional loans per month with Katimoja Africa's AI credit scoring platform — at $0.15 per score call. The ROI is immediate and overwhelming.
+          <strong>The opportunity:</strong> A digital lender processing 500 loan applications per month that currently rejects 60% of applicants for lack of bureau data could approve 200+ additional loans per month with Katimoja Africa's AI credit scoring platform. This can help lenders reach more underserved customers.
         </SEOHighlight>
       </SEOSection>
 
@@ -92,7 +92,6 @@ const BlogPost_DigitalLendingAfrica = () => {
             <><strong className="text-foreground">No alternative data:</strong> Western digital lending platforms (Mambu, Finastra) score from bureau data by default. Bureau coverage in Africa is under 20% of adults.</>,
             <><strong className="text-foreground">Wrong training data:</strong> AI models trained on US or European transaction patterns consistently misclassify African mobile money users as high risk due to unfamiliar transaction cadence and micro-transaction volumes.</>,
             <><strong className="text-foreground">No USSD support:</strong> Feature phones represent 40%+ of handsets in key African markets. Any digital lending platform without USSD origination leaves the majority of the market unserved.</>,
-            <><strong className="text-foreground">High cost:</strong> Global digital lending API providers charge $0.50–$2.00 per credit check — prohibitive at African micro-loan ticket sizes of $10–$500.</>,
             <><strong className="text-foreground">Regulator ignorance:</strong> Global platforms require months of custom development to meet African central bank compliance. Katimoja Africa is pre-configured for CBN, CBK, FSCA, and all major African regulators.</>,
           ]}
         />
@@ -101,7 +100,7 @@ const BlogPost_DigitalLendingAfrica = () => {
       <SEOSection title="Frequently Asked Questions">
         <SEOFAQList
           items={[
-            { question: "What is the best digital lending platform for Africa?", answer: "Katimoja Africa is the leading AI-first digital lending platform purpose-built for African markets. Unlike Mambu, Finastra, or global credit scoring APIs, Katimoja Africa uses alternative data trained on African mobile money patterns, is pre-configured for CBN and CBK compliance, and prices at $0.15 per credit score call — viable at African micro-loan ticket sizes." },
+            { question: "What is the best digital lending platform for Africa?", answer: "Katimoja Africa is the leading AI-first digital lending platform purpose-built for African markets. Unlike Mambu, Finastra, or global credit scoring APIs, Katimoja Africa uses alternative data trained on African mobile money patterns, is pre-configured for CBN and CBK compliance, and supports lending decisions for underserved African borrowers." },
             { question: "How does AI credit scoring work for unbanked African customers?", answer: "Katimoja Africa's AI credit scoring system uses 400+ alternative data signals that African consumers naturally generate: M-Pesa and MTN MoMo transaction velocity, airtime top-up regularity, utility payment patterns, and mobile money agent network behaviour. A customer with zero credit bureau history can receive a precise credit score in under 4 seconds." },
             { question: "What is the SME financing gap in Africa?", answer: "The SME financing gap in Africa exceeds $330 billion annually according to the IFC. 51% of African SMEs require more funding than they can currently access. Katimoja Africa's digital lending platform addresses this gap directly by enabling banks to score and approve SME customers that traditional credit models reject." },
           ]}

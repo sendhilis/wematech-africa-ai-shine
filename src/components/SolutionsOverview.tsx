@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, Phone, Bot, CreditCard, Lock, FileBarChart } from "lucide-react";
+import { ArrowRight, Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, Phone, Bot, CreditCard, FileBarChart } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useDemoAccess } from "@/contexts/DemoAccessContext";
 
 const solutions = [
@@ -10,7 +11,6 @@ const solutions = [
     description: "Complete enterprise wallet with 14 core modules, agent networks, merchant payments, AI micro-loans, and conversational banking. Serving 10M+ users with <0.3s latency.",
     features: ["P2P Transfers", "Agent Network", "AI Credit Scoring", "Merchant QR Payments"],
     slug: "globalpay",
-    demo: "https://tesfapay.techmonk.world",
     color: "primary",
   },
   {
@@ -20,7 +20,6 @@ const solutions = [
     description: "Comprehensive 5-portal financial services platform — retail, agency, merchant, internet banking & admin. Built with shadow banking architecture and regulatory compliance.",
     features: ["Retail Portal", "Agency Banking", "Corporate RBAC", "Loan Management"],
     slug: "digital-experience",
-    demo: "https://nisir.techurate.world",
     color: "accent",
   },
   {
@@ -30,7 +29,6 @@ const solutions = [
     description: "AI-powered credit scoring for thin-file borrowers across 12+ African markets. WoE/IV logistic regression, document OCR, fairness monitoring, and bureau fusion.",
     features: ["AI Scoring (300-900)", "Smart OCR", "Fairness Auditing", "40+ Integrations"],
     slug: "africaone",
-    demo: "https://africaone.techmonk.world",
     color: "primary",
   },
   {
@@ -40,7 +38,6 @@ const solutions = [
     description: "Agentic AI platform for banking operations — CDP, multi-agent runtime, orchestration, fraud detection, dormancy revival, and cross-sell automation with 9,000+ decisions/hour.",
     features: ["AI Agents", "CDP & Segments", "Fraud Detection", "Orchestration"],
     slug: "ai-banking-core",
-    demo: "https://abcstudio.techmonk.world",
     color: "accent",
   },
   {
@@ -50,7 +47,6 @@ const solutions = [
     description: "White-label digital wallet solution with multi-wallet savings, auto-save features, bill payments, and bank-grade security. Deployed across East African markets.",
     features: ["Multi-Wallets", "Auto-Save", "Bill Payments", "Diaspora Connect"],
     slug: "smart-wallet",
-    demo: "https://tesfapay.techmonk.world",
     color: "primary",
   },
   {
@@ -60,7 +56,6 @@ const solutions = [
     description: "Cost-effective AI voice-based call center for banks with multilingual support in English, Arabic & French. 78% AI resolution rate, real-time monitoring, and intelligent call routing.",
     features: ["Multilingual AI", "Live Dashboard", "Agent Analytics", "Knowledge Base"],
     slug: "eximvoice",
-    demo: "https://eximvoice.techmonk.world",
     color: "accent",
   },
   {
@@ -70,7 +65,6 @@ const solutions = [
     description: "Custom-built AI agent platform for commercial banks — deploy domain-specific copilots for credit, compliance, trade finance, treasury, and customer service operations.",
     features: ["Domain Agents", "Agent Builder", "Compliance AI", "Trade Finance"],
     slug: "tigiverse",
-    demo: "https://tigiverseai.techurate.world",
     color: "primary",
   },
   {
@@ -80,7 +74,6 @@ const solutions = [
     description: "End-to-end digital lending with uncollateralized credit, AI scoring, smart savings, and instant disbursement for MSMEs. Zero collateral, sub-60s disbursement.",
     features: ["Instant Credit", "AI Scoring", "Smart Savings", "MSME Dashboard"],
     slug: "digital-lending",
-    demo: "https://michu2.0.wematech.in",
     color: "accent",
   },
   {
@@ -90,13 +83,12 @@ const solutions = [
     description: "Automated central bank compliance reporting with AI that adapts to any African country's Reserve Bank framework. 16+ regulatory reports, immutable audit trails, and 100% submission accuracy — zero manual spreadsheets.",
     features: ["Auto-Compliance", "AI Country Adapt", "16+ Reports", "Audit Trail"],
     slug: "finiosiq",
-    demo: "https://nisir.techurate.world",
     color: "primary",
   },
 ];
 
 const SolutionsOverview = () => {
-  const { requestDemoAccess, isVerified } = useDemoAccess();
+  const { requestDemoAccess } = useDemoAccess();
 
   return (
     <section id="solutions-overview" className="py-24 relative">
@@ -140,12 +132,12 @@ const SolutionsOverview = () => {
                 <Link to={`/solutions#${sol.slug}`} className="text-sm text-primary font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
                   Learn More <ArrowRight size={14} />
                 </Link>
-                <button
-                  onClick={() => requestDemoAccess(sol.demo)}
+                <Button variant="ghost"
+                  onClick={() => requestDemoAccess(sol.title)}
                   className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center gap-1"
                 >
-                  {isVerified ? "View Demo →" : <><Lock size={12} /> View Demo</>}
-                </button>
+                  Request demo
+                </Button>
               </div>
             </div>
           ))}

@@ -512,7 +512,7 @@ const ComplianceAlertApp = () => {
                 Pick the regulators you must comply with
               </h1>
               <p className="text-sm text-muted-foreground">
-                {config.countries.length} selected · billing adapts to your selection
+                {config.countries.length} selected
               </p>
             </div>
           </div>
@@ -536,7 +536,7 @@ const ComplianceAlertApp = () => {
                   className="text-left p-3 rounded-lg border border-border/50 bg-secondary/30 hover:border-accent/50 hover:bg-accent/5 transition"
                 >
                   <div className="text-xs font-semibold text-foreground">{b.label}</div>
-                  <div className="text-[10px] text-muted-foreground mt-0.5">{b.price}</div>
+
                 </button>
               ))}
             </div>
@@ -662,14 +662,6 @@ const ComplianceAlertApp = () => {
                 />
               )}
             </ChannelToggle>
-          </div>
-
-          <div className="mt-6 p-4 rounded-lg bg-accent/5 border border-accent/20 flex gap-3">
-            <Sparkles size={16} className="text-accent flex-shrink-0 mt-0.5" />
-            <div className="text-xs text-muted-foreground">
-              <span className="text-foreground font-medium">Billing connection coming soon.</span>{" "}
-              For now, your alerts run on a 14-day complimentary trial — no card required.
-            </div>
           </div>
 
           <div className="flex justify-between mt-7">

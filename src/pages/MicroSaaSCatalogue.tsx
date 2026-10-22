@@ -5,14 +5,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { microSaaSProducts } from "@/data/microsaas";
 
+import { Button } from "@/components/ui/button";
+import { useDemoAccess } from "@/contexts/DemoAccessContext";
+
 const MicroSaaSCatalogue = () => {
+  const { requestDemoAccess } = useDemoAccess();
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Katimoja Micro-SaaS Catalogue | Plug-in AI for African Banking</title>
         <meta
           name="description"
-          content="5 plug-in AI Micro-SaaS products for African banks, neobanks, MFIs and SMEs. BankBot, ScoreAI, SME Pulse, ComplianceAlert and LaunchKit. From $99/mo."
+          content="5 plug-in AI Micro-SaaS products for African banks, neobanks, MFIs and SMEs. BankBot, ScoreAI, SME Pulse, ComplianceAlert and LaunchKit."
         />
         <link rel="canonical" href="https://wematech.africa/microsaas" />
       </Helmet>
@@ -30,8 +34,7 @@ const MicroSaaSCatalogue = () => {
             Plug-in AI for African banks. <span className="glow-text">Live in 48 hours.</span>
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            Five standalone subscriptions. Each solves one acute pain. Each priced
-            for a department head to approve without procurement. Each expands into
+            Five standalone AI products. Each solves one acute pain and expands into
             the full Katimoja platform.
           </p>
         </div>
@@ -128,20 +131,8 @@ const MicroSaaSCatalogue = () => {
                   </div>
                 </div>
 
-                {/* Footer pricing + CTAs */}
-                <div className="p-6 sm:p-7 bg-secondary/30 border-t border-border/40 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
-                  <div className="flex flex-wrap gap-x-6 gap-y-3">
-                    {p.pricing.map((t) => (
-                      <div key={t.period}>
-                        <div className="font-heading text-xl font-bold text-foreground">
-                          {t.amount}
-                        </div>
-                        <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
-                          {t.period}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                {/* Product enquiries */}
+                <div className="p-6 sm:p-7 bg-secondary/30 border-t border-border/40 flex justify-end">
                   <div className="flex items-center gap-3 w-full lg:w-auto">
                     <Link
                       to={`/microsaas/${p.slug}`}
@@ -149,21 +140,9 @@ const MicroSaaSCatalogue = () => {
                     >
                       Details
                     </Link>
-                    {p.hasLiveProduct ? (
-                      <Link
-                        to={`/microsaas/${p.slug}/app`}
-                        className="btn-primary text-xs flex-1 lg:flex-none whitespace-nowrap"
-                      >
-                        {p.ctaLabel ?? "Launch"}
-                      </Link>
-                    ) : (
-                      <Link
-                        to="/contact"
-                        className="btn-primary text-xs flex-1 lg:flex-none whitespace-nowrap"
-                      >
-                        Request access →
-                      </Link>
-                    )}
+                    <Button onClick={() => requestDemoAccess(p.name)} className="text-xs flex-1 lg:flex-none">
+                      Request demo <ArrowRight size={14} />
+                    </Button>
                   </div>
                 </div>
               </article>

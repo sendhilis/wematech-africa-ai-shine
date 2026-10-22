@@ -5,7 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import DemoBooking from "@/components/DemoBooking";
-import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, Lock, Phone, Bot, CreditCard, FileBarChart } from "lucide-react";
+import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, Phone, Bot, CreditCard, FileBarChart } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useDemoAccess } from "@/contexts/DemoAccessContext";
 import CornerOracle from "@/components/CornerOracle";
 
@@ -15,7 +16,6 @@ const solutions = [
     icon: Wallet,
     title: "GlobalPay",
     subtitle: "The World's Most Advanced AI-Powered Mobile Money Platform",
-    demo: "https://tesfapay.techmonk.world",
     hero: "Complete enterprise wallet ecosystem with 14 core modules, 50+ AI features, and infrastructure to serve 10M+ users across African markets.",
     modules: [
       { name: "Customer Wallet", desc: "P2P transfers, bill payments, merchant QR, airtime top-up, smart savings goals" },
@@ -37,7 +37,6 @@ const solutions = [
     icon: LayoutDashboard,
     title: "Digital Experience Platform",
     subtitle: "Comprehensive Multi-Portal Financial Services Ecosystem",
-    demo: "https://nisir.techurate.world",
     hero: "Five independent portals unified under a single platform — retail banking, agency banking, merchant payments, internet banking, and centralized admin console.",
     modules: [
       { name: "Retail Portal", desc: "Mobile-first individual banking — savings, payments, loans, tiered KYC compliance" },
@@ -59,7 +58,6 @@ const solutions = [
     icon: BarChart3,
     title: "AfricaOne",
     subtitle: "Pan-African Credit Intelligence Platform",
-    demo: "https://africaone.techmonk.world",
     hero: "AI-powered credit scoring, document intelligence, and production-grade integrations for Africa's financial future. Serving 12+ markets with thin-file friendly scoring.",
     modules: [
       { name: "AI Scoring Engine", desc: "WoE + IV logistic regression, 300-900 score range, 5 risk bands (A-E), bureau fusion, <2s latency" },
@@ -81,7 +79,6 @@ const solutions = [
     icon: Brain,
     title: "AI Banking Core",
     subtitle: "Intelligent Operations & Customer Engagement Platform",
-    demo: "https://abcstudio.techmonk.world",
     hero: "Agentic AI platform for banking operations — Customer Data Platform, multi-agent runtime, orchestration engine, and autonomous decision-making at scale.",
     modules: [
       { name: "Customer Data Platform", desc: "2.4M+ profiles, 12,847 events/sec, real-time segmentation, 96.8% data quality" },
@@ -103,7 +100,6 @@ const solutions = [
     icon: Smartphone,
     title: "Smart Wallet",
     subtitle: "White-Label Consumer Digital Wallet",
-    demo: "https://tesfapay.techmonk.world",
     hero: "Ready-to-deploy digital wallet with multi-wallet savings, auto-save features, bill payments, and diaspora connectivity. Bank-grade security for all transactions.",
     modules: [
       { name: "Multi-Wallets", desc: "Education, Medical, Holiday & Retirement purpose-built savings wallets" },
@@ -125,7 +121,6 @@ const solutions = [
     icon: Phone,
     title: "EximVoice",
     subtitle: "AI-Powered Voice Call Center for Banks",
-    demo: "https://eximvoice.techmonk.world",
     hero: "Versatile, cost-effective AI voice-based call center solution for banks. Experience multilingual support in English, Arabic, and French with real-time AI resolution, intelligent call routing, and comprehensive agent performance analytics.",
     modules: [
       { name: "AI Voice Agent", desc: "Handles routine inquiries — mobile banking, card issues, balance checks — with 78% AI resolution rate" },
@@ -147,7 +142,6 @@ const solutions = [
     icon: Bot,
     title: "TigiVerse",
     subtitle: "AI Copilot Platform for Commercial Banks",
-    demo: "https://tigiverseai.techurate.world",
     hero: "Custom-built AI agent platform for commercial banks — deploy domain-specific copilots for credit analysis, compliance, customer service, trade finance, and treasury operations. Each agent is trained on your bank's policies, products, and regulatory framework.",
     modules: [
       { name: "Credit Analysis Agent", desc: "Automated financial statement analysis, risk assessment, covenant monitoring, and credit memo generation" },
@@ -169,7 +163,6 @@ const solutions = [
     icon: CreditCard,
     title: "Digital Lending Platform",
     subtitle: "Uncollateralized MSME Credit & Wallet Services",
-    demo: "https://michu2.0.wematech.in",
     hero: "End-to-end digital lending platform delivering uncollateralized credit, wallet services, and smart savings for MSMEs. AI-powered credit decisioning with alternative data scoring, instant disbursement, and automated collections.",
     modules: [
       { name: "Instant Credit", desc: "Uncollateralized micro-loans with AI credit scoring, alternative data signals, and real-time disbursement" },
@@ -191,7 +184,6 @@ const solutions = [
     icon: FileBarChart,
     title: "FiniosIQ",
     subtitle: "AI-Powered Regulatory Reporting & Analytics Engine",
-    demo: "https://nisir.techurate.world",
     hero: "Purpose-built, AI-adaptive regulatory reporting engine that auto-configures to any African country's Reserve Bank compliance framework. From balance sheets to capital adequacy — 16+ reports generated, validated, and submission-ready with zero manual spreadsheets. Embedded within the Digital Experience Platform.",
     modules: [
       { name: "Business Data Pipeline", desc: "Server-side ETL ingesting CBS/LOS data nightly, classifying every loan through the central bank's asset grading framework with immutable snapshot versioning" },
@@ -212,7 +204,7 @@ const solutions = [
 
 const Solutions = () => {
   const location = useLocation();
-  const { requestDemoAccess, isVerified } = useDemoAccess();
+  const { requestDemoAccess } = useDemoAccess();
 
   useEffect(() => {
     if (location.hash) {
@@ -273,12 +265,12 @@ const Solutions = () => {
                     </div>
                     <p className="text-muted-foreground leading-relaxed max-w-2xl">{sol.hero}</p>
                   </div>
-                  <button
-                    onClick={() => requestDemoAccess(sol.demo)}
+                  <Button
+                    onClick={() => requestDemoAccess(sol.title)}
                     className="btn-primary flex items-center gap-2 flex-shrink-0"
                   >
-                    {isVerified ? "View Demo" : <><Lock size={14} /> View Demo</>}
-                  </button>
+                    Request demo <ArrowRight size={14} />
+                  </Button>
                 </div>
 
                 {/* Stats */}
