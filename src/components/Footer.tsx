@@ -52,8 +52,7 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-foreground mb-4">Connect</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="mailto:sendhil.kumar@wematech.africa" className="break-all hover:text-primary">sendhil.kumar@wematech.africa</a></li>
-              <li><a href="mailto:tejas@wematech.africa" className="break-all hover:text-primary">tejas@wematech.africa</a></li>
+              <li><a href="mailto:info@katimoja.africa" className="break-all hover:text-primary">info@katimoja.africa</a></li>
               <li>Africa Headquarters: Nairobi, Kenya</li>
             </ul>
             <div className="mt-4">
