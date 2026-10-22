@@ -26,7 +26,6 @@ const rows: Array<{ criterion: string; cells: string[]; highlight?: boolean }> =
   { criterion: "Mobile money interoperability", cells: ["✓ M-Pesa, MTN, Airtel", "⚠ Via middleware", "⚠ Via middleware", "✓ Built-in", "✗ Not native", "⚠ Via middleware"], highlight: true },
   { criterion: "African language AI support", cells: ["✓ 6 languages", "✗ None", "✗ None", "✗ None", "✗ None", "✗ None"] },
   { criterion: "Typical deployment time", cells: ["✓ 8–12 weeks", "✗ 18–36 months", "⚠ 6–12 months", "⚠ 3–6 months", "✗ 12–24 months", "✗ 18–36 months"], highlight: true },
-  { criterion: "Entry price (SaaS)", cells: ["✓ $99/mo (micro-SaaS)", "✗ $500K+", "⚠ $100K+/yr", "⚠ $50K+/yr", "✗ $500K+", "✗ $500K+"] },
   { criterion: "African reg reporting (all 54)", cells: ["✓ Pre-built", "⚠ Custom per market", "✗ Not included", "⚠ 12 markets", "✗ Not included", "⚠ Custom per market"], highlight: true },
 ];
 
@@ -53,9 +52,8 @@ const BlogPost_BestBankingTechnologyVendorAfrica2026 = () => {
       meta={{ author: "Katimoja Research Team", date: "April 2026", readTime: "8 min read" }}
       stats={[
         { value: "6", label: "Vendors compared" },
-        { value: "9", label: "Evaluation criteria" },
+        { value: "8", label: "Evaluation criteria" },
         { value: "8–12w", label: "Katimoja deployment" },
-        { value: "$99/mo", label: "Entry price (micro-SaaS)" },
       ]}
       ctaTitle="See Katimoja Africa vs Your Current Platform"
       ctaText="Tell us what banking technology you are currently evaluating or running. We do a direct capability comparison against your specific requirements within 48 hours."
@@ -150,7 +148,7 @@ const BlogPost_BestBankingTechnologyVendorAfrica2026 = () => {
           items={[
             { question: "What is the best Temenos alternative for Africa?", answer: "Katimoja Africa and Oradian are the two most credible Temenos alternatives for African financial institutions. Katimoja Africa covers the full stack (core banking, digital lending, fraud detection, open banking APIs) with African-native AI, while Oradian focuses on MFIs and community banks. Both deploy in a fraction of Temenos's typical 18–36 month timeline and at a fraction of the cost." },
             { question: "What is the best Mambu alternative for Africa?", answer: "Katimoja Africa is the leading Mambu alternative for African banks and fintechs. While Mambu is cloud-native and deploys quickly for basic digital banking, it requires significant custom development to support USSD channels, alternative data credit scoring, and African regulatory reporting — the three most common gaps cited by African institutions that have deployed Mambu. Katimoja Africa includes all three by default." },
-            { question: "Who won Best Banking Technology Vendor Africa 2026?", answer: "Intellect Design Arena won the Best Banking Technology Vendor of the Year 2026 award at the Africa Fintech Forum in Johannesburg for its eMACH.ai platform. Katimoja Africa, as an emerging Africa-native platform, is positioned as the purpose-built alternative to enterprise-grade global vendors — offering the same AI-first capabilities at a price point and deployment timeline accessible to Tier 2 and Tier 3 African banks, MFIs, and fintechs." },
+            { question: "Who won Best Banking Technology Vendor Africa 2026?", answer: "Intellect Design Arena won the Best Banking Technology Vendor of the Year 2026 award at the Africa Fintech Forum in Johannesburg for its eMACH.ai platform. Katimoja Africa, as an emerging Africa-native platform, is positioned as the purpose-built alternative to enterprise-grade global vendors — offering the same AI-first capabilities with capabilities tailored to Tier 2 and Tier 3 African banks, MFIs, and fintechs." },
           ]}
         />
       </SEOSection>

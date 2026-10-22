@@ -512,7 +512,7 @@ const ComplianceAlertApp = () => {
                 Pick the regulators you must comply with
               </h1>
               <p className="text-sm text-muted-foreground">
-                {config.countries.length} selected · billing adapts to your selection
+                {config.countries.length} selected
               </p>
             </div>
           </div>
@@ -536,7 +536,7 @@ const ComplianceAlertApp = () => {
                   className="text-left p-3 rounded-lg border border-border/50 bg-secondary/30 hover:border-accent/50 hover:bg-accent/5 transition"
                 >
                   <div className="text-xs font-semibold text-foreground">{b.label}</div>
-                  <div className="text-[10px] text-muted-foreground mt-0.5">{b.price}</div>
+
                 </button>
               ))}
             </div>

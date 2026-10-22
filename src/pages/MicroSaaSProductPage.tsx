@@ -5,8 +5,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getMicroSaaSBySlug, microSaaSProducts } from "@/data/microsaas";
 
+import { Button } from "@/components/ui/button";
+import { useDemoAccess } from "@/contexts/DemoAccessContext";
+
 const MicroSaaSProductPage = () => {
   const { slug } = useParams();
+  const { requestDemoAccess } = useDemoAccess();
   const product = slug ? getMicroSaaSBySlug(slug) : undefined;
 
   if (!product) return <Navigate to="/microsaas" replace />;
@@ -75,18 +79,9 @@ const MicroSaaSProductPage = () => {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            {product.hasLiveProduct ? (
-              <Link to={`/microsaas/${product.slug}/app`} className="btn-primary">
-                {product.ctaLabel ?? "Launch"} <ArrowRight size={16} className="ml-1" />
-              </Link>
-            ) : (
-              <Link to="/contact" className="btn-primary">
-                Request access <ArrowRight size={16} className="ml-1" />
-              </Link>
-            )}
-            <a href="#pricing" className="btn-outline">
-              See pricing
-            </a>
+            <Button onClick={() => requestDemoAccess(product.name)}>
+              Request demo <ArrowRight size={16} />
+            </Button>
           </div>
         </div>
       </section>
@@ -132,43 +127,6 @@ const MicroSaaSProductPage = () => {
             {product.bigStat.label}
           </div>
           <p className="text-foreground/80 text-lg leading-relaxed">{product.whyImpulse}</p>
-        </div>
-      </section>
-
-      <section id="pricing" className="py-16 border-t border-border/30">
-        <div className="section-container">
-          <h2 className="font-heading text-3xl font-bold text-foreground text-center mb-2">
-            Pricing
-          </h2>
-          <p className="text-muted-foreground text-center mb-10">
-            Cancel anytime. Billing connection coming soon.
-          </p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {product.pricing.map((t, i) => (
-              <div
-                key={t.period}
-                className={`glass-card p-6 text-center ${i === 1 ? "ring-1 ring-accent/40" : ""}`}
-              >
-                <div className="font-heading text-3xl font-bold text-foreground mb-1">
-                  {t.amount}
-                </div>
-                <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
-                  {t.period}
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            {product.hasLiveProduct ? (
-              <Link to={`/microsaas/${product.slug}/app`} className="btn-primary">
-                {product.ctaLabel ?? "Launch product"}
-              </Link>
-            ) : (
-              <Link to="/contact" className="btn-primary">
-                Request early access
-              </Link>
-            )}
-          </div>
         </div>
       </section>
 

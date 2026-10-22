@@ -30,10 +30,10 @@ export const AFRICAN_COUNTRIES: Country[] = [
 ];
 
 export const REGION_BUNDLES = [
-  { id: "ecowas", label: "West Africa (ECOWAS)", countries: ["NG", "GH", "SN", "CI"], price: "$599/mo" },
-  { id: "eac", label: "East African Community", countries: ["KE", "TZ", "UG", "RW", "ET"], price: "$499/mo" },
-  { id: "sadc", label: "Southern Africa (SADC)", countries: ["ZA", "ZM", "ZW", "BW", "MU", "NA", "MZ"], price: "$499/mo" },
-  { id: "all", label: "All Africa (54 markets)", countries: ["*"], price: "$799/mo" },
+  { id: "ecowas", label: "West Africa (ECOWAS)", countries: ["NG", "GH", "SN", "CI"] },
+  { id: "eac", label: "East African Community", countries: ["KE", "TZ", "UG", "RW", "ET"] },
+  { id: "sadc", label: "Southern Africa (SADC)", countries: ["ZA", "ZM", "ZW", "BW", "MU", "NA", "MZ"] },
+  { id: "all", label: "All Africa (54 markets)", countries: ["*"] },
 ];
 
 export type Severity = "critical" | "high" | "medium" | "info";
