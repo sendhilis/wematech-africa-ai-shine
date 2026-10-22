@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import WhatsAppCta from "@/components/WhatsAppCta";
 
 const CTASection = () => {
   return (
@@ -24,6 +25,7 @@ const CTASection = () => {
           <Link to="/solutions" className="btn-outline text-sm sm:text-base px-6 sm:px-10 py-3 sm:py-4">
             View Solutions
           </Link>
+          <WhatsAppCta className="btn-outline text-sm sm:text-base px-6 sm:px-10 py-3 sm:py-4 flex items-center gap-2" label="WhatsApp Us" />
         </div>
       </div>
     </section>

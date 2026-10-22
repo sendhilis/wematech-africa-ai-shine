@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { ArrowRight, Check, ArrowLeft, Sparkles } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppCta from "@/components/WhatsAppCta";
 import { getMicroSaaSBySlug, microSaaSProducts } from "@/data/microsaas";
 
 import { Button } from "@/components/ui/button";
@@ -82,6 +83,7 @@ const MicroSaaSProductPage = () => {
             <Button onClick={() => requestDemoAccess(product.name)}>
               Request demo <ArrowRight size={16} />
             </Button>
+            <WhatsAppCta className="btn-outline flex items-center gap-2 text-sm px-6 py-2.5" label="WhatsApp Us" />
           </div>
         </div>
       </section>

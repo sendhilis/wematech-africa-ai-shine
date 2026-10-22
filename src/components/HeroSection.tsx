@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Cpu, Globe } from "lucide-react";
+import WhatsAppCta from "@/components/WhatsAppCta";
 import heroImage from "@/assets/hero-africa.webp";
 import heroImageMobile from "@/assets/hero-africa-mobile.webp";
 
@@ -53,6 +54,7 @@ const HeroSection = () => {
             <Link to="/solutions#book-demo" className="btn-outline">
               Request Demo
             </Link>
+            <WhatsAppCta className="btn-outline flex items-center gap-2" label="WhatsApp Us" />
           </div>
 
           <div className="animate-slide-up-delayed-2 grid grid-cols-3 gap-3 sm:gap-6 max-w-lg">
