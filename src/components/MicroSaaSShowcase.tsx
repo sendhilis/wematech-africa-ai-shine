@@ -115,11 +115,6 @@ const MicroSaaSShowcase = () => {
                 </p>
 
                 <div className="flex items-end justify-between pt-4 border-t border-border/40">
-                  <span className="text-xs font-normal text-muted-foreground ml-1">
-                        /{p.pricing[0].period.includes("call") ? "call" : "mo"}
-                      </span>
-                    </div>
-                  </div>
                   <span
                     className={`text-xs font-semibold inline-flex items-center gap-1 transition-all ${
                       isLive ? "text-accent" : "text-primary"

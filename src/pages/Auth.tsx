@@ -86,7 +86,7 @@ const Auth = () => {
                 {mode === "signup" ? "Activate ComplianceAlert" : "Welcome back"}
               </h1>
               <p className="text-xs text-muted-foreground">
-                {mode === "signup" ? "Free 14-day trial · no card" : "Sign in to your dashboard"}
+                {mode === "signup" ? "Create your account" : "Sign in to your dashboard"}
               </p>
             </div>
           </div>

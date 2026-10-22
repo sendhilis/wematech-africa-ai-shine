@@ -664,14 +664,6 @@ const ComplianceAlertApp = () => {
             </ChannelToggle>
           </div>
 
-          <div className="mt-6 p-4 rounded-lg bg-accent/5 border border-accent/20 flex gap-3">
-            <Sparkles size={16} className="text-accent flex-shrink-0 mt-0.5" />
-            <div className="text-xs text-muted-foreground">
-              <span className="text-foreground font-medium">Billing connection coming soon.</span>{" "}
-              For now, your alerts run on a 14-day complimentary trial — no card required.
-            </div>
-          </div>
-
           <div className="flex justify-between mt-7">
             <button onClick={() => setOnboardStage(2)} className="btn-outline">
               <ArrowLeft size={16} className="mr-1" /> Back
