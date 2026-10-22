@@ -43,9 +43,9 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Katimoja"
-              width={1374}
-              height={326}
-              className="h-auto w-36 sm:w-44 object-contain"
+              width={376}
+              height={198}
+              className="h-12 sm:h-14 w-auto object-contain rounded-md bg-card-foreground p-1"
             />
             <span className="text-muted-foreground font-medium leading-tight hidden sm:block text-[10px]">
               Advanced AI. Accessible to All.
