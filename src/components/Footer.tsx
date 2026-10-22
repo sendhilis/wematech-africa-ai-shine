@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoIcon from "@/assets/wematech-icon.webp";
+import logo from "@/assets/katimoja-logo.png";
 
 const Footer = () => {
   return (
@@ -7,16 +7,11 @@ const Footer = () => {
       <div className="section-container py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-1">
-            <Link to="/" className="flex items-center gap-3 mb-4">
-              <img src={logoIcon} alt="Katimoja" className="h-12 w-12 drop-shadow-[0_0_12px_hsl(40_92%_56%/0.4)]" />
-              <div className="flex flex-col">
-                <span className="text-xl font-bold font-heading text-foreground">
-                  Wema<span className="text-accent">Tech</span>
-                </span>
+            <Link to="/" aria-label="Katimoja home" className="flex flex-col items-start gap-2 mb-4">
+              <img src={logo} alt="Katimoja" width={1374} height={326} loading="lazy" className="h-auto w-44 object-contain" />
                 <span className="text-[10px] text-muted-foreground font-medium">
                   Advanced AI. Accessible to All.
                 </span>
-              </div>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Africa-focused AI-powered digital banking solutions. Transforming financial services across the continent.
@@ -57,9 +52,9 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-foreground mb-4">Connect</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>info@wematech.io</li>
-              <li>Nairobi, Kenya</li>
-              <li>Addis Ababa, Ethiopia</li>
+              <li><a href="mailto:sendhil.kumar@wematech.africa" className="break-all hover:text-primary">sendhil.kumar@wematech.africa</a></li>
+              <li><a href="mailto:tejas@wematech.africa" className="break-all hover:text-primary">tejas@wematech.africa</a></li>
+              <li>Africa Headquarters: Nairobi, Kenya</li>
             </ul>
             <div className="mt-4">
               <a
