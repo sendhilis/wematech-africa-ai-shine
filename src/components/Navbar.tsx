@@ -52,7 +52,7 @@ const Navbar = () => {
             </span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-5 lg:gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -75,7 +75,7 @@ const Navbar = () => {
           variant="ghost"
           size="icon"
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="lg:hidden text-foreground"
+          className="md:hidden text-foreground"
           aria-label={isMobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileOpen}
           aria-controls="mobile-navigation"
@@ -85,7 +85,7 @@ const Navbar = () => {
       </div>
 
       {isMobileOpen && (
-        <div id="mobile-navigation" className="lg:hidden mt-2 mx-4 rounded-lg p-6 space-y-4 bg-background/95 backdrop-blur-xl border border-border/30">
+        <div id="mobile-navigation" className="md:hidden mt-2 mx-4 rounded-lg p-6 space-y-4 bg-background/95 backdrop-blur-xl border border-border/30">
           {navLinks.map((link) => (
             <Link
               key={link.path}
