@@ -4,3 +4,8 @@
 - [x] Update page titles, social descriptions, and organization metadata.
 - [x] Verify pages, navigation, imagery, and remaining legacy references.
 - Preserve existing working domains, email addresses, stored data, and service identifiers until replacements are confirmed.
+
+# Product enquiries
+- [ ] Remove product prices and Pricing links/tabs across catalogue, product pages, dashboard, and sales articles.
+- [ ] Replace demo access with email-only enquiries to info@katimoja.africa and an on-screen acknowledgement.
+- [ ] Verify an actual enquiry send, no demo navigation, and relevant tests.
