@@ -24,4 +24,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://www.wematech.africa/sitemap.xml
+Sitemap: https://www.katimoja.africa/sitemap.xml
