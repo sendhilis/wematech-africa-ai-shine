@@ -9,7 +9,7 @@ import CornerOracle from "@/components/CornerOracle";
 const StatsSection = lazy(() => import("@/components/StatsSection"));
 const MicroSaaSShowcase = lazy(() => import("@/components/MicroSaaSShowcase"));
 const SolutionsOverview = lazy(() => import("@/components/SolutionsOverview"));
-const WhyWematech = lazy(() => import("@/components/WhyWematech"));
+const WhyKatimoja = lazy(() => import("@/components/WhyKatimoja"));
 const SEOContentBlock = lazy(() => import("@/components/SEOContentBlock"));
 const FAQSection = lazy(() => import("@/components/FAQSection"));
 const CTASection = lazy(() => import("@/components/CTASection"));
@@ -34,7 +34,7 @@ const Index = () => {
         <StatsSection />
         <MicroSaaSShowcase />
         <SolutionsOverview />
-        <WhyWematech />
+        <WhyKatimoja />
         <SEOContentBlock />
         <FAQSection />
         <CTASection />

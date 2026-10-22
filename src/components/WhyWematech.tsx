@@ -33,7 +33,7 @@ const reasons = [
   },
 ];
 
-const WhyWematech = () => {
+const WhyKatimoja = () => {
   return (
     <section id="why-katimoja" className="py-24 relative">
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-accent/3 blur-[180px]" />
@@ -80,4 +80,4 @@ const WhyWematech = () => {
   );
 };
 
-export default WhyWematech;
+export default WhyKatimoja;
