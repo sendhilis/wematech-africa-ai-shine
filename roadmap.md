@@ -9,3 +9,6 @@
 - [x] Remove product prices and Pricing links/tabs across catalogue, product pages, dashboard, and sales articles.
 - [x] Replace demo access with email-only enquiries to info@katimoja.africa and an on-screen acknowledgement.
 - [x] Verify an actual enquiry send, no demo navigation, and relevant tests.
+
+# SEO corrections
+- [x] Point robots.txt and sitemap.xml at https://www.katimoja.africa and add public product pages; published and verified live (18 URLs, no legacy domain references).
