@@ -9,7 +9,7 @@ const MicroSaaSCatalogue = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Wematech Micro-SaaS Catalogue | Plug-in AI for African Banking</title>
+        <title>Katimoja Micro-SaaS Catalogue | Plug-in AI for African Banking</title>
         <meta
           name="description"
           content="5 plug-in AI Micro-SaaS products for African banks, neobanks, MFIs and SMEs. BankBot, ScoreAI, SME Pulse, ComplianceAlert and LaunchKit. From $99/mo."
@@ -24,7 +24,7 @@ const MicroSaaSCatalogue = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-primary/10 blur-[180px] pointer-events-none" />
         <div className="section-container relative z-10">
           <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-4 py-1.5 text-xs font-semibold text-accent mb-6">
-            <Zap size={14} /> Wematech Micro-SaaS
+            <Zap size={14} /> Katimoja Micro-SaaS
           </span>
           <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-5 max-w-4xl">
             Plug-in AI for African banks. <span className="glow-text">Live in 48 hours.</span>
@@ -32,7 +32,7 @@ const MicroSaaSCatalogue = () => {
           <p className="text-muted-foreground text-lg max-w-2xl">
             Five standalone subscriptions. Each solves one acute pain. Each priced
             for a department head to approve without procurement. Each expands into
-            the full Wematech platform.
+            the full Katimoja platform.
           </p>
         </div>
       </section>

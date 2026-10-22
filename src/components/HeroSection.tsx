@@ -34,7 +34,7 @@ const HeroSection = () => {
           </div>
 
           <h1 className="animate-slide-up font-heading text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-foreground mb-4 sm:mb-6">
-            AI-Powered
+              Katimoja
             <br />
             <span className="glow-text">Banking Technology</span>
             <br />
@@ -42,7 +42,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="animate-slide-up-delayed text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-8 sm:mb-10">
-            End-to-end digital financial infrastructure — from mobile money platforms and credit intelligence 
+            Headquartered in Nairobi, Kenya. End-to-end digital financial infrastructure — from mobile money platforms and credit intelligence 
             to AI-driven customer engagement. Built for Africa's fastest-growing markets.
           </p>
 

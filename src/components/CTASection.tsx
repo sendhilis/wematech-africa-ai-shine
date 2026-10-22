@@ -14,7 +14,7 @@ const CTASection = () => {
           <span className="glow-text">Digital Banking in Africa?</span>
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto mb-10 text-lg">
-          Partner with Wematech to deploy world-class financial infrastructure 
+          Partner with Katimoja to deploy world-class financial infrastructure 
           tailored for African markets.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">

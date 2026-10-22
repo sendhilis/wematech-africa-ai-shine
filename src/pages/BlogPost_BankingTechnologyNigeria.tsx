@@ -9,7 +9,7 @@ import SEOLandingLayout, {
 const BlogPost_BankingTechnologyNigeria = () => {
   return (
     <SEOLandingLayout
-      title="Banking Technology Nigeria — AI-First Platform for Nigerian Banks | Wematech Africa"
+      title="Banking Technology Nigeria — AI-First Platform for Nigerian Banks | Katimoja Africa"
       description="Purpose-built banking technology for Nigeria. CBN-compliant AI core banking, digital lending, fraud detection and open banking APIs. Covering all 44 licensed banks, 900+ MFIs and Nigerian fintechs."
       canonical="https://wematech.africa/blog/banking-technology-nigeria"
       jsonLd={[
@@ -17,7 +17,7 @@ const BlogPost_BankingTechnologyNigeria = () => {
           "@context": "https://schema.org",
           "@type": "Article",
           headline: "Banking Technology Nigeria — The Complete 2026 Guide",
-          author: { "@type": "Organization", name: "Wematech Africa" },
+          author: { "@type": "Organization", name: "Katimoja Africa" },
           datePublished: "2026-04-20",
           mainEntityOfPage: "https://wematech.africa/blog/banking-technology-nigeria",
         },
@@ -30,7 +30,7 @@ const BlogPost_BankingTechnologyNigeria = () => {
               name: "What is the best banking technology platform for Nigeria?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Wematech Africa is the most comprehensive AI-first banking technology platform purpose-built for Nigerian banks. Pre-configured for CBN compliance including the March 2026 AML AI mandate, BVN integration, NIBSS payment rails, and NIN-based KYC — no customisation required.",
+                text: "Katimoja Africa is the most comprehensive AI-first banking technology platform purpose-built for Nigerian banks. Pre-configured for CBN compliance including the March 2026 AML AI mandate, BVN integration, NIBSS payment rails, and NIN-based KYC — no customisation required.",
               },
             },
             {
@@ -52,8 +52,8 @@ const BlogPost_BankingTechnologyNigeria = () => {
           — AI-First, CBN-Compliant, Ready in Weeks
         </>
       }
-      lead="Wematech Africa is the leading banking technology platform for Nigerian banks, MFIs, and fintechs. Pre-configured for CBN compliance including the March 2026 AML AI mandate. Covers 44 licensed banks, 900+ MFIs, and 200+ fintechs — no customisation required."
-      meta={{ author: "Wematech Africa", date: "April 2026", readTime: "9 min read" }}
+      lead="Katimoja Africa is the leading banking technology platform for Nigerian banks, MFIs, and fintechs. Pre-configured for CBN compliance including the March 2026 AML AI mandate. Covers 44 licensed banks, 900+ MFIs, and 200+ fintechs — no customisation required."
+      meta={{ author: "Katimoja Africa", date: "April 2026", readTime: "9 min read" }}
       stats={[
         { value: "44", label: "CBN-licensed commercial banks" },
         { value: "900+", label: "Microfinance banks in Nigeria" },
@@ -79,11 +79,11 @@ const BlogPost_BankingTechnologyNigeria = () => {
           The <strong className="text-foreground">banking technology Nigeria</strong> sector is undergoing its most significant transformation in a decade. Three forces are driving simultaneous pressure on every institution: the CBN's capital adequacy restructuring (raising international bank requirements from $33M to $330M), the March 2026 AML AI compliance mandate requiring explainable AI within 18 months, and the rise of fintechs like Moniepoint, OPay, and Kuda forcing Tier 2 and Tier 3 banks to modernise or lose market share.
         </p>
         <SEOHighlight>
-          <strong>The CBN 2026 AI mandate — what it means for your bank:</strong> In March 2026, the CBN issued baseline standards requiring all Nigerian banks to implement explainable AI for credit and fraud decisions. Banks have 18 months to comply. A system that denies a loan must explain its decision. A fraud model must not discriminate by region or demographic. Legacy core banking systems physically cannot produce this audit trail — they were not designed for it. Wematech Africa's banking technology Nigeria platform meets this requirement by default.
+          <strong>The CBN 2026 AI mandate — what it means for your bank:</strong> In March 2026, the CBN issued baseline standards requiring all Nigerian banks to implement explainable AI for credit and fraud decisions. Banks have 18 months to comply. A system that denies a loan must explain its decision. A fraud model must not discriminate by region or demographic. Legacy core banking systems physically cannot produce this audit trail — they were not designed for it. Katimoja Africa's banking technology Nigeria platform meets this requirement by default.
         </SEOHighlight>
       </SEOSection>
 
-      <SEOSection title="Wematech Africa's Nigerian Banking Technology Stack">
+      <SEOSection title="Katimoja Africa's Nigerian Banking Technology Stack">
         <SEOSolutionGrid
           items={[
             { title: "CBN-Native Core Banking", description: "Cloud-native core banking pre-configured for CBN regulatory reporting, AMCON requirements, and Bank Resolution frameworks. No customisation needed for Nigerian compliance." },
@@ -101,7 +101,7 @@ const BlogPost_BankingTechnologyNigeria = () => {
           Traditional Nigerian banks are losing ground to three categories of competitors simultaneously. Fintechs like Moniepoint (processing $17B+ in monthly transactions) and OPay (900,000 agents) are capturing SME banking relationships that should belong to licensed banks. Neobanks like Kuda and Carbon are winning young urban customers with superior mobile experiences. And international platforms like Flutterwave and Paystack are embedding payments infrastructure directly into e-commerce and business software.
         </p>
         <p>
-          The banks that are winning this battle share one characteristic: they are running <strong className="text-foreground">digital banking Nigeria</strong> infrastructure that can match fintech speed without sacrificing regulatory compliance. Wematech Africa's platform is the only banking software Nigeria built specifically for this competitive environment — delivering fintech-speed digital experiences on a CBN-compliant core banking foundation.
+          The banks that are winning this battle share one characteristic: they are running <strong className="text-foreground">digital banking Nigeria</strong> infrastructure that can match fintech speed without sacrificing regulatory compliance. Katimoja Africa's platform is the only banking software Nigeria built specifically for this competitive environment — delivering fintech-speed digital experiences on a CBN-compliant core banking foundation.
         </p>
         <SEOSubheading>Core Banking Nigeria — The Legacy System Problem</SEOSubheading>
         <p>
@@ -111,17 +111,17 @@ const BlogPost_BankingTechnologyNigeria = () => {
 
       <SEOSection title="Fintech Banking Nigeria — The Partnership Model">
         <p>
-          Nigerian banks that are growing fastest in 2026 are not competing with fintechs — they are partnering with them through Banking-as-a-Service (BaaS) models. Wematech Africa's open banking API layer enables Nigerian banks to expose their infrastructure to licensed fintechs, earning fee income from transactions while the fintech handles customer acquisition. This model has been proven by Providus Bank and others — and Wematech Africa's platform makes it accessible to any CBN-licensed institution.
+          Nigerian banks that are growing fastest in 2026 are not competing with fintechs — they are partnering with them through Banking-as-a-Service (BaaS) models. Katimoja Africa's open banking API layer enables Nigerian banks to expose their infrastructure to licensed fintechs, earning fee income from transactions while the fintech handles customer acquisition. This model has been proven by Providus Bank and others — and Katimoja Africa's platform makes it accessible to any CBN-licensed institution.
         </p>
       </SEOSection>
 
       <SEOSection title="Frequently Asked Questions">
         <SEOFAQList
           items={[
-            { question: "What is the best banking technology platform for Nigeria?", answer: "Wematech Africa is the most comprehensive AI-first banking technology platform purpose-built for Nigerian banks. Pre-configured for CBN compliance including the March 2026 AML AI mandate, with native BVN integration, NIBSS payment rails, and NIN-based KYC. Unlike Temenos or Finacle, no customisation is required to meet Nigerian regulatory requirements." },
-            { question: "What does the CBN March 2026 AI banking mandate require?", answer: "The CBN issued baseline standards for automated AML solutions using AI in March 2026. Nigerian banks have 18 months to implement explainable AI for credit and fraud decisions, with full audit trails and human oversight protocols. Wematech Africa's platform meets every requirement of this mandate by default — no additional development needed." },
-            { question: "How does Wematech Africa differ from Wema Bank Nigeria?", answer: "Wematech Africa is an AI banking technology company — a software platform provider serving banks, MFIs, and fintechs across Africa. Wema Bank is a Nigerian commercial bank (ALAT platform). Wematech Africa is a technology vendor, not a bank. We provide the infrastructure that financial institutions use to deliver banking services to their customers." },
-            { question: "How many banks can Wematech Africa serve in Nigeria?", answer: "Wematech Africa's banking technology Nigeria platform is designed to serve all licensed CBN institutions: 44 commercial banks, 900+ microfinance banks, payment service banks, mortgage banks, and the growing fintech ecosystem. Our modular architecture means MFIs can start with a single module without deploying the full platform." },
+            { question: "What is the best banking technology platform for Nigeria?", answer: "Katimoja Africa is the most comprehensive AI-first banking technology platform purpose-built for Nigerian banks. Pre-configured for CBN compliance including the March 2026 AML AI mandate, with native BVN integration, NIBSS payment rails, and NIN-based KYC. Unlike Temenos or Finacle, no customisation is required to meet Nigerian regulatory requirements." },
+            { question: "What does the CBN March 2026 AI banking mandate require?", answer: "The CBN issued baseline standards for automated AML solutions using AI in March 2026. Nigerian banks have 18 months to implement explainable AI for credit and fraud decisions, with full audit trails and human oversight protocols. Katimoja Africa's platform meets every requirement of this mandate by default — no additional development needed." },
+            { question: "How does Katimoja Africa differ from Wema Bank Nigeria?", answer: "Katimoja Africa is an AI banking technology company — a software platform provider serving banks, MFIs, and fintechs across Africa. Wema Bank is a Nigerian commercial bank (ALAT platform). Katimoja Africa is a technology vendor, not a bank. We provide the infrastructure that financial institutions use to deliver banking services to their customers." },
+            { question: "How many banks can Katimoja Africa serve in Nigeria?", answer: "Katimoja Africa's banking technology Nigeria platform is designed to serve all licensed CBN institutions: 44 commercial banks, 900+ microfinance banks, payment service banks, mortgage banks, and the growing fintech ecosystem. Our modular architecture means MFIs can start with a single module without deploying the full platform." },
           ]}
         />
       </SEOSection>

@@ -8,14 +8,14 @@ import SEOLandingLayout, {
 const BlogPost_BankingTechnologySouthAfrica = () => {
   return (
     <SEOLandingLayout
-      title="Banking Technology South Africa — FSCA-Compliant AI Platform | Wematech Africa"
+      title="Banking Technology South Africa — FSCA-Compliant AI Platform | Katimoja Africa"
       description="AI-first banking technology for South Africa. FSCA and SARB compliant, COFI Bill ready, digital banking solutions for commercial banks, neobanks and fintechs."
       canonical="https://wematech.africa/blog/banking-technology-south-africa"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "Article",
         headline: "Banking Technology South Africa 2026",
-        author: { "@type": "Organization", name: "Wematech Africa" },
+        author: { "@type": "Organization", name: "Katimoja Africa" },
         datePublished: "2026-04-20",
         mainEntityOfPage: "https://wematech.africa/blog/banking-technology-south-africa",
       }}
@@ -26,8 +26,8 @@ const BlogPost_BankingTechnologySouthAfrica = () => {
           — FSCA Compliant, COFI Bill Ready
         </>
       }
-      lead="Wematech Africa provides AI-first banking technology for South African banks, neobanks, and fintechs. Pre-configured for FSCA conduct requirements, SARB prudential standards, NCA consumer credit compliance, and the Conduct of Financial Institutions Bill transitioning throughout 2026."
-      meta={{ author: "Wematech Africa", date: "April 2026", readTime: "6 min read" }}
+      lead="Katimoja Africa provides AI-first banking technology for South African banks, neobanks, and fintechs. Pre-configured for FSCA conduct requirements, SARB prudential standards, NCA consumer credit compliance, and the Conduct of Financial Institutions Bill transitioning throughout 2026."
+      meta={{ author: "Katimoja Africa", date: "April 2026", readTime: "6 min read" }}
       stats={[
         { value: "2nd", label: "Most sophisticated digital banking globally" },
         { value: "$30B", label: "SME financing gap" },
@@ -49,10 +49,10 @@ const BlogPost_BankingTechnologySouthAfrica = () => {
           South Africa has Africa's most sophisticated <strong className="text-foreground">digital banking</strong> sector — and by some measures, the world's second most advanced behind Singapore. The Oliver Wyman digital banking index ranked South Africa second globally in 2024 for digital banking sales capability, underpinned by institutions like TymeBank, Discovery Bank, and Capitec that have redefined what digital-first banking means in an emerging market context.
         </p>
         <p>
-          Yet South Africa also has the continent's most demanding <strong className="text-foreground">banking technology</strong> compliance environment. The FSCA and SARB operate a Twin Peaks regulatory model that requires financial institutions to meet both conduct and prudential standards simultaneously. The Conduct of Financial Institutions Bill — transitioning throughout 2026 — is restructuring the entire subordinate legislative framework. Wematech Africa's South Africa configuration is built for this complexity by default.
+          Yet South Africa also has the continent's most demanding <strong className="text-foreground">banking technology</strong> compliance environment. The FSCA and SARB operate a Twin Peaks regulatory model that requires financial institutions to meet both conduct and prudential standards simultaneously. The Conduct of Financial Institutions Bill — transitioning throughout 2026 — is restructuring the entire subordinate legislative framework. Katimoja Africa's South Africa configuration is built for this complexity by default.
         </p>
         <SEOHighlight>
-          <strong>COFI Bill 2026:</strong> The Conduct of Financial Institutions Bill is South Africa's most significant financial sector legislative reform in decades. It repeals and replaces multiple existing Acts including FAIS. Financial institutions must transition their compliance frameworks throughout 2026. Wematech Africa's FSCA compliance module is being updated in real-time as COFI subsidiary legislation is published — customers are automatically compliant as frameworks change.
+          <strong>COFI Bill 2026:</strong> The Conduct of Financial Institutions Bill is South Africa's most significant financial sector legislative reform in decades. It repeals and replaces multiple existing Acts including FAIS. Financial institutions must transition their compliance frameworks throughout 2026. Katimoja Africa's FSCA compliance module is being updated in real-time as COFI subsidiary legislation is published — customers are automatically compliant as frameworks change.
         </SEOHighlight>
       </SEOSection>
 
@@ -71,15 +71,15 @@ const BlogPost_BankingTechnologySouthAfrica = () => {
 
       <SEOSection title="South Africa's $30B SME Financing Gap">
         <p>
-          South Africa's SME financing gap is estimated at $30 billion by the IFC. Nearly 780,000 formal firms and 2 million informal firms are affected. Commercial banks fail to serve this market because traditional credit scoring models — relying on turnover thresholds, collateral, and formal credit histories — systematically exclude the majority of South African SMEs. Wematech Africa's AI credit scoring platform uses alternative data including utility payment patterns, cash flow proxies, and business registration records to build credit profiles for SMEs that traditional models cannot assess.
+          South Africa's SME financing gap is estimated at $30 billion by the IFC. Nearly 780,000 formal firms and 2 million informal firms are affected. Commercial banks fail to serve this market because traditional credit scoring models — relying on turnover thresholds, collateral, and formal credit histories — systematically exclude the majority of South African SMEs. Katimoja Africa's AI credit scoring platform uses alternative data including utility payment patterns, cash flow proxies, and business registration records to build credit profiles for SMEs that traditional models cannot assess.
         </p>
       </SEOSection>
 
       <SEOSection title="Frequently Asked Questions">
         <SEOFAQList
           items={[
-            { question: "What is the COFI Bill and how does it affect banking technology in South Africa?", answer: "The Conduct of Financial Institutions Bill is South Africa's most significant financial sector regulatory reform. It repeals and replaces existing legislation including the FAIS Act, bringing all financial institutions under a unified conduct framework. COFI transition is occurring throughout 2025–2027. Wematech Africa's FSCA compliance module updates automatically as COFI subsidiary legislation is published, keeping customers compliant throughout the transition." },
-            { question: "What banking technology do South African neobanks use?", answer: "South African neobanks like TymeBank have pioneered mobile-first, data-driven banking models using cloud-native core banking, AI-powered customer engagement, and alternative data credit scoring. Wematech Africa provides the same technology stack for new market entrants — enabling greenfield neobank launches in 8–12 weeks with full FSCA and SARB compliance built in." },
+            { question: "What is the COFI Bill and how does it affect banking technology in South Africa?", answer: "The Conduct of Financial Institutions Bill is South Africa's most significant financial sector regulatory reform. It repeals and replaces existing legislation including the FAIS Act, bringing all financial institutions under a unified conduct framework. COFI transition is occurring throughout 2025–2027. Katimoja Africa's FSCA compliance module updates automatically as COFI subsidiary legislation is published, keeping customers compliant throughout the transition." },
+            { question: "What banking technology do South African neobanks use?", answer: "South African neobanks like TymeBank have pioneered mobile-first, data-driven banking models using cloud-native core banking, AI-powered customer engagement, and alternative data credit scoring. Katimoja Africa provides the same technology stack for new market entrants — enabling greenfield neobank launches in 8–12 weeks with full FSCA and SARB compliance built in." },
           ]}
         />
       </SEOSection>

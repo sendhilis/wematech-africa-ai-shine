@@ -8,14 +8,14 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Helmet>
-        <title>About Wematech Africa | Engineering Africa's Financial Future with AI</title>
-        <meta name="description" content="Wematech Africa is an AI-first banking technology company serving 12+ African markets with core banking, credit intelligence, mobile money, and agentic AI solutions." />
-        <link rel="canonical" href="https://www.wematech.in/about" />
+        <title>About Katimoja Africa | Engineering Africa's Financial Future with AI</title>
+        <meta name="description" content="Katimoja Africa is an AI-first banking technology company serving 12+ African markets with core banking, credit intelligence, mobile money, and agentic AI solutions." />
+        <link rel="canonical" href="https://wematech.africa/about" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.wematech.in/about" />
-        <meta property="og:title" content="About Wematech Africa | Engineering Africa's Financial Future with AI" />
-        <meta property="og:description" content="Wematech Africa is an AI-first banking technology company serving 12+ African markets with core banking, credit intelligence, mobile money, and agentic AI solutions." />
-        <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f7cf74b4-a501-4ba6-99fc-605ac5a3ae20/id-preview-e944887d--163e2fc3-2f9a-45c2-8325-972d3fd31fb6.lovable.app-1775979718401.png" />
+        <meta property="og:url" content="https://wematech.africa/about" />
+        <meta property="og:title" content="About Katimoja Africa | Engineering Africa's Financial Future with AI" />
+        <meta property="og:description" content="Katimoja Africa is an AI-first banking technology company serving 12+ African markets with core banking, credit intelligence, mobile money, and agentic AI solutions." />
+
       </Helmet>
       <Navbar />
 
@@ -23,7 +23,7 @@ const About = () => {
         <div className="section-container">
           <div className="max-w-3xl">
             <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-4 block">
-              About Wematech
+              About Katimoja
             </span>
             <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Engineering Africa's
@@ -31,7 +31,7 @@ const About = () => {
               <span className="glow-text">Financial Future</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Wematech is an Africa-focused digital banking solutions provider specializing in AI-powered 
+              Katimoja is headquartered in Nairobi, Kenya — an Africa-focused digital banking solutions provider specializing in AI-powered 
               financial infrastructure. We build ground-up for the continent's unique markets — from 
               mobile money platforms and credit intelligence to autonomous banking operations.
             </p>

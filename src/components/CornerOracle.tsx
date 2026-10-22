@@ -61,7 +61,7 @@ const defaultQAs: SectionQA[] = [
     answer: "It depends on your primary objective. For mobile money and wallet infrastructure: GlobalPay. For credit decisioning: AfricaOne. For full digital banking portals: Digital Experience Platform. Most clients start with one and expand — we're modular by design.",
   },
   {
-    sectionId: "why-wematech",
+    sectionId: "why-katimoja",
     question: "Do you work with regulators directly?",
     answer: "Yes. We've worked with central banks in Ethiopia, Kenya, Nigeria, and Rwanda on compliance frameworks. Our RegTech modules are pre-configured for CBN, CBK, NBE, and BNR requirements. We handle regulatory reporting as part of the platform.",
   },

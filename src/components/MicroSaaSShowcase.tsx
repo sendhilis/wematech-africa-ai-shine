@@ -23,7 +23,7 @@ const MicroSaaSShowcase = () => {
         <div className="max-w-3xl mb-12">
           <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-4 py-1.5 text-xs font-semibold text-accent mb-6">
             <Sparkles size={14} />
-            New · Wematech Micro-SaaS
+            New · Katimoja Micro-SaaS
           </span>
           <h2
             id="microsaas-heading"

@@ -1131,7 +1131,7 @@ const ComplianceAlertApp = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>ComplianceAlert — Wematech Africa</title>
+        <title>ComplianceAlert — Katimoja Africa</title>
         <meta name="robots" content="noindex" />
       </Helmet>
       <Navbar />

@@ -10,14 +10,14 @@ const BlogPost_MobileMoneyKenya = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>How Mobile Money Infrastructure is Driving Financial Inclusion in Kenya | Wematech Africa</title>
+        <title>How Mobile Money Infrastructure is Driving Financial Inclusion in Kenya | Katimoja Africa</title>
         <meta
           name="description"
           content="Discover how mobile money infrastructure is driving financial inclusion in Kenya — from M-Pesa's agent networks and USSD technology to AI credit scoring and super apps. A guide for African financial institutions."
         />
-        <link rel="canonical" href="https://www.wematech.in/blog/mobile-money-financial-inclusion-kenya" />
+        <link rel="canonical" href="https://wematech.africa/blog/mobile-money-financial-inclusion-kenya" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://www.wematech.in/blog/mobile-money-financial-inclusion-kenya" />
+        <meta property="og:url" content="https://wematech.africa/blog/mobile-money-financial-inclusion-kenya" />
         <meta property="og:title" content="How Mobile Money Infrastructure is Driving Financial Inclusion in Kenya" />
         <meta property="og:description" content="Discover how mobile money infrastructure is driving financial inclusion in Kenya — from M-Pesa's agent networks to AI-powered credit scoring and digital super apps." />
         <script type="application/ld+json">
@@ -26,10 +26,10 @@ const BlogPost_MobileMoneyKenya = () => {
             "@type": "BlogPosting",
             headline: "How Mobile Money Infrastructure is Driving Financial Inclusion in Kenya",
             description: "Discover how mobile money infrastructure is driving financial inclusion in Kenya — from M-Pesa's agent networks to AI-powered credit scoring and digital super apps.",
-            author: { "@type": "Organization", name: "Wematech Africa" },
+            author: { "@type": "Organization", name: "Katimoja Africa" },
             datePublished: "2026-04-13",
-            publisher: { "@type": "Organization", name: "Wematech Africa", url: "https://www.wematech.in" },
-            mainEntityOfPage: "https://www.wematech.in/blog/mobile-money-financial-inclusion-kenya",
+            publisher: { "@type": "Organization", name: "Katimoja Africa", url: "https://wematech.africa" },
+            mainEntityOfPage: "https://wematech.africa/blog/mobile-money-financial-inclusion-kenya",
           })}
         </script>
       </Helmet>
@@ -50,7 +50,7 @@ const BlogPost_MobileMoneyKenya = () => {
               How Mobile Money Infrastructure is Driving Financial Inclusion in Kenya
             </h1>
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-8">
-              <span className="flex items-center gap-1.5"><User size={14} /> Wematech Africa</span>
+              <span className="flex items-center gap-1.5"><User size={14} /> Katimoja Africa</span>
               <span className="flex items-center gap-1.5"><Calendar size={14} /> April 2026</span>
               <span className="flex items-center gap-1.5"><Clock size={14} /> 9 min read</span>
             </div>
@@ -134,7 +134,7 @@ const BlogPost_MobileMoneyKenya = () => {
                       <div className="mt-4 p-4 rounded-xl bg-accent/5 border border-accent/10">
                         <p className="text-sm text-foreground/80">
                           <ChevronRight size={14} className="inline text-accent mr-1" />
-                          Wematech's <Link to="/solutions#digital-experience" className="text-primary hover:underline font-semibold">Digital Experience Platform</Link> and open banking API suite are purpose-built to connect with mobile money ecosystems across Africa.
+                          Katimoja's <Link to="/solutions#digital-experience" className="text-primary hover:underline font-semibold">Digital Experience Platform</Link> and open banking API suite are purpose-built to connect with mobile money ecosystems across Africa.
                         </p>
                       </div>
                     </>
@@ -199,7 +199,7 @@ const BlogPost_MobileMoneyKenya = () => {
                   <div className="mt-4 p-4 rounded-xl bg-accent/5 border border-accent/10">
                     <p className="text-sm text-foreground/80">
                       <ChevronRight size={14} className="inline text-accent mr-1" />
-                      Wematech's <Link to="/solutions#africaone" className="text-primary hover:underline font-semibold">AfricaOne Credit Intelligence</Link> platform scores thin-file borrowers across 12+ African markets using alternative data and AI.
+                      Katimoja's <Link to="/solutions#africaone" className="text-primary hover:underline font-semibold">AfricaOne Credit Intelligence</Link> platform scores thin-file borrowers across 12+ African markets using alternative data and AI.
                     </p>
                   </div>
                 </div>
@@ -324,7 +324,7 @@ const BlogPost_MobileMoneyKenya = () => {
                 Kenya proved the model. The rest of Africa is following. The question is how fast.
               </p>
               <p>
-                At Wematech Africa, we build the infrastructure that makes this possible. Our <Link to="/solutions#mobile-money" className="text-primary hover:underline font-semibold">mobile money platform</Link>, open banking API suite, and <Link to="/solutions#africaone" className="text-primary hover:underline font-semibold">AI-powered credit scoring tools</Link> are purpose-built for African financial institutions — designed to connect seamlessly with the M-Pesa ecosystem and the broader digital financial services landscape across the continent.
+                At Katimoja Africa, we build the infrastructure that makes this possible. Our <Link to="/solutions#mobile-money" className="text-primary hover:underline font-semibold">mobile money platform</Link>, open banking API suite, and <Link to="/solutions#africaone" className="text-primary hover:underline font-semibold">AI-powered credit scoring tools</Link> are purpose-built for African financial institutions — designed to connect seamlessly with the M-Pesa ecosystem and the broader digital financial services landscape across the continent.
               </p>
             </div>
           </section>
@@ -332,10 +332,10 @@ const BlogPost_MobileMoneyKenya = () => {
           {/* CTA Box */}
           <div className="mb-12 p-8 rounded-2xl border border-primary/20 bg-primary/5 text-center">
             <p className="text-foreground text-lg font-semibold mb-4">
-              Want to explore how Wematech Africa can help your institution participate in the mobile money opportunity?
+              Want to explore how Katimoja Africa can help your institution participate in the mobile money opportunity?
             </p>
             <Link to="/contact" className="btn-primary inline-block text-sm px-8 py-3">
-              Get in Touch with Wematech Africa
+              Get in Touch with Katimoja Africa
             </Link>
           </div>
 

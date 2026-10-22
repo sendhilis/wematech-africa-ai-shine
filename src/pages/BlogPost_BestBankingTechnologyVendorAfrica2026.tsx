@@ -30,19 +30,19 @@ const rows: Array<{ criterion: string; cells: string[]; highlight?: boolean }> =
   { criterion: "African reg reporting (all 54)", cells: ["✓ Pre-built", "⚠ Custom per market", "✗ Not included", "⚠ 12 markets", "✗ Not included", "⚠ Custom per market"], highlight: true },
 ];
 
-const vendors = ["Wematech Africa", "Temenos T24", "Mambu", "Oradian", "Backbase", "Finastra"];
+const vendors = ["Katimoja Africa", "Temenos T24", "Mambu", "Oradian", "Backbase", "Finastra"];
 
 const BlogPost_BestBankingTechnologyVendorAfrica2026 = () => {
   return (
     <SEOLandingLayout
-      title="Best Banking Technology Vendor Africa 2026 — Honest Comparison | Wematech Africa"
-      description="2026 comparison of the best banking technology vendors for African banks — Wematech Africa vs Temenos, Mambu, Oradian, and Backbase. Which platform is actually built for Africa?"
+      title="Best Banking Technology Vendor Africa 2026 — Honest Comparison | Katimoja Africa"
+      description="2026 comparison of the best banking technology vendors for African banks — Katimoja Africa vs Temenos, Mambu, Oradian, and Backbase. Which platform is actually built for Africa?"
       canonical="https://wematech.africa/blog/best-banking-technology-vendor-africa-2026"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "Article",
         headline: "Best Banking Technology Vendor Africa 2026 — The Complete Comparison",
-        author: { "@type": "Organization", name: "Wematech Africa" },
+        author: { "@type": "Organization", name: "Katimoja Africa" },
         datePublished: "2026-04-20",
         mainEntityOfPage:
           "https://wematech.africa/blog/best-banking-technology-vendor-africa-2026",
@@ -50,14 +50,14 @@ const BlogPost_BestBankingTechnologyVendorAfrica2026 = () => {
       tag="Vendor Comparison 2026"
       heading="Best Banking Technology Vendor Africa 2026 — The Honest Comparison"
       lead="Which banking technology platform is actually built for Africa — and which ones are global systems that have been adapted, patched, and customised to work in African markets? A direct comparison of the six most-evaluated platforms by African financial institutions in 2026."
-      meta={{ author: "Wematech Research Team", date: "April 2026", readTime: "8 min read" }}
+      meta={{ author: "Katimoja Research Team", date: "April 2026", readTime: "8 min read" }}
       stats={[
         { value: "6", label: "Vendors compared" },
         { value: "9", label: "Evaluation criteria" },
-        { value: "8–12w", label: "Wematech deployment" },
+        { value: "8–12w", label: "Katimoja deployment" },
         { value: "$99/mo", label: "Entry price (micro-SaaS)" },
       ]}
-      ctaTitle="See Wematech Africa vs Your Current Platform"
+      ctaTitle="See Katimoja Africa vs Your Current Platform"
       ctaText="Tell us what banking technology you are currently evaluating or running. We do a direct capability comparison against your specific requirements within 48 hours."
       ctaButtonText="Request a Comparison"
       related={[
@@ -132,13 +132,13 @@ const BlogPost_BestBankingTechnologyVendorAfrica2026 = () => {
 
       <SEOSection title="Oradian — The Closest Competitor">
         <p>
-          Oradian is the most legitimate alternative to Wematech Africa in the African banking technology market. It is genuinely built for African conditions, focuses specifically on MFIs and community banks, and has deep experience in Sub-Saharan Africa. The gaps are scope (Oradian does not cover the full stack from core banking to fraud detection to open banking APIs) and the AI layer (Oradian's credit decisioning does not include the alternative data machine learning capabilities that Wematech Africa's platform offers). For MFIs evaluating a <strong className="text-foreground">Mambu alternative Africa</strong> or <strong className="text-foreground">Temenos alternative Africa</strong>, Oradian and Wematech Africa are the two platforms worth serious evaluation.
+          Oradian is the most legitimate alternative to Katimoja Africa in the African banking technology market. It is genuinely built for African conditions, focuses specifically on MFIs and community banks, and has deep experience in Sub-Saharan Africa. The gaps are scope (Oradian does not cover the full stack from core banking to fraud detection to open banking APIs) and the AI layer (Oradian's credit decisioning does not include the alternative data machine learning capabilities that Katimoja Africa's platform offers). For MFIs evaluating a <strong className="text-foreground">Mambu alternative Africa</strong> or <strong className="text-foreground">Temenos alternative Africa</strong>, Oradian and Katimoja Africa are the two platforms worth serious evaluation.
         </p>
       </SEOSection>
 
       <SEOSection title='The Verdict — What "Best" Actually Means for Africa'>
         <p>
-          The <strong className="text-foreground">best digital banking platform Africa</strong> needs in 2026 is not the most feature-rich, the most globally recognised, or the one with the largest implementation partner network. It is the platform that requires the least customisation to be operational in African market conditions — meaning native USSD, native mobile money interoperability, African regulatory compliance by default, and AI models trained on African data. By this measure, Wematech Africa is the only platform that meets all four criteria simultaneously.
+          The <strong className="text-foreground">best digital banking platform Africa</strong> needs in 2026 is not the most feature-rich, the most globally recognised, or the one with the largest implementation partner network. It is the platform that requires the least customisation to be operational in African market conditions — meaning native USSD, native mobile money interoperability, African regulatory compliance by default, and AI models trained on African data. By this measure, Katimoja Africa is the only platform that meets all four criteria simultaneously.
         </p>
         <p>
           For large Tier 1 banks with $50M+ technology budgets and 3-year transformation timelines, Temenos or Finastra may still make sense given their ecosystem depth. For every other African financial institution — Tier 2 and Tier 3 banks, MFIs, SACCOs, neobanks, and fintechs — the cost and time of adapting a global platform to African conditions does not justify the brand recognition premium.
@@ -148,9 +148,9 @@ const BlogPost_BestBankingTechnologyVendorAfrica2026 = () => {
       <SEOSection title="Frequently Asked Questions">
         <SEOFAQList
           items={[
-            { question: "What is the best Temenos alternative for Africa?", answer: "Wematech Africa and Oradian are the two most credible Temenos alternatives for African financial institutions. Wematech Africa covers the full stack (core banking, digital lending, fraud detection, open banking APIs) with African-native AI, while Oradian focuses on MFIs and community banks. Both deploy in a fraction of Temenos's typical 18–36 month timeline and at a fraction of the cost." },
-            { question: "What is the best Mambu alternative for Africa?", answer: "Wematech Africa is the leading Mambu alternative for African banks and fintechs. While Mambu is cloud-native and deploys quickly for basic digital banking, it requires significant custom development to support USSD channels, alternative data credit scoring, and African regulatory reporting — the three most common gaps cited by African institutions that have deployed Mambu. Wematech Africa includes all three by default." },
-            { question: "Who won Best Banking Technology Vendor Africa 2026?", answer: "Intellect Design Arena won the Best Banking Technology Vendor of the Year 2026 award at the Africa Fintech Forum in Johannesburg for its eMACH.ai platform. Wematech Africa, as an emerging Africa-native platform, is positioned as the purpose-built alternative to enterprise-grade global vendors — offering the same AI-first capabilities at a price point and deployment timeline accessible to Tier 2 and Tier 3 African banks, MFIs, and fintechs." },
+            { question: "What is the best Temenos alternative for Africa?", answer: "Katimoja Africa and Oradian are the two most credible Temenos alternatives for African financial institutions. Katimoja Africa covers the full stack (core banking, digital lending, fraud detection, open banking APIs) with African-native AI, while Oradian focuses on MFIs and community banks. Both deploy in a fraction of Temenos's typical 18–36 month timeline and at a fraction of the cost." },
+            { question: "What is the best Mambu alternative for Africa?", answer: "Katimoja Africa is the leading Mambu alternative for African banks and fintechs. While Mambu is cloud-native and deploys quickly for basic digital banking, it requires significant custom development to support USSD channels, alternative data credit scoring, and African regulatory reporting — the three most common gaps cited by African institutions that have deployed Mambu. Katimoja Africa includes all three by default." },
+            { question: "Who won Best Banking Technology Vendor Africa 2026?", answer: "Intellect Design Arena won the Best Banking Technology Vendor of the Year 2026 award at the Africa Fintech Forum in Johannesburg for its eMACH.ai platform. Katimoja Africa, as an emerging Africa-native platform, is positioned as the purpose-built alternative to enterprise-grade global vendors — offering the same AI-first capabilities at a price point and deployment timeline accessible to Tier 2 and Tier 3 African banks, MFIs, and fintechs." },
           ]}
         />
       </SEOSection>

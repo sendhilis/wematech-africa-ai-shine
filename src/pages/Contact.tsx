@@ -69,14 +69,14 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Helmet>
-        <title>Contact Wematech Africa | Request a Demo — AI Banking Solutions</title>
-        <meta name="description" content="Get in touch with Wematech Africa to schedule a demo of our AI-powered banking technology. Offices in Nairobi and Addis Ababa serving banks and fintechs across Africa." />
-        <link rel="canonical" href="https://www.wematech.in/contact" />
+        <title>Contact Katimoja Africa | Request a Demo — AI Banking Solutions</title>
+        <meta name="description" content="Get in touch with Katimoja Africa to schedule a demo of our AI-powered banking technology. Headquartered in Nairobi, Kenya serving banks and fintechs across Africa." />
+        <link rel="canonical" href="https://wematech.africa/contact" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.wematech.in/contact" />
-        <meta property="og:title" content="Contact Wematech Africa | Request a Demo — AI Banking Solutions" />
-        <meta property="og:description" content="Get in touch with Wematech Africa to schedule a demo of our AI-powered banking technology. Offices in Nairobi and Addis Ababa serving banks and fintechs across Africa." />
-        <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f7cf74b4-a501-4ba6-99fc-605ac5a3ae20/id-preview-e944887d--163e2fc3-2f9a-45c2-8325-972d3fd31fb6.lovable.app-1775979718401.png" />
+        <meta property="og:url" content="https://wematech.africa/contact" />
+        <meta property="og:title" content="Contact Katimoja Africa | Request a Demo — AI Banking Solutions" />
+        <meta property="og:description" content="Get in touch with Katimoja Africa to schedule a demo of our AI-powered banking technology. Headquartered in Nairobi, Kenya serving banks and fintechs across Africa." />
+
       </Helmet>
       <Navbar />
 
@@ -114,9 +114,8 @@ const Contact = () => {
                       <MapPin size={18} className="text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-foreground">Offices</p>
+                      <p className="text-sm font-semibold text-foreground">Africa Headquarters</p>
                       <p className="text-sm text-muted-foreground">Nairobi, Kenya</p>
-                      <p className="text-sm text-muted-foreground">Addis Ababa, Ethiopia</p>
                     </div>
                   </div>
                 </div>

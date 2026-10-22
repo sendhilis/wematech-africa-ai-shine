@@ -6,7 +6,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const WEMATECH_EMAIL = "sendhil.kumar@techmonk.world";
+const KATIMOJA_EMAIL = "sendhil.kumar@techmonk.world";
 
 serve(async (req: Request) => {
   if (req.method === "OPTIONS") {
@@ -51,16 +51,16 @@ serve(async (req: Request) => {
     }
 
     // Log notifications
-    console.log(`[DEMO BOOKED VIA WEMA AI]`);
+    console.log(`[DEMO BOOKED VIA KATIMOJA AI]`);
     console.log(`  Customer: ${name} (${email})`);
     console.log(`  Date: ${demoDate}`);
     console.log(`  Organization: ${organization || "N/A"}`);
-    console.log(`  Notifying: ${WEMATECH_EMAIL}`);
+    console.log(`  Notifying: ${KATIMOJA_EMAIL}`);
 
     return new Response(
       JSON.stringify({
         success: true,
-        message: `Demo booked successfully for ${name} on ${demoDate}. A confirmation will be sent to ${email} and the Wematech team has been notified.`,
+        message: `Demo booked successfully for ${name} on ${demoDate}. A confirmation will be sent to ${email} and the Katimoja team has been notified.`,
       }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );

@@ -33,17 +33,17 @@ const DAYS: DayData[] = [
     date: "Tuesday 15 April 2026",
     objective: "Deploy optimised index.html live. Submit to Google Search Console. Achieve first index confirmation within 24hrs.",
     tasks: [
-      { name: "Deploy optimised index.html to wematech.africa", desc: "Upload the optimised file. Verify mobile/desktop render. Confirm HTTPS.", tags: ["technical"], time: "09:00", priority: "high" },
+      { name: "Deploy optimised index.html to katimoja.africa", desc: "Upload the optimised file. Verify mobile/desktop render. Confirm HTTPS.", tags: ["technical"], time: "09:00", priority: "high" },
       { name: "Connect Google Search Console — verify domain ownership", desc: "Add DNS TXT record or HTML meta tag. Confirm ownership.", tags: ["technical"], time: "09:30", priority: "high" },
       { name: "Submit sitemap.xml to Google Search Console", desc: "Create sitemap.xml listing all pages. Submit via GSC → Sitemaps.", tags: ["technical"], time: "10:00", priority: "high" },
       { name: "Request manual indexing via GSC URL Inspection Tool", desc: "Paste https://wematech.africa/ into URL Inspection → Request Indexing.", tags: ["technical"], time: "10:30", priority: "high" },
       { name: "Submit to Bing Webmaster Tools", desc: "Bing powers AI search tools including Copilot. Import from GSC or manual verify.", tags: ["technical"], time: "11:00", priority: "med" },
       { name: "Replace GA_MEASUREMENT_ID with real GA4 property ID", desc: "Create GA4 property. Replace placeholder in index.html.", tags: ["analytics"], time: "11:30", priority: "med" },
-      { name: "Create Google Business Profile — \"Wematech Africa\"", desc: "Category: Software Company + Financial Technology. Add Lagos address.", tags: ["technical"], time: "12:00", priority: "med" },
+      { name: "Create Google Business Profile — \"Katimoja Africa\"", desc: "Category: Software Company + Financial Technology. Add Nairobi, Kenya headquarters.", tags: ["technical"], time: "12:00", priority: "med" },
       { name: "Create robots.txt with AI crawler allowances", desc: "Allow GPTBot, anthropic-ai, PerplexityBot, ClaudeBot, Applebot.", tags: ["technical", "content"], time: "13:00", priority: "med" },
       { name: "Set up Cloudflare for speed + security signals", desc: "Enable auto-minification and caching. Improves Core Web Vitals.", tags: ["technical"], time: "14:00", priority: "med" },
       { name: "Submit to African tech directories: Disrupt Africa, VC4A", desc: "Free listings creating early backlinks from respected African tech sources.", tags: ["outreach"], time: "15:00", priority: "low" },
-      { name: "Create LinkedIn company page for Wematech Africa", desc: "Full description using keywords. LinkedIn pages rank on Google.", tags: ["social"], time: "16:00", priority: "low" },
+      { name: "Create LinkedIn company page for Katimoja Africa", desc: "Full description using keywords. LinkedIn pages rank on Google.", tags: ["social"], time: "16:00", priority: "low" },
       { name: "Write Day 1 progress notes — baseline snapshot", desc: "Record GSC indexing status, GA4 setup confirmed, baseline visibility.", tags: ["analytics"], time: "17:00", priority: "low" },
     ],
     report: {
@@ -98,7 +98,7 @@ const DAYS: DayData[] = [
   {
     id: "d5", num: 5, title: "LinkedIn + Social Launch", phase: "ignition",
     date: "Sat 19 Apr",
-    objective: "\"wematech africa\" appears in Google top 10. First GSC impressions recorded.",
+    objective: "\"katimoja africa\" appears in Google top 10. First GSC impressions recorded.",
     tasks: [
       { name: "Run first full ranking check — record baseline", desc: "Search Google incognito for all target keywords. Screenshot results.", tags: ["analytics"], time: "09:00", priority: "high" },
       { name: "Check GSC: impressions, clicks, index status", desc: "Performance → Last 7 days. Note impressions and clicks.", tags: ["analytics"], time: "10:00", priority: "high" },
@@ -154,7 +154,7 @@ const DAYS: DayData[] = [
   {
     id: "d10", num: 10, title: "Mid-Sprint Ranking Check", phase: "amplify",
     date: "Fri 25 Apr",
-    objective: "8 keywords tracked. \"Wematech africa\" #1. \"AI banking technology Africa\" top 10. 3+ leads. 10+ backlinks.",
+    objective: "8 keywords tracked. \"Katimoja africa\" #1. \"AI banking technology Africa\" top 10. 3+ leads. 10+ backlinks.",
     tasks: [
       { name: "Full keyword ranking audit — all 9 target keywords", desc: "Check incognito. Record positions. Compare to Day 5.", tags: ["analytics"], time: "09:00", priority: "high" },
       { name: "Analyse GA4: top landing pages, traffic sources", desc: "Fix CTAs if conversion <2%.", tags: ["analytics"], time: "10:00", priority: "high" },
@@ -176,12 +176,12 @@ const DAYS: DayData[] = [
   {
     id: "d12", num: 12, title: "AI Search Optimization", phase: "dominate",
     date: "Tue 29 Apr",
-    objective: "Wematech cited in at least 1 Perplexity or ChatGPT query about African banking.",
+    objective: "Katimoja cited in at least 1 Perplexity or ChatGPT query about African banking.",
     tasks: [
       { name: "Create /llm.txt — AI-optimised brand description", desc: "Plaintext for AI crawlers: who, what, key facts.", tags: ["technical", "content"], time: "09:00", priority: "high" },
       { name: "Post on Reddit: r/fintech and r/Africa", desc: "Genuine value post. Reddit ranks on Google and Perplexity.", tags: ["outreach", "social"], time: "11:00", priority: "high" },
       { name: "Add to Wikipedia \"FinTech in Africa\" article", desc: "Neutral, factual edit. Highest-trust signal.", tags: ["outreach"], time: "13:00", priority: "med" },
-      { name: "Publish Blog #3: \"Wematech vs Temenos\" comparison", desc: "1,000-word honest comparison. High organic CTR.", tags: ["content"], time: "15:00", priority: "med" },
+      { name: "Publish Blog #3: \"Katimoja vs Temenos\" comparison", desc: "1,000-word honest comparison. High organic CTR.", tags: ["content"], time: "15:00", priority: "med" },
     ],
   },
   {
@@ -201,7 +201,7 @@ const DAYS: DayData[] = [
     objective: "8+ pages indexed. \"Digital banking solutions Africa\" top 10. Backlinks 20+.",
     tasks: [
       { name: "Publish Blog #4: \"How to Choose a Digital Banking Platform\"", desc: "1,500-word buyer's guide. Highest commercial intent.", tags: ["content"], time: "09:00", priority: "high" },
-      { name: "Final backlink push: HARO / Qwoted journalist requests", desc: "Respond with expert insights as Wematech Africa.", tags: ["outreach"], time: "11:00", priority: "high" },
+      { name: "Final backlink push: HARO / Qwoted journalist requests", desc: "Respond with expert insights as Katimoja Africa.", tags: ["outreach"], time: "11:00", priority: "high" },
       { name: "Publish /fraud-detection-ai-africa/ and /regtech-africa/", desc: "Two solution pages. 600+ words each.", tags: ["content"], time: "13:00", priority: "med" },
       { name: "Request indexing for all new pages in GSC", desc: "URL Inspection tool for every page this week.", tags: ["technical"], time: "16:00", priority: "med" },
     ],
@@ -209,7 +209,7 @@ const DAYS: DayData[] = [
   {
     id: "d15", num: 15, title: "Final Audit + Victory Report", phase: "dominate",
     date: "Fri 2 May",
-    objective: "\"Wematech africa\" #1. \"AI banking\" top 5. \"Digital banking\" top 10. 3–5 leads. 20+ backlinks.",
+    objective: "\"Katimoja africa\" #1. \"AI banking\" top 5. \"Digital banking\" top 10. 3–5 leads. 20+ backlinks.",
     tasks: [
       { name: "Full keyword position audit — all target terms", desc: "Manually check all 9 keywords. Document trajectory.", tags: ["analytics"], time: "09:00", priority: "high" },
       { name: "GA4 + GSC: Full 15-day traffic report", desc: "Impressions, clicks, CTR, position, top queries.", tags: ["analytics"], time: "10:00", priority: "high" },
@@ -219,7 +219,7 @@ const DAYS: DayData[] = [
     ],
     report: {
       metrics: [
-        { label: "Brand Keyword", value: "#1", change: "\"wematech africa\"", color: "green" },
+        { label: "Brand Keyword", value: "#1", change: "\"katimoja africa\"", color: "green" },
         { label: "AI Banking KW", value: "Top 5", change: "\"ai banking africa\"", color: "green" },
         { label: "Digital Banking", value: "Top 10", change: "\"digital banking africa\"", color: "gold" },
         { label: "Backlinks", value: "20+", change: "DA avg 55+", color: "green" },
@@ -231,7 +231,7 @@ const DAYS: DayData[] = [
 ];
 
 const KEYWORDS = [
-  { keyword: "wematech africa", difficulty: "Very Easy", volume: "Brand", target: "#1 Day 4", strategy: "Brand indexing" },
+  { keyword: "katimoja africa", difficulty: "Very Easy", volume: "Brand", target: "#1 Day 4", strategy: "Brand indexing" },
   { keyword: "ai banking technology africa", difficulty: "Low", volume: "Mid", target: "#1–3 Day 10", strategy: "Homepage + Blog" },
   { keyword: "digital banking solutions africa", difficulty: "Medium", volume: "High", target: "#1–5 Day 12", strategy: "Dedicated page + backlinks" },
   { keyword: "digital banking africa", difficulty: "High", volume: "Very High", target: "#1–10 Day 15", strategy: "Full authority push" },
@@ -311,7 +311,8 @@ const SEOWarRoom = () => {
     });
   };
 
-  const day = DAYS.find(d => d.id === activeDay)!;
+  const day = DAYS.find(d => d.id === activeDay) ?? DAYS[0];
+  if (!day) return null;
   const tabId = activeTab[activeDay] || "tasks";
   const today = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 
@@ -329,7 +330,7 @@ const SEOWarRoom = () => {
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: colorMap.green, display: "inline-block", animation: "blink 1.4s infinite" }} /> Mission Active
             </div>
             <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.6rem", fontWeight: 800, letterSpacing: "-0.03em", marginBottom: "0.2rem" }}>
-              Wematech Africa<br /><span style={{ color: colorMap.green }}>#1 Digital Banking Africa</span>
+              Katimoja Africa<br /><span style={{ color: colorMap.green }}>#1 Digital Banking Africa</span>
             </h1>
             <p style={{ color: "rgba(232,237,248,0.45)", fontSize: "0.85rem", maxWidth: 500 }}>15-Day SEO Blitz — Daily schedule, task tracking, and progress. Target: rank #1 for "digital banking Africa".</p>
             <button onClick={() => navigate("/admin")} style={{ marginTop: 8, background: "transparent", border: "1px solid rgba(255,255,255,0.15)", color: "#E8EDF8", padding: "4px 12px", borderRadius: 4, cursor: "pointer", fontSize: 11, fontFamily: "monospace" }}>← Back to Admin</button>
@@ -560,7 +561,7 @@ const SEOWarRoom = () => {
 
       {/* FOOTER */}
       <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", padding: "0.8rem 2rem", display: "flex", justifyContent: "space-between", alignItems: "center", background: "#0F1628", fontFamily: "monospace", fontSize: 9, color: "rgba(232,237,248,0.45)", letterSpacing: "0.06em", flexWrap: "wrap", gap: "0.5rem" }}>
-        <span>WEMATECH AFRICA — SEO WAR ROOM — 15-DAY MISSION</span>
+        <span>KATIMOJA AFRICA — SEO WAR ROOM — 15-DAY MISSION</span>
         <span>YOUR SEO MANAGER • <span style={{ color: colorMap.green }}>MISSION ACTIVE</span> • Today: {today}</span>
         <span>TARGET: #1 DIGITAL BANKING AFRICA</span>
       </div>

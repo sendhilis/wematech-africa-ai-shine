@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logoIcon from "@/assets/wematech-icon.webp";
+import logo from "@/assets/katimoja-logo.png";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -33,31 +34,25 @@ const Navbar = () => {
       aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-[hsl(228_50%_16%/0.95)] backdrop-blur-xl border-b border-[hsl(228_50%_30%/0.3)] py-2"
+          ? "bg-background/95 backdrop-blur-xl border-b border-border/30 py-2"
           : "bg-transparent py-4"
       }`}
     >
       <div className="section-container flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group relative">
-          <div className="relative flex-shrink-0">
-            <div className={`absolute inset-0 rounded-full bg-accent/20 blur-xl animate-pulse-glow transition-all duration-500 ${isScrolled ? "scale-110" : "scale-125"}`} />
+        <Link to="/" aria-label="Katimoja home" className="flex flex-col gap-1 shrink-0">
             <img
-              src={logoIcon}
-              alt="WeMaTech"
-              className={`relative z-10 transition-all duration-500 drop-shadow-[0_0_20px_hsl(40_92%_56%/0.6)] group-hover:drop-shadow-[0_0_32px_hsl(40_92%_56%/0.8)] ${isScrolled ? "h-10 w-10 sm:h-14 sm:w-14" : "h-12 w-12 sm:h-[4.5rem] sm:w-[4.5rem]"}`}
+              src={logo}
+              alt="Katimoja"
+              width={1374}
+              height={326}
+              className="h-auto w-36 sm:w-44 object-contain"
             />
-          </div>
-          <div className="flex flex-col">
-            <span className={`font-heading font-bold text-foreground leading-tight transition-all duration-500 ${isScrolled ? "text-lg sm:text-xl" : "text-xl sm:text-2xl"}`}>
-              Wema<span className="text-accent">Tech</span>
-            </span>
-            <span className={`text-muted-foreground font-medium leading-tight transition-all duration-500 hidden sm:block ${isScrolled ? "text-[10px]" : "text-xs"}`}>
+            <span className="text-muted-foreground font-medium leading-tight hidden sm:block text-[10px]">
               Advanced AI. Accessible to All.
             </span>
-          </div>
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -76,16 +71,21 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <button
+        <Button
+          variant="ghost"
+          size="icon"
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="md:hidden text-foreground"
+          className="lg:hidden text-foreground"
+          aria-label={isMobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMobileOpen}
+          aria-controls="mobile-navigation"
         >
           {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        </Button>
       </div>
 
       {isMobileOpen && (
-        <div className="md:hidden mt-2 mx-4 rounded-2xl p-6 space-y-4 bg-[hsl(228_50%_14%/0.95)] backdrop-blur-xl border border-[hsl(228_50%_30%/0.3)]">
+        <div id="mobile-navigation" className="lg:hidden mt-2 mx-4 rounded-lg p-6 space-y-4 bg-background/95 backdrop-blur-xl border border-border/30">
           {navLinks.map((link) => (
             <Link
               key={link.path}
