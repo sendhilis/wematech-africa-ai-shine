@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { ArrowRight, Check, Zap } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { WHATSAPP_LINK, WHATSAPP_NUMBER_DISPLAY } from "@/components/WhatsAppCta";
 import { microSaaSProducts } from "@/data/microsaas";
 
 import { Button } from "@/components/ui/button";
@@ -148,6 +149,15 @@ const MicroSaaSCatalogue = () => {
               </article>
             );
           })}
+        </div>
+
+        <div className="mt-10 text-center">
+          <p className="text-sm text-muted-foreground">
+            Prefer WhatsApp?{" "}
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+              Chat with us at {WHATSAPP_NUMBER_DISPLAY}
+            </a>
+          </p>
         </div>
       </section>
 

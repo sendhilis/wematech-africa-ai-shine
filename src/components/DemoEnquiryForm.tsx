@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { CheckCircle, Loader2, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { WHATSAPP_LINK, WHATSAPP_NUMBER_DISPLAY } from "@/components/WhatsAppCta";
 import { DEMO_ACKNOWLEDGEMENT, demoEnquirySchema, submitDemoEnquiry } from "@/lib/demo-enquiry";
 
 export default function DemoEnquiryForm({ product }: { product: string }) {
@@ -32,6 +33,11 @@ export default function DemoEnquiryForm({ product }: { product: string }) {
       <textarea name="message" rows={3} maxLength={1000} value={values.message} onChange={e => setValues({ ...values, message: e.target.value })} className="w-full rounded-md bg-secondary border border-border px-3 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
     </label>
     {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
+    <p className="text-xs text-muted-foreground">Prefer WhatsApp?{" "}
+      <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+        Chat with us at {WHATSAPP_NUMBER_DISPLAY}
+      </a>
+    </p>
     <Button type="submit" disabled={loading} className="w-full">{loading ? <Loader2 className="animate-spin" /> : <Send />} {loading ? 'Sending request…' : 'Send demo enquiry'}</Button>
   </form>;
 }

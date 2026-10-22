@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/katimoja-logo.png";
+import { WHATSAPP_LINK, WHATSAPP_NUMBER_DISPLAY } from "@/components/WhatsAppCta";
 
 const Footer = () => {
   return (
@@ -53,6 +54,7 @@ const Footer = () => {
             <h4 className="font-heading font-semibold text-foreground mb-4">Connect</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li><a href="mailto:info@katimoja.africa" className="break-all hover:text-primary">info@katimoja.africa</a></li>
+              <li><a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="hover:text-primary">WhatsApp: {WHATSAPP_NUMBER_DISPLAY}</a></li>
               <li>Africa Headquarters: Nairobi, Kenya</li>
             </ul>
             <div className="mt-4">

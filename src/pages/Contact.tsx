@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Mail, MapPin, Send, Loader2 } from "lucide-react";
+import { Mail, MapPin, Send, Loader2, MessageCircle } from "lucide-react";
+import { WHATSAPP_LINK, WHATSAPP_NUMBER_DISPLAY } from "@/components/WhatsAppCta";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
@@ -110,6 +111,17 @@ const Contact = () => {
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <MessageCircle size={18} className="text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">WhatsApp</p>
+                      <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary">
+                        {WHATSAPP_NUMBER_DISPLAY}
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <MapPin size={18} className="text-primary" />
                     </div>
                     <div>
@@ -140,6 +152,12 @@ const Contact = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <h3 className="font-heading text-lg font-bold text-foreground mb-2">Request a Demo</h3>
+                  <p className="text-xs text-muted-foreground mb-4">
+                    Prefer WhatsApp?{" "}
+                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      Chat with us at {WHATSAPP_NUMBER_DISPLAY}
+                    </a>
+                  </p>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="text-xs text-muted-foreground block mb-1.5">First Name</label>
