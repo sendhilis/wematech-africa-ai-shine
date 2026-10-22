@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-1">
             <Link to="/" aria-label="Katimoja home" className="flex flex-col items-start gap-2 mb-4">
-              <img src={logo} alt="Katimoja" width={1374} height={326} loading="lazy" className="h-auto w-44 object-contain" />
+              <img src={logo} alt="Katimoja" width={376} height={198} loading="lazy" className="h-16 w-auto object-contain rounded-md bg-card-foreground p-1" />
                 <span className="text-[10px] text-muted-foreground font-medium">
                   Advanced AI. Accessible to All.
                 </span>
