@@ -21,9 +21,9 @@ const Index = () => {
       <Helmet>
         <title>Katimoja Africa | AI-Powered Banking Technology Solutions in Africa</title>
         <meta name="description" content="Katimoja Africa delivers AI-first banking technology solutions across Africa — core banking transformation, digital lending, mobile money infrastructure, fraud detection, RegTech, and open banking APIs." />
-        <link rel="canonical" href="https://wematech.africa/" />
+        <link rel="canonical" href="https://www.katimoja.africa/" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://wematech.africa/" />
+        <meta property="og:url" content="https://www.katimoja.africa/" />
         <meta property="og:title" content="Katimoja Africa — AI-Powered Banking Tech Solutions for Africa" />
         <meta property="og:description" content="Africa's leading AI-first banking technology company. We power digital banking transformation for banks, fintechs, and microfinance institutions across 54 African markets." />
 
