@@ -220,7 +220,8 @@
         document.body.appendChild(s);
         s.onload = function() {
           var el = document.createElement('elevenlabs-convai');
-          el.setAttribute('agent-id', 'agent_3301m57p4e45ejma82qaqaw78zgr');
+          el.setAttribute('agent-id', 'agent_7801kp0hpr6gfvct6ew70a890689');
+          el.setAttribute('placement', 'bottom-right');
           el.setAttribute('avatar-image-url', window.location.origin + '/favicon.png');
           el.setAttribute('text-contents', JSON.stringify({ main_label: 'Katimoja AI' }));
           // On phones keep the assistant as a small corner button so it doesn't cover page content
@@ -229,6 +230,13 @@
             el.setAttribute('placement', 'bottom-right');
           }
           document.body.appendChild(el);
+          // AMA - CalBank agent, bottom-left
+          var ama = document.createElement('elevenlabs-convai');
+          ama.setAttribute('agent-id', 'agent_3301m57p4e45ejma82qaqaw78zgr');
+          ama.setAttribute('placement', 'bottom-left');
+          ama.setAttribute('text-contents', JSON.stringify({ main_label: 'AMA - CalBank' }));
+          if (window.matchMedia('(max-width: 767px)').matches) ama.setAttribute('variant', 'tiny');
+          document.body.appendChild(ama);
         };
       }
       if ('requestIdleCallback' in window) {
