@@ -9,6 +9,7 @@ import { Wallet, LayoutDashboard, BarChart3, Brain, Smartphone, ArrowRight, Phon
 import { Button } from "@/components/ui/button";
 import { useDemoAccess } from "@/contexts/DemoAccessContext";
 import CornerOracle from "@/components/CornerOracle";
+import ClientOnly from "@/components/ClientOnly";
 
 const solutions = [
   {
@@ -305,7 +306,9 @@ const Solutions = () => {
       <DemoBooking />
       <CTASection />
       <Footer />
-      <CornerOracle />
+      <ClientOnly>
+        <CornerOracle />
+      </ClientOnly>
     </div>
   );
 };
