@@ -56,6 +56,8 @@ function withSocialFallbacks(head: string): string {
   if (title && !has("og:title")) extra.push(`<meta property="og:title" content="${attr(title)}"/>`);
   if (desc && !has("og:description")) extra.push(`<meta property="og:description" content="${desc}"/>`);
   if (canonical && !has("og:url")) extra.push(`<meta property="og:url" content="${canonical}"/>`);
+  if (title && !/name="twitter:title"/.test(head)) extra.push(`<meta name="twitter:title" content="${attr(title)}"/>`);
+  if (desc && !/name="twitter:description"/.test(head)) extra.push(`<meta name="twitter:description" content="${desc}"/>`);
   return extra.length ? `${head}\n${extra.join("\n")}` : head;
 }
 
