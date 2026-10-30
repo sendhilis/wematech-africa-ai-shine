@@ -1,0 +1,10 @@
+import { useEffect, useState, type ReactNode } from "react";
+
+/** Renders children only after mounting in the browser (skipped during prerender). */
+const ClientOnly = ({ children }: { children: ReactNode }) => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  return mounted ? <>{children}</> : null;
+};
+
+export default ClientOnly;

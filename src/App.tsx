@@ -1,7 +1,7 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, type ReactNode } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -31,49 +31,70 @@ const ComplianceAlertApp = lazy(() => import("./pages/ComplianceAlertApp.tsx"));
 const Auth = lazy(() => import("./pages/Auth.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
-const queryClient = new QueryClient();
+/** Private pages: keep them out of search results. */
+const NoIndex = ({ children }: { children: ReactNode }) => (
+  <>
+    <Helmet>
+      <meta name="robots" content="noindex, nofollow" />
+    </Helmet>
+    {children}
+  </>
+);
 
-const App = () => (
-  <HelmetProvider>
+export const AppRoutes = () => (
+  <Suspense fallback={<div className="min-h-screen bg-background" />}>
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/solutions" element={<Solutions />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/ai-transforming-core-banking-nigeria" element={<BlogPost_AICoreBankingNigeria />} />
+      <Route path="/blog/mobile-money-financial-inclusion-kenya" element={<BlogPost_MobileMoneyKenya />} />
+      <Route path="/blog/digital-lending-africa" element={<BlogPost_DigitalLendingAfrica />} />
+      <Route path="/blog/banking-technology-nigeria" element={<BlogPost_BankingTechnologyNigeria />} />
+      <Route path="/blog/banking-technology-kenya" element={<BlogPost_BankingTechnologyKenya />} />
+      <Route path="/blog/banking-technology-south-africa" element={<BlogPost_BankingTechnologySouthAfrica />} />
+      <Route path="/blog/best-banking-technology-vendor-africa-2026" element={<BlogPost_BestBankingTechnologyVendorAfrica2026 />} />
+      <Route path="/admin/login" element={<NoIndex><AdminLogin /></NoIndex>} />
+      <Route path="/admin" element={<NoIndex><AdminDashboard /></NoIndex>} />
+      <Route path="/admin/seo-warroom" element={<NoIndex><SEOWarRoom /></NoIndex>} />
+      <Route path="/microsaas" element={<MicroSaaSCatalogue />} />
+      <Route path="/microsaas/:slug" element={<MicroSaaSProductPage />} />
+      <Route path="/auth" element={<NoIndex><Auth /></NoIndex>} />
+      <Route
+        path="/microsaas/compliance-alert/app"
+        element={
+          <NoIndex>
+            <RequireAuth>
+              <ComplianceAlertApp />
+            </RequireAuth>
+          </NoIndex>
+        }
+      />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </Suspense>
+);
+
+/** Shared providers used by both the browser app and the build-time prerenderer. */
+export const AppProviders = ({
+  children,
+  helmetContext,
+  queryClient,
+}: {
+  children: ReactNode;
+  helmetContext?: Record<string, unknown>;
+  queryClient: QueryClient;
+}) => (
+  <HelmetProvider context={helmetContext}>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <AuthProvider>
           <DemoAccessProvider>
             <Toaster />
             <Sonner />
-            <BrowserRouter>
-              <Suspense fallback={<div className="min-h-screen bg-background" />}>
-                <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/solutions" element={<Solutions />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/blog" element={<Blog />} />
-                  <Route path="/blog/ai-transforming-core-banking-nigeria" element={<BlogPost_AICoreBankingNigeria />} />
-                  <Route path="/blog/mobile-money-financial-inclusion-kenya" element={<BlogPost_MobileMoneyKenya />} />
-                  <Route path="/blog/digital-lending-africa" element={<BlogPost_DigitalLendingAfrica />} />
-                  <Route path="/blog/banking-technology-nigeria" element={<BlogPost_BankingTechnologyNigeria />} />
-                  <Route path="/blog/banking-technology-kenya" element={<BlogPost_BankingTechnologyKenya />} />
-                  <Route path="/blog/banking-technology-south-africa" element={<BlogPost_BankingTechnologySouthAfrica />} />
-                  <Route path="/blog/best-banking-technology-vendor-africa-2026" element={<BlogPost_BestBankingTechnologyVendorAfrica2026 />} />
-                  <Route path="/admin/login" element={<AdminLogin />} />
-                  <Route path="/admin" element={<AdminDashboard />} />
-                  <Route path="/admin/seo-warroom" element={<SEOWarRoom />} />
-                  <Route path="/microsaas" element={<MicroSaaSCatalogue />} />
-                  <Route path="/microsaas/:slug" element={<MicroSaaSProductPage />} />
-                  <Route path="/auth" element={<Auth />} />
-                  <Route
-                    path="/microsaas/compliance-alert/app"
-                    element={
-                      <RequireAuth>
-                        <ComplianceAlertApp />
-                      </RequireAuth>
-                    }
-                  />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </Suspense>
-            </BrowserRouter>
+            {children}
           </DemoAccessProvider>
         </AuthProvider>
       </TooltipProvider>
@@ -81,5 +102,14 @@ const App = () => (
   </HelmetProvider>
 );
 
-export default App;
+const queryClient = new QueryClient();
 
+const App = () => (
+  <AppProviders queryClient={queryClient}>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  </AppProviders>
+);
+
+export default App;
