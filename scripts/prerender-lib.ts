@@ -24,6 +24,7 @@ const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
  */
 export function injectPage(template: string, appHtml: string, head: string, prerenderedPaths: string[]): string {
   let out = template;
+  head = withSocialFallbacks(head);
 
   if (/<title[\s>]/.test(head)) out = out.replace(/<title>[\s\S]*?<\/title>/, "");
   for (const m of head.matchAll(/<meta[^>]*\s(name|property)="([^"]+)"/g)) {
@@ -41,6 +42,21 @@ export function injectPage(template: string, appHtml: string, head: string, prer
     `if(${JSON.stringify(prerenderedPaths)}.indexOf(p)<0){var r=document.getElementById("root");if(r)r.innerHTML="";}})();</script>`;
   out = out.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>${guard}`);
   return out;
+}
+
+const attr = (s: string) => s.replace(/"/g, "&quot;");
+
+/** Pages that set only title/description/canonical still get matching social tags, never the homepage's. */
+function withSocialFallbacks(head: string): string {
+  const extra: string[] = [];
+  const has = (prop: string) => new RegExp(`property="${prop}"`).test(head);
+  const title = head.match(/<title[^>]*>([\s\S]*?)<\/title>/)?.[1];
+  const desc = head.match(/<meta[^>]*name="description"[^>]*content="([^"]*)"/)?.[1];
+  const canonical = head.match(/<link[^>]*rel="canonical"[^>]*href="([^"]*)"/)?.[1];
+  if (title && !has("og:title")) extra.push(`<meta property="og:title" content="${attr(title)}"/>`);
+  if (desc && !has("og:description")) extra.push(`<meta property="og:description" content="${desc}"/>`);
+  if (canonical && !has("og:url")) extra.push(`<meta property="og:url" content="${canonical}"/>`);
+  return extra.length ? `${head}\n${extra.join("\n")}` : head;
 }
 
 export function outputFileFor(path: string): string {
