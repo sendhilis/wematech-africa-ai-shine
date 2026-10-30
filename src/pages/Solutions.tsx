@@ -220,9 +220,9 @@ const Solutions = () => {
       <Helmet>
         <title>Solutions | AI Banking, Mobile Money & Digital Lending — Katimoja Africa</title>
         <meta name="description" content="Explore Katimoja's full suite of AI-powered banking solutions — GlobalPay mobile money, digital lending, credit intelligence, AI copilots, and voice call center for African banks and fintechs." />
-        <link rel="canonical" href="https://wematech.africa/solutions" />
+        <link rel="canonical" href="https://www.katimoja.africa/solutions" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://wematech.africa/solutions" />
+        <meta property="og:url" content="https://www.katimoja.africa/solutions" />
         <meta property="og:title" content="Solutions | AI Banking, Mobile Money & Digital Lending — Katimoja Africa" />
         <meta property="og:description" content="Explore Katimoja's full suite of AI-powered banking solutions — GlobalPay mobile money, digital lending, credit intelligence, AI copilots, and voice call center for African banks and fintechs." />
 

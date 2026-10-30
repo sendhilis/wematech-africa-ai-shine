@@ -10,9 +10,9 @@ const About = () => {
       <Helmet>
         <title>About Katimoja Africa | Engineering Africa's Financial Future with AI</title>
         <meta name="description" content="Katimoja Africa is an AI-first banking technology company serving 12+ African markets with core banking, credit intelligence, mobile money, and agentic AI solutions." />
-        <link rel="canonical" href="https://wematech.africa/about" />
+        <link rel="canonical" href="https://www.katimoja.africa/about" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://wematech.africa/about" />
+        <meta property="og:url" content="https://www.katimoja.africa/about" />
         <meta property="og:title" content="About Katimoja Africa | Engineering Africa's Financial Future with AI" />
         <meta property="og:description" content="Katimoja Africa is an AI-first banking technology company serving 12+ African markets with core banking, credit intelligence, mobile money, and agentic AI solutions." />
 

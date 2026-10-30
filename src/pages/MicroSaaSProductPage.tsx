@@ -24,7 +24,7 @@ const MicroSaaSProductPage = () => {
       <Helmet>
         <title>{product.name} — Katimoja Micro-SaaS</title>
         <meta name="description" content={product.tagline} />
-        <link rel="canonical" href={`https://wematech.africa/microsaas/${product.slug}`} />
+        <link rel="canonical" href={`https://www.katimoja.africa/microsaas/${product.slug}`} />
       </Helmet>
 
       <Navbar />

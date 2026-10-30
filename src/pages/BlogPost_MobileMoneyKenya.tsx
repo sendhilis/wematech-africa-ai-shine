@@ -15,9 +15,9 @@ const BlogPost_MobileMoneyKenya = () => {
           name="description"
           content="Discover how mobile money infrastructure is driving financial inclusion in Kenya — from M-Pesa's agent networks and USSD technology to AI credit scoring and super apps. A guide for African financial institutions."
         />
-        <link rel="canonical" href="https://wematech.africa/blog/mobile-money-financial-inclusion-kenya" />
+        <link rel="canonical" href="https://www.katimoja.africa/blog/mobile-money-financial-inclusion-kenya" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://wematech.africa/blog/mobile-money-financial-inclusion-kenya" />
+        <meta property="og:url" content="https://www.katimoja.africa/blog/mobile-money-financial-inclusion-kenya" />
         <meta property="og:title" content="How Mobile Money Infrastructure is Driving Financial Inclusion in Kenya" />
         <meta property="og:description" content="Discover how mobile money infrastructure is driving financial inclusion in Kenya — from M-Pesa's agent networks to AI-powered credit scoring and digital super apps." />
         <script type="application/ld+json">
@@ -28,8 +28,8 @@ const BlogPost_MobileMoneyKenya = () => {
             description: "Discover how mobile money infrastructure is driving financial inclusion in Kenya — from M-Pesa's agent networks to AI-powered credit scoring and digital super apps.",
             author: { "@type": "Organization", name: "Katimoja Africa" },
             datePublished: "2026-04-13",
-            publisher: { "@type": "Organization", name: "Katimoja Africa", url: "https://wematech.africa" },
-            mainEntityOfPage: "https://wematech.africa/blog/mobile-money-financial-inclusion-kenya",
+            publisher: { "@type": "Organization", name: "Katimoja Africa", url: "https://www.katimoja.africa" },
+            mainEntityOfPage: "https://www.katimoja.africa/blog/mobile-money-financial-inclusion-kenya",
           })}
         </script>
       </Helmet>

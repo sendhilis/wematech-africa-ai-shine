@@ -108,7 +108,7 @@ const Blog = () => {
           name="description"
           content="Expert insights on AI-powered banking technology, digital transformation, and fintech innovation across Africa from the Katimoja Africa team."
         />
-        <link rel="canonical" href="https://wematech.africa/blog" />
+        <link rel="canonical" href="https://www.katimoja.africa/blog" />
       </Helmet>
       <Navbar />
 

@@ -10,14 +10,14 @@ const BlogPost_BankingTechnologyKenya = () => {
     <SEOLandingLayout
       title="Banking Technology Kenya — AI Platform for Banks & SACCOs | Katimoja Africa"
       description="AI-first banking technology for Kenya. CBK-compliant, native M-Pesa integration, SACCO digital banking, and mobile banking solutions covering 39 commercial banks and 4,000+ SACCOs."
-      canonical="https://wematech.africa/blog/banking-technology-kenya"
+      canonical="https://www.katimoja.africa/blog/banking-technology-kenya"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "Article",
         headline: "Banking Technology Kenya 2026",
         author: { "@type": "Organization", name: "Katimoja Africa" },
         datePublished: "2026-04-20",
-        mainEntityOfPage: "https://wematech.africa/blog/banking-technology-kenya",
+        mainEntityOfPage: "https://www.katimoja.africa/blog/banking-technology-kenya",
       }}
       tag="Banking Technology Kenya"
       heading={

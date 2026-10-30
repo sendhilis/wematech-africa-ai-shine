@@ -72,9 +72,9 @@ const Contact = () => {
       <Helmet>
         <title>Contact Katimoja Africa | Request a Demo — AI Banking Solutions</title>
         <meta name="description" content="Get in touch with Katimoja Africa to schedule a demo of our AI-powered banking technology. Headquartered in Nairobi, Kenya serving banks and fintechs across Africa." />
-        <link rel="canonical" href="https://wematech.africa/contact" />
+        <link rel="canonical" href="https://www.katimoja.africa/contact" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://wematech.africa/contact" />
+        <meta property="og:url" content="https://www.katimoja.africa/contact" />
         <meta property="og:title" content="Contact Katimoja Africa | Request a Demo — AI Banking Solutions" />
         <meta property="og:description" content="Get in touch with Katimoja Africa to schedule a demo of our AI-powered banking technology. Headquartered in Nairobi, Kenya serving banks and fintechs across Africa." />
 

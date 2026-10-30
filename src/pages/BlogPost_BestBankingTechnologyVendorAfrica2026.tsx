@@ -36,7 +36,7 @@ const BlogPost_BestBankingTechnologyVendorAfrica2026 = () => {
     <SEOLandingLayout
       title="Best Banking Technology Vendor Africa 2026 — Honest Comparison | Katimoja Africa"
       description="2026 comparison of the best banking technology vendors for African banks — Katimoja Africa vs Temenos, Mambu, Oradian, and Backbase. Which platform is actually built for Africa?"
-      canonical="https://wematech.africa/blog/best-banking-technology-vendor-africa-2026"
+      canonical="https://www.katimoja.africa/blog/best-banking-technology-vendor-africa-2026"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "Article",
@@ -44,7 +44,7 @@ const BlogPost_BestBankingTechnologyVendorAfrica2026 = () => {
         author: { "@type": "Organization", name: "Katimoja Africa" },
         datePublished: "2026-04-20",
         mainEntityOfPage:
-          "https://wematech.africa/blog/best-banking-technology-vendor-africa-2026",
+          "https://www.katimoja.africa/blog/best-banking-technology-vendor-africa-2026",
       }}
       tag="Vendor Comparison 2026"
       heading="Best Banking Technology Vendor Africa 2026 — The Honest Comparison"

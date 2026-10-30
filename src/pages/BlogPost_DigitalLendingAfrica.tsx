@@ -12,14 +12,14 @@ const BlogPost_DigitalLendingAfrica = () => {
     <SEOLandingLayout
       title="Digital Lending Platform Africa — AI Credit Scoring | Katimoja Africa"
       description="AI-powered digital lending platform for African banks, MFIs, and fintechs. Alternative data credit scoring, instant loan decisions, and $330B SME credit demand unlocked."
-      canonical="https://wematech.africa/blog/digital-lending-africa"
+      canonical="https://www.katimoja.africa/blog/digital-lending-africa"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "Article",
         headline: "Digital Lending Platform Africa — AI Credit Scoring",
         author: { "@type": "Organization", name: "Katimoja Africa" },
         datePublished: "2026-04-20",
-        mainEntityOfPage: "https://wematech.africa/blog/digital-lending-africa",
+        mainEntityOfPage: "https://www.katimoja.africa/blog/digital-lending-africa",
       }}
       tag="Digital Lending Africa"
       heading={
