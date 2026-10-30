@@ -10,14 +10,14 @@ const BlogPost_BankingTechnologySouthAfrica = () => {
     <SEOLandingLayout
       title="Banking Technology South Africa — FSCA-Compliant AI Platform | Katimoja Africa"
       description="AI-first banking technology for South Africa. FSCA and SARB compliant, COFI Bill ready, digital banking solutions for commercial banks, neobanks and fintechs."
-      canonical="https://wematech.africa/blog/banking-technology-south-africa"
+      canonical="https://www.katimoja.africa/blog/banking-technology-south-africa"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "Article",
         headline: "Banking Technology South Africa 2026",
         author: { "@type": "Organization", name: "Katimoja Africa" },
         datePublished: "2026-04-20",
-        mainEntityOfPage: "https://wematech.africa/blog/banking-technology-south-africa",
+        mainEntityOfPage: "https://www.katimoja.africa/blog/banking-technology-south-africa",
       }}
       tag="Banking Technology South Africa"
       heading={

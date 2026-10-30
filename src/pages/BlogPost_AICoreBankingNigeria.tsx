@@ -18,9 +18,9 @@ const BlogPost_AICoreBankingNigeria = () => {
           name="description"
           content="Discover how AI is reshaping core banking in Nigeria — from fraud detection and credit scoring to digital lending and customer experience. A guide for Nigerian financial institutions."
         />
-        <link rel="canonical" href="https://wematech.africa/blog/ai-transforming-core-banking-nigeria" />
+        <link rel="canonical" href="https://www.katimoja.africa/blog/ai-transforming-core-banking-nigeria" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://wematech.africa/blog/ai-transforming-core-banking-nigeria" />
+        <meta property="og:url" content="https://www.katimoja.africa/blog/ai-transforming-core-banking-nigeria" />
         <meta property="og:title" content="How AI is Transforming Core Banking in Nigeria" />
         <meta property="og:description" content="Discover how AI is reshaping core banking in Nigeria — from fraud detection and credit scoring to digital lending and customer experience." />
         <script type="application/ld+json">
@@ -31,8 +31,8 @@ const BlogPost_AICoreBankingNigeria = () => {
             description: "Discover how AI is reshaping core banking in Nigeria — from fraud detection and credit scoring to digital lending and customer experience.",
             author: { "@type": "Organization", name: "Katimoja Africa" },
             datePublished: "2026-04-12",
-            publisher: { "@type": "Organization", name: "Katimoja Africa", url: "https://wematech.africa" },
-            mainEntityOfPage: "https://wematech.africa/blog/ai-transforming-core-banking-nigeria",
+            publisher: { "@type": "Organization", name: "Katimoja Africa", url: "https://www.katimoja.africa" },
+            mainEntityOfPage: "https://www.katimoja.africa/blog/ai-transforming-core-banking-nigeria",
           })}
         </script>
       </Helmet>

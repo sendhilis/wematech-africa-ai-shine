@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import IntentPulse from "@/components/IntentPulse";
 import SilentQualifier from "@/components/SilentQualifier";
 import CornerOracle from "@/components/CornerOracle";
+import ClientOnly from "@/components/ClientOnly";
 
 const StatsSection = lazy(() => import("@/components/StatsSection"));
 const MicroSaaSShowcase = lazy(() => import("@/components/MicroSaaSShowcase"));
@@ -39,9 +40,11 @@ const Index = () => {
         <FAQSection />
         <CTASection />
         <Footer />
-        <IntentPulse />
-        <SilentQualifier />
-        <CornerOracle />
+        <ClientOnly>
+          <IntentPulse />
+          <SilentQualifier />
+          <CornerOracle />
+        </ClientOnly>
       </Suspense>
     </div>
   );

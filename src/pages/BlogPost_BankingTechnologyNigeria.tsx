@@ -11,7 +11,7 @@ const BlogPost_BankingTechnologyNigeria = () => {
     <SEOLandingLayout
       title="Banking Technology Nigeria — AI-First Platform for Nigerian Banks | Katimoja Africa"
       description="Purpose-built banking technology for Nigeria. CBN-compliant AI core banking, digital lending, fraud detection and open banking APIs. Covering all 44 licensed banks, 900+ MFIs and Nigerian fintechs."
-      canonical="https://wematech.africa/blog/banking-technology-nigeria"
+      canonical="https://www.katimoja.africa/blog/banking-technology-nigeria"
       jsonLd={[
         {
           "@context": "https://schema.org",
@@ -19,7 +19,7 @@ const BlogPost_BankingTechnologyNigeria = () => {
           headline: "Banking Technology Nigeria — The Complete 2026 Guide",
           author: { "@type": "Organization", name: "Katimoja Africa" },
           datePublished: "2026-04-20",
-          mainEntityOfPage: "https://wematech.africa/blog/banking-technology-nigeria",
+          mainEntityOfPage: "https://www.katimoja.africa/blog/banking-technology-nigeria",
         },
         {
           "@context": "https://schema.org",

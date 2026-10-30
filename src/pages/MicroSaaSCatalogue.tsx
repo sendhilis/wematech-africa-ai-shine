@@ -19,7 +19,7 @@ const MicroSaaSCatalogue = () => {
           name="description"
           content="5 plug-in AI Micro-SaaS products for African banks, neobanks, MFIs and SMEs. BankBot, ScoreAI, SME Pulse, ComplianceAlert and LaunchKit."
         />
-        <link rel="canonical" href="https://wematech.africa/microsaas" />
+        <link rel="canonical" href="https://www.katimoja.africa/microsaas" />
       </Helmet>
 
       <Navbar />
